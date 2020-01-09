@@ -63,6 +63,7 @@ function checkAndCreateDir(dirname) {
  * Each playground is a minimal Blockly instance.  This loads the same XML in
  * both playgrounds and saves a screenshot of each.
  */
+
 async function genScreenshots() {
   var output_url = 'tests/screenshot/outputs'
   processArgs();

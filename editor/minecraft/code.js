@@ -166,6 +166,13 @@ Code.loadBlocks = function(defaultXml) {
   }
 };
 
+
+Code.getLanguage = function() {
+	 var languageMenu = document.getElementById('languageMenu');
+	 return encodeURIComponent(languageMenu.options[languageMenu.selectedIndex].value);
+}
+
+
 /**
  * Save the blocks and reload with a different language.
  */
@@ -608,7 +615,9 @@ Code.runJS = function() {
 		   formData.append('Playername', playerName);
 		   formData.append('FtpLink', ftpLink);
 		   formData.append('langsel', Code.getLanguage());
-	   
+
+
+		   
 		   var xhr = new XMLHttpRequest();
 		   xhr.open("POST", hpath, true); 
 		   xhr.timeout = 2000; 

@@ -6,6 +6,7 @@ Blockly.Msg["ADD_COMMENT"] = "أضف تعليقًا";
 Blockly.Msg["CANNOT_DELETE_VARIABLE_PROCEDURE"] = "لايمكن حذف متغير \"%1\" بسبب انه جزء من الدالة \"%2\"";
 Blockly.Msg["CHANGE_VALUE_TITLE"] = "تغيير قيمة:";
 Blockly.Msg["CLEAN_UP"] = "ترتيب القطع";
+Blockly.Msg["COLLAPSED_WARNINGS_WARNING"] = "الكتل المطوية تحتوي على تحذيرات.";
 Blockly.Msg["COLLAPSE_ALL"] = "إخفاء القطع";
 Blockly.Msg["COLLAPSE_BLOCK"] = "إخفاء القطعة";
 Blockly.Msg["COLOUR_BLEND_COLOUR1"] = "اللون 1";
@@ -64,12 +65,26 @@ Blockly.Msg["DELETE_VARIABLE_CONFIRMATION"] = "حذف%1 1 استخدامات ا�
 Blockly.Msg["DELETE_X_BLOCKS"] = "احذف %1 قطع";
 Blockly.Msg["DISABLE_BLOCK"] = "عطّل القطعة";
 Blockly.Msg["DUPLICATE_BLOCK"] = "مكرر";
+Blockly.Msg["DUPLICATE_COMMENT"] = "تعليق مكرر";
 Blockly.Msg["ENABLE_BLOCK"] = "أعد تفعيل القطعة";
 Blockly.Msg["EXPAND_ALL"] = "وسٌّع القطع";
 Blockly.Msg["EXPAND_BLOCK"] = "وسٌّع القطعة";
 Blockly.Msg["EXTERNAL_INPUTS"] = "ادخال خارجي";
 Blockly.Msg["HELP"] = "مساعدة";
 Blockly.Msg["INLINE_INPUTS"] = "ادخال خطي";
+Blockly.Msg["IOS_CANCEL"] = "إلغاء";
+Blockly.Msg["IOS_ERROR"] = "خطأ";
+Blockly.Msg["IOS_OK"] = "أوافق";
+Blockly.Msg["IOS_PROCEDURES_ADD_INPUT"] = "+اضافة ادخال";
+Blockly.Msg["IOS_PROCEDURES_ALLOW_STATEMENTS"] = "العبارات المسموحة";
+Blockly.Msg["IOS_PROCEDURES_DUPLICATE_INPUTS_ERROR"] = "هذه الدالة لها مدخلات مكررة.";
+Blockly.Msg["IOS_PROCEDURES_INPUTS"] = "المدخلات";
+Blockly.Msg["IOS_VARIABLES_ADD_BUTTON"] = "أضف";
+Blockly.Msg["IOS_VARIABLES_ADD_VARIABLE"] = "+اضف متغير";
+Blockly.Msg["IOS_VARIABLES_DELETE_BUTTON"] = "احذف";
+Blockly.Msg["IOS_VARIABLES_EMPTY_NAME_ERROR"] = "لا يمكنك استخدام اسم متغير فارغ.";
+Blockly.Msg["IOS_VARIABLES_RENAME_BUTTON"] = "أعد التسمية";
+Blockly.Msg["IOS_VARIABLES_VARIABLE_NAME"] = "اسم المتغير";
 Blockly.Msg["LISTS_CREATE_EMPTY_HELPURL"] = "https://github.com/google/blockly/wiki/Lists#create-empty-list";
 Blockly.Msg["LISTS_CREATE_EMPTY_TITLE"] = "إنشئ قائمة فارغة";
 Blockly.Msg["LISTS_CREATE_EMPTY_TOOLTIP"] = "تقوم بإرجاع قائمة، طولها 0, لا تحتوي على أية سجلات البيانات";
@@ -125,6 +140,9 @@ Blockly.Msg["LISTS_LENGTH_TOOLTIP"] = "تقوم بإرجاع طول قائمة."
 Blockly.Msg["LISTS_REPEAT_HELPURL"] = "https://github.com/google/blockly/wiki/Lists#create-list-with";  // untranslated
 Blockly.Msg["LISTS_REPEAT_TITLE"] = "إنشئ قائمة مع العنصر  %1 %2 مرات";
 Blockly.Msg["LISTS_REPEAT_TOOLTIP"] = "انشئ قائمة تتألف من القيمة المعطاة متكررة لعدد محدد من المرات.";
+Blockly.Msg["LISTS_REVERSE_HELPURL"] = "https://github.com/google/blockly/wiki/Lists#reversing-a-list";  // untranslated
+Blockly.Msg["LISTS_REVERSE_MESSAGE0"] = "عكس %1";
+Blockly.Msg["LISTS_REVERSE_TOOLTIP"] = "عكس نسخة من القائمة.";
 Blockly.Msg["LISTS_SET_INDEX_HELPURL"] = "https://github.com/google/blockly/wiki/Lists#in-list--set";  // untranslated
 Blockly.Msg["LISTS_SET_INDEX_INPUT_TO"] = "مثل";
 Blockly.Msg["LISTS_SET_INDEX_INSERT"] = "أدخل في";
@@ -185,12 +203,15 @@ Blockly.Msg["MATH_ARITHMETIC_TOOLTIP_DIVIDE"] = "يرجع حاصل قسمة ال
 Blockly.Msg["MATH_ARITHMETIC_TOOLTIP_MINUS"] = "يرجع الفرق بين الرقمين.";
 Blockly.Msg["MATH_ARITHMETIC_TOOLTIP_MULTIPLY"] = "يرجع حاصل ضرب الرقمين.";
 Blockly.Msg["MATH_ARITHMETIC_TOOLTIP_POWER"] = "يرجع الرقم الأول مرفوع إلى تربيع الرقم الثاني.";
+Blockly.Msg["MATH_ATAN2_HELPURL"] = "https://en.wikipedia.org/wiki/Atan2";
+Blockly.Msg["MATH_ATAN2_TITLE"] = "atan2 من X:%1 Y:%2";
+Blockly.Msg["MATH_ATAN2_TOOLTIP"] = "عودة قوس ظل النقطة (س، ص) بالدرجات من -180 إلى 180.";
 Blockly.Msg["MATH_CHANGE_HELPURL"] = "https://en.wikipedia.org/wiki/Programming_idiom#Incrementing_a_counter";
 Blockly.Msg["MATH_CHANGE_TITLE"] = "غير %1 بـ %2";
 Blockly.Msg["MATH_CHANGE_TOOLTIP"] = "إضف رقم إلى متغير '%1'.";
 Blockly.Msg["MATH_CONSTANT_HELPURL"] = "https://en.wikipedia.org/wiki/Mathematical_constant";
 Blockly.Msg["MATH_CONSTANT_TOOLTIP"] = "ير جع واحد من الثوابت الشائعة : π (3.141…), e (2.718…), φ (1.618…), sqrt(2) (1.414…), sqrt(½) (0.707…), or ∞ (infinity).";
-Blockly.Msg["MATH_CONSTRAIN_HELPURL"] = "https://en.wikipedia.org/wiki/Clamping_%28graphics%29";  // untranslated
+Blockly.Msg["MATH_CONSTRAIN_HELPURL"] = "https://en.wikipedia.org/wiki/Clamping_(graphics)";  // untranslated
 Blockly.Msg["MATH_CONSTRAIN_TITLE"] = "تقيد %1 منخفض %2 مرتفع %3";
 Blockly.Msg["MATH_CONSTRAIN_TOOLTIP"] = "تقييد العددليكون بين الحدود المحددة (ضمناً).";
 Blockly.Msg["MATH_DIVISION_SYMBOL"] = "÷";
@@ -322,8 +343,12 @@ Blockly.Msg["MC_cmd_up"] = "up";  // untranslated
 Blockly.Msg["MC_cmd_west"] = "west";  // untranslated
 Blockly.Msg["MC_cmd_whereLook"] = "where I'm looking";  // untranslated
 Blockly.Msg["MC_particles"] = "particles";  // untranslated
+Blockly.Msg["NEW_COLOUR_VARIABLE"] = "انشاء متغير لوني...";
+Blockly.Msg["NEW_NUMBER_VARIABLE"] = "انشاء متغير رقمي...";
+Blockly.Msg["NEW_STRING_VARIABLE"] = "انشاء متغير نصي...";
 Blockly.Msg["NEW_VARIABLE"] = "إنشاء متغير...";
 Blockly.Msg["NEW_VARIABLE_TITLE"] = "اسم المتغير الجديد:";
+Blockly.Msg["NEW_VARIABLE_TYPE_TITLE"] = "نوع متغير جديد:";
 Blockly.Msg["ORDINAL_NUMBER_SUFFIX"] = "";  // untranslated
 Blockly.Msg["PROCEDURES_ALLOW_STATEMENTS"] = "اسمح بالبيانات";
 Blockly.Msg["PROCEDURES_BEFORE_PARAMS"] = "مع:";
@@ -355,9 +380,8 @@ Blockly.Msg["REDO"] = "إعادة";
 Blockly.Msg["REMOVE_COMMENT"] = "أزل التعليق";
 Blockly.Msg["RENAME_VARIABLE"] = "إعادة تسمية المتغير...";
 Blockly.Msg["RENAME_VARIABLE_TITLE"] = "إعادة تسمية كافة المتغيرات '%1' إلى:";
-Blockly.Msg["TEXT_APPEND_APPENDTEXT"] = "append text";  // untranslated
 Blockly.Msg["TEXT_APPEND_HELPURL"] = "https://github.com/google/blockly/wiki/Text#text-modification";  // untranslated
-Blockly.Msg["TEXT_APPEND_TO"] = "to";  // untranslated
+Blockly.Msg["TEXT_APPEND_TITLE"] = "إلى %1 إلصق نص %2";
 Blockly.Msg["TEXT_APPEND_TOOLTIP"] = "إلصق جزءا من النص إلى متغير '%1'.";
 Blockly.Msg["TEXT_CHANGECASE_HELPURL"] = "https://github.com/google/blockly/wiki/Text#adjusting-text-case";  // untranslated
 Blockly.Msg["TEXT_CHANGECASE_OPERATOR_LOWERCASE"] = "الى حروف صغيرة";
@@ -368,11 +392,14 @@ Blockly.Msg["TEXT_CHARAT_FIRST"] = "احصل على الحرف الأول";
 Blockly.Msg["TEXT_CHARAT_FROM_END"] = "الحصول على الحرف # من نهاية";
 Blockly.Msg["TEXT_CHARAT_FROM_START"] = "الحصول على الحرف #";
 Blockly.Msg["TEXT_CHARAT_HELPURL"] = "https://github.com/google/blockly/wiki/Text#extracting-text";  // untranslated
-Blockly.Msg["TEXT_CHARAT_INPUT_INTEXT"] = "in text";  // untranslated
 Blockly.Msg["TEXT_CHARAT_LAST"] = "احصل على آخر حرف";
 Blockly.Msg["TEXT_CHARAT_RANDOM"] = "الحصول على حرف عشوائي";
 Blockly.Msg["TEXT_CHARAT_TAIL"] = "";  // untranslated
+Blockly.Msg["TEXT_CHARAT_TITLE"] = "في النص %1 %2";
 Blockly.Msg["TEXT_CHARAT_TOOLTIP"] = "يرجع حرف ما في الموضع المحدد.";
+Blockly.Msg["TEXT_COUNT_HELPURL"] = "https://github.com/google/blockly/wiki/Text#counting-substrings";  // untranslated
+Blockly.Msg["TEXT_COUNT_MESSAGE0"] = "العدد %1 في %2";
+Blockly.Msg["TEXT_COUNT_TOOLTIP"] = "احسب كم عدد بعض النصوص تتكرر ضمن نص اخر.";
 Blockly.Msg["TEXT_CREATE_JOIN_ITEM_TOOLTIP"] = "إضف عنصر إلى النص.";
 Blockly.Msg["TEXT_CREATE_JOIN_TITLE_JOIN"] = "الانضمام إلى";
 Blockly.Msg["TEXT_CREATE_JOIN_TOOLTIP"] = "أضف, إحذف, أو أعد ترتيب المقاطع لإعادة تكوين النص من القطع التالية.";
@@ -387,10 +414,9 @@ Blockly.Msg["TEXT_GET_SUBSTRING_START_FROM_START"] = "الحصول على سلس
 Blockly.Msg["TEXT_GET_SUBSTRING_TAIL"] = "";  // untranslated
 Blockly.Msg["TEXT_GET_SUBSTRING_TOOLTIP"] = "يرجع جزء معين من النص.";
 Blockly.Msg["TEXT_INDEXOF_HELPURL"] = "https://github.com/google/blockly/wiki/Text#finding-text";  // untranslated
-Blockly.Msg["TEXT_INDEXOF_INPUT_INTEXT"] = "in text";  // untranslated
 Blockly.Msg["TEXT_INDEXOF_OPERATOR_FIRST"] = "ابحث عن التواجد الأول للنص";
 Blockly.Msg["TEXT_INDEXOF_OPERATOR_LAST"] = "ابحث عن التواجد الأخير للنص";
-Blockly.Msg["TEXT_INDEXOF_TAIL"] = "";  // untranslated
+Blockly.Msg["TEXT_INDEXOF_TITLE"] = "في النص %1 %2 %3";
 Blockly.Msg["TEXT_INDEXOF_TOOLTIP"] = "تقوم بإرجاع مؤشر التواجد الأول/الأخير للنص الأول في النص الثاني.  تقوم بإرجاع %1 إذا لم يتم العثور على النص.";
 Blockly.Msg["TEXT_ISEMPTY_HELPURL"] = "https://github.com/google/blockly/wiki/Text#checking-for-empty-text";  // untranslated
 Blockly.Msg["TEXT_ISEMPTY_TITLE"] = "%1 فارغ";
@@ -409,6 +435,12 @@ Blockly.Msg["TEXT_PROMPT_TOOLTIP_NUMBER"] = "انتظر ادخال المستخ�
 Blockly.Msg["TEXT_PROMPT_TOOLTIP_TEXT"] = "انتظر ادخال المستخدم لنص ما.";
 Blockly.Msg["TEXT_PROMPT_TYPE_NUMBER"] = "انتظر ادخال المستخدم لرقم ما مع اظهار رسالة";
 Blockly.Msg["TEXT_PROMPT_TYPE_TEXT"] = "انتظر ادخال المستخدم لنص ما مع اظهار رسالة";
+Blockly.Msg["TEXT_REPLACE_HELPURL"] = "https://github.com/google/blockly/wiki/Text#replacing-substrings";  // untranslated
+Blockly.Msg["TEXT_REPLACE_MESSAGE0"] = "بدل %1 ب %2 في %3";
+Blockly.Msg["TEXT_REPLACE_TOOLTIP"] = "استبدل جميع حالات حدوث بعض النصوص داخل نص آخر.";
+Blockly.Msg["TEXT_REVERSE_HELPURL"] = "https://github.com/google/blockly/wiki/Text#reversing-text";  // untranslated
+Blockly.Msg["TEXT_REVERSE_MESSAGE0"] = "عكس %1";
+Blockly.Msg["TEXT_REVERSE_TOOLTIP"] = "يعكس ترتيب حروف النص";
 Blockly.Msg["TEXT_TEXT_HELPURL"] = "https://en.wikipedia.org/wiki/String_(computer_science)";
 Blockly.Msg["TEXT_TEXT_TOOLTIP"] = "حرف أو كلمة أو سطر من النص.";
 Blockly.Msg["TEXT_TRIM_HELPURL"] = "https://github.com/google/blockly/wiki/Text#trimming-removing-spaces";  // untranslated
@@ -418,7 +450,8 @@ Blockly.Msg["TEXT_TRIM_OPERATOR_RIGHT"] = "إزالة الفراغات من ال
 Blockly.Msg["TEXT_TRIM_TOOLTIP"] = "يرجع نسخة من النص مع حذف من أحد أو كلا الفراغات من أطرافه.";
 Blockly.Msg["TODAY"] = "اليوم";
 Blockly.Msg["UNDO"] = "رجوع";
-Blockly.Msg["VARIABLES_DEFAULT"] = "item";  // untranslated
+Blockly.Msg["UNNAMED_KEY"] = "غير مسمى";
+Blockly.Msg["VARIABLES_DEFAULT_NAME"] = "البند";
 Blockly.Msg["VARIABLES_GET_CREATE_SET"] = "انشئ 'التعيين %1'";
 Blockly.Msg["VARIABLES_GET_HELPURL"] = "https://github.com/google/blockly/wiki/Variables#get";  // untranslated
 Blockly.Msg["VARIABLES_GET_TOOLTIP"] = "يرجع قيمة هذا المتغير.";
@@ -427,6 +460,8 @@ Blockly.Msg["VARIABLES_SET_CREATE_GET"] = "انشئ 'احصل على %1'";
 Blockly.Msg["VARIABLES_SET_HELPURL"] = "https://github.com/google/blockly/wiki/Variables#set";  // untranslated
 Blockly.Msg["VARIABLES_SET_TOOLTIP"] = "تعيين هذا المتغير لتكون مساوية للقيمة المدخلة.";
 Blockly.Msg["VARIABLE_ALREADY_EXISTS"] = "المتغير '%1' موجود بالفعل";
+Blockly.Msg["VARIABLE_ALREADY_EXISTS_FOR_ANOTHER_TYPE"] = "متغير بأسم '%1' معرف من نوع اخر : '%2'.";
+Blockly.Msg["WORKSPACE_COMMENT_DEFAULT_TEXT"] = "قل شيئا...";
 Blockly.Msg["b_acacia_button"] = "Acacia Button";  // untranslated
 Blockly.Msg["b_acacia_door"] = "Acacia Wood Door";  // untranslated
 Blockly.Msg["b_acacia_fence"] = "Acacia Wood Fence";  // untranslated
@@ -1515,16 +1550,26 @@ Blockly.Msg["CONTROLS_IF_ELSE_TITLE_ELSE"] = Blockly.Msg["CONTROLS_IF_MSG_ELSE"]
 Blockly.Msg["CONTROLS_IF_IF_TITLE_IF"] = Blockly.Msg["CONTROLS_IF_MSG_IF"];
 Blockly.Msg["CONTROLS_IF_MSG_THEN"] = Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"];
 Blockly.Msg["CONTROLS_WHILEUNTIL_INPUT_DO"] = Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"];
-Blockly.Msg["LISTS_CREATE_WITH_ITEM_TITLE"] = Blockly.Msg["VARIABLES_DEFAULT"];
+Blockly.Msg["LISTS_CREATE_WITH_ITEM_TITLE"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
 Blockly.Msg["LISTS_GET_INDEX_HELPURL"] = Blockly.Msg["LISTS_INDEX_OF_HELPURL"];
 Blockly.Msg["LISTS_GET_INDEX_INPUT_IN_LIST"] = Blockly.Msg["LISTS_INLIST"];
 Blockly.Msg["LISTS_GET_SUBLIST_INPUT_IN_LIST"] = Blockly.Msg["LISTS_INLIST"];
 Blockly.Msg["LISTS_INDEX_OF_INPUT_IN_LIST"] = Blockly.Msg["LISTS_INLIST"];
 Blockly.Msg["LISTS_SET_INDEX_INPUT_IN_LIST"] = Blockly.Msg["LISTS_INLIST"];
-Blockly.Msg["MATH_CHANGE_TITLE_ITEM"] = Blockly.Msg["VARIABLES_DEFAULT"];
+Blockly.Msg["MATH_CHANGE_TITLE_ITEM"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
 Blockly.Msg["PROCEDURES_DEFRETURN_COMMENT"] = Blockly.Msg["PROCEDURES_DEFNORETURN_COMMENT"];
 Blockly.Msg["PROCEDURES_DEFRETURN_DO"] = Blockly.Msg["PROCEDURES_DEFNORETURN_DO"];
 Blockly.Msg["PROCEDURES_DEFRETURN_PROCEDURE"] = Blockly.Msg["PROCEDURES_DEFNORETURN_PROCEDURE"];
 Blockly.Msg["PROCEDURES_DEFRETURN_TITLE"] = Blockly.Msg["PROCEDURES_DEFNORETURN_TITLE"];
-Blockly.Msg["TEXT_APPEND_VARIABLE"] = Blockly.Msg["VARIABLES_DEFAULT"];
-Blockly.Msg["TEXT_CREATE_JOIN_ITEM_TITLE_ITEM"] = Blockly.Msg["VARIABLES_DEFAULT"];
+Blockly.Msg["TEXT_APPEND_VARIABLE"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
+Blockly.Msg["TEXT_CREATE_JOIN_ITEM_TITLE_ITEM"] = Blockly.Msg["VARIABLES_DEFAULT_NAME"];
+
+Blockly.Msg["MATH_HUE"] = "230";
+Blockly.Msg["LOOPS_HUE"] = "120";
+Blockly.Msg["LISTS_HUE"] = "260";
+Blockly.Msg["LOGIC_HUE"] = "210";
+Blockly.Msg["VARIABLES_HUE"] = "330";
+Blockly.Msg["TEXTS_HUE"] = "160";
+Blockly.Msg["PROCEDURES_HUE"] = "290";
+Blockly.Msg["COLOUR_HUE"] = "20";
+Blockly.Msg["VARIABLES_DYNAMIC_HUE"] = "310";

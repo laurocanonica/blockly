@@ -2425,28 +2425,51 @@ Blockly.Blocks['minecraft_drawing'] = {
 						  "type": "minecraft_drawing",
 						  "message0": Blockly.Msg.MC_cmd_minecraft_draw,
 						  "args0": [
+							  
 						    {
 						      "type": "input_value",
 						      "name": "matlist",
 						      "check": "Array"
 						    },
 						    {
-						      "type": "field_colour",
-						      "name": "col1",
-						      "colour": "#ff0000"
+						        "type": "field_image",
+						        "src": "https://www.gstatic.com/codesite/ph/images/star_on.gif",
+						        "width": 15,
+						        "height": 15,
+						        "alt": "*",
+						        "flipRtl": false
 						    },
 						    {
 						      "type": "input_value",
-						      "name": "blockchoice1",
+						      "name": "blockchoice0",
 						      
 						      "check": [
 						    	  "Material", "Face", "Entity", "Team"
 						      ]
 						    },
 						    {
-						      "type": "field_colour",
-						      "name": "col2",
-						      "colour": "#ffff00"
+						        "type": "field_image",
+						        "src": "https://www.gstatic.com/codesite/ph/images/star_on.gif",
+						        "width": 15,
+						        "height": 15,
+						        "alt": "*",
+						        "flipRtl": false
+							    },
+							    {
+							      "type": "input_value",
+							      "name": "blockchoice1",
+							      "check": [
+							    	  "Material", "Face", "Entity", "Team"
+							      ]
+						    },
+
+						    {
+						        "type": "field_image",
+						        "src": "https://www.gstatic.com/codesite/ph/images/star_on.gif",
+						        "width": 15,
+						        "height": 15,
+						        "alt": "*",
+						        "flipRtl": false
 						    },
 						    {
 						      "type": "input_value",
@@ -2456,9 +2479,12 @@ Blockly.Blocks['minecraft_drawing'] = {
 						      ]
 						    },
 						    {
-						      "type": "field_colour",
-						      "name": "col3",
-						      "colour": "#33ffff"
+						        "type": "field_image",
+						        "src": "https://www.gstatic.com/codesite/ph/images/star_on.gif",
+						        "width": 15,
+						        "height": 15,
+						        "alt": "*",
+						        "flipRtl": false
 						    },
 						    {
 						      "type": "input_value",
@@ -2468,9 +2494,12 @@ Blockly.Blocks['minecraft_drawing'] = {
 						      ]
 						    },
 						    {
-						      "type": "field_colour",
-						      "name": "col4",
-						      "colour": "#009900"
+						        "type": "field_image",
+						        "src": "https://www.gstatic.com/codesite/ph/images/star_on.gif",
+						        "width": 15,
+						        "height": 15,
+						        "alt": "*",
+						        "flipRtl": false
 						    },
 						    {
 						      "type": "input_value",
@@ -2480,9 +2509,12 @@ Blockly.Blocks['minecraft_drawing'] = {
 						      ]
 						    },
 						    {
-						      "type": "field_colour",
-						      "name": "col5",
-						      "colour": "#333333"
+						        "type": "field_image",
+						        "src": "https://www.gstatic.com/codesite/ph/images/star_on.gif",
+						        "width": 15,
+						        "height": 15,
+						        "alt": "*",
+						        "flipRtl": false
 						    },
 						    {
 						      "type": "input_value",
@@ -2492,9 +2524,12 @@ Blockly.Blocks['minecraft_drawing'] = {
 						      ]
 						    },
 						    {
-							      "type": "field_colour",
-							      "name": "col6",
-							      "colour": "#333333"
+						        "type": "field_image",
+						        "src": "https://www.gstatic.com/codesite/ph/images/star_on.gif",
+						        "width": 15,
+						        "height": 15,
+						        "alt": "*",
+						        "flipRtl": false
 							    },
 							    {
 							      "type": "input_value",
@@ -2504,9 +2539,12 @@ Blockly.Blocks['minecraft_drawing'] = {
 							      ]
 							    },
 							    {
-								      "type": "field_colour",
-								      "name": "col7",
-								      "colour": "#333333"
+							        "type": "field_image",
+							        "src": "https://www.gstatic.com/codesite/ph/images/star_on.gif",
+							        "width": 15,
+							        "height": 15,
+							        "alt": "*",
+							        "flipRtl": false
 								    },
 								    {
 								      "type": "input_value",
@@ -2516,9 +2554,12 @@ Blockly.Blocks['minecraft_drawing'] = {
 								      ]
 								    },
 								    {
-									      "type": "field_colour",
-									      "name": "col8",
-									      "colour": "#333333"
+								        "type": "field_image",
+								        "src": "https://www.gstatic.com/codesite/ph/images/star_on.gif",
+								        "width": 15,
+								        "height": 15,
+								        "alt": "*",
+								        "flipRtl": false
 									    },
 									    {
 									      "type": "input_value",
@@ -2528,9 +2569,12 @@ Blockly.Blocks['minecraft_drawing'] = {
 									      ]
 									    },
 									    {
-										      "type": "field_colour",
-										      "name": "col9",
-										      "colour": "#333333"
+									        "type": "field_image",
+									        "src": "https://www.gstatic.com/codesite/ph/images/star_on.gif",
+									        "width": 15,
+									        "height": 15,
+									        "alt": "*",
+									        "flipRtl": false
 										    },
 										    {
 										      "type": "input_value",
@@ -2538,19 +2582,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 										      "check": [
 										    	  "Material", "Face", "Entity", "Team"
 										      ]
-										    },
-										    {
-											      "type": "field_colour",
-											      "name": "col10",
-											      "colour": "#333333"
-											    },
-											    {
-											      "type": "input_value",
-											      "name": "blockchoice10",
-											      "check": [
-											    	  "Material", "Face", "Entity", "Team"
-											      ]
-											    }
+										    }
 						  ],
 						  "inputsInline": false,
 						  "previousStatement": null,
@@ -2565,137 +2597,149 @@ Blockly.Blocks['minecraft_drawing'] = {
 
 
 
-Blockly.Blocks['minecraft_drawcol_red'] = {
+Blockly.Blocks['minecraft_drawcol_0'] = {
 		init : function() {
 			this.jsonInit( 	
-					{
-						  "type": "minecraft_drawcol_red",
-						  "message0": "%1 %2",
-						  "args0": [
-						    {
-						      "type": "field_colour",
-						      "name": "col",
-						      "colour": "#ff0000"
-						    },
-						    {
-						      "type": "input_value",
-						      "name": "drawcolour",
-						      "check": "Draw_col"
-						    }
-						  ],
-						  "inputsInline": false,
-						  "output": "Draw_col",
-						  "colour": 230,
-						  "tooltip": "press R to change to the last used colour",
-						  "helpUrl": ""
-						});
+			{
+			  "type": "minecraft_drawcol_0",
+			  "message0": " %1",
+			  "args0": [{"type": "input_value", "name": "child"}],
+			  "output": null,
+			  "colour": '#888888',
+			  "tooltip": "",
+			  "helpUrl": ""
+			});
 		}
 	};
 
-Blockly.Blocks['minecraft_drawcol_yellow'] = {
+Blockly.Blocks['minecraft_drawcol_1'] = {
+	init : function() {
+		this.jsonInit( 	
+		{
+		  "type": "minecraft_drawcol_1",
+		  "message0": " %1",
+		  "args0": [{"type": "input_value", "name": "child"}],
+		  "output": null,
+		  "colour": '#ff4000',
+		  "tooltip": "",
+		  "helpUrl": ""
+		});
+	}
+};
+
+Blockly.Blocks['minecraft_drawcol_2'] = {
 		init : function() {
 			this.jsonInit( 	
-					{
-						  "type": "minecraft_drawcol_yellow",
-						  "message0": "%1 %2",
-						  "args0": [
-						    {
-						      "type": "field_colour",
-						      "name": "col",
-						      "colour": "#ffff00"
-						    },
-						    {
-						      "type": "input_value",
-						      "name": "drawcolour",
-						      "check": "Draw_col"
-						    }
-						  ],
-						  "inputsInline": false,
-						  "output": "Draw_col",
-						  "colour": 230,
-						  "tooltip": "",
-						  "helpUrl": ""
-						});
+			{
+			  "type": "minecraft_drawcol_2",
+			  "message0": " %1",
+			  "args0": [{"type": "input_value", "name": "child"}],
+			  "output": null,
+			  "colour": '#ffbf00',
+			  "tooltip": "",
+			  "helpUrl": ""
+			});
 		}
 	};
-Blockly.Blocks['minecraft_drawcol_blue'] = {
+Blockly.Blocks['minecraft_drawcol_3'] = {
 		init : function() {
 			this.jsonInit( 	
-					{
-						  "type": "minecraft_drawcol_yellow",
-						  "message0": "%1 %2",
-						  "args0": [
-						    {
-						      "type": "field_colour",
-						      "name": "col",
-						      "colour": "#33ccff"
-						    },
-						    {
-						      "type": "input_value",
-						      "name": "drawcolour",
-						      "check": "Draw_col"
-						    }
-						  ],
-						  "inputsInline": false,
-						  "output": "Draw_col",
-						  "colour": 230,
-						  "tooltip": "",
-						  "helpUrl": ""
-						});
+			{
+			  "type": "minecraft_drawcol_3",
+			  "message0": " %1",
+			  "args0": [{"type": "input_value", "name": "child"}],
+			  "output": null,
+			  "colour": '#bfff00',
+			  "tooltip": "",
+			  "helpUrl": ""
+			});
 		}
 	};
-Blockly.Blocks['minecraft_drawcol_green'] = {
+Blockly.Blocks['minecraft_drawcol_4'] = {
 		init : function() {
 			this.jsonInit( 	
-					{
-						  "type": "minecraft_drawcol_yellow",
-						  "message0": "%1 %2",
-						  "args0": [
-						    {
-						      "type": "field_colour",
-						      "name": "col",
-						      "colour": "#33ff33"
-						    },
-						    {
-						      "type": "input_value",
-						      "name": "drawcolour",
-						      "check": "Draw_col"
-						    }
-						  ],
-						  "inputsInline": false,
-						  "output": "Draw_col",
-						  "colour": 230,
-						  "tooltip": "",
-						  "helpUrl": ""
-						});
+			{
+			  "type": "minecraft_drawcol_4",
+			  "message0": " %1",
+			  "args0": [{"type": "input_value", "name": "child"}],
+			  "output": null,
+			  "colour": '#00ff80',
+			  "tooltip": "",
+			  "helpUrl": ""
+			});
 		}
 	};
-Blockly.Blocks['minecraft_drawcol_purple'] = {
+Blockly.Blocks['minecraft_drawcol_5'] = {
 		init : function() {
 			this.jsonInit( 	
-					{
-						  "type": "minecraft_drawcol_yellow",
-						  "message0": "%1 %2",
-						  "args0": [
-						    {
-						      "type": "field_colour",
-						      "name": "col",
-						      "colour": "#cc66cc"
-						    },
-						    {
-						      "type": "input_value",
-						      "name": "drawcolour",
-						      "check": "Draw_col"
-						    }
-						  ],
-						  "inputsInline": false,
-						  "output": "Draw_col",
-						  "colour": 230,
-						  "tooltip": "",
-						  "helpUrl": ""
-						});
+			{
+			  "type": "minecraft_drawcol_5",
+			  "message0": " %1",
+			  "args0": [{"type": "input_value", "name": "child"}],
+			  "output": null,
+			  "colour": '#00bfff',
+			  "tooltip": "",
+			  "helpUrl": ""
+			});
 		}
 	};
+Blockly.Blocks['minecraft_drawcol_6'] = {
+		init : function() {
+			this.jsonInit( 	
+			{
+			  "type": "minecraft_drawcol_6",
+			  "message0": " %1",
+			  "args0": [{"type": "input_value", "name": "child"}],
+			  "output": null,
+			  "colour": '#0040ff',
+			  "tooltip": "",
+			  "helpUrl": ""
+			});
+		}
+	};
+Blockly.Blocks['minecraft_drawcol_7'] = {
+		init : function() {
+			this.jsonInit( 	
+			{
+			  "type": "minecraft_drawcol_7",
+			  "message0": " %1",
+			  "args0": [{"type": "input_value", "name": "child"}],
+			  "output": null,
+			  "colour": '#8000ff',
+			  "tooltip": "",
+			  "helpUrl": ""
+			});
+		}
+	};
+Blockly.Blocks['minecraft_drawcol_8'] = {
+		init : function() {
+			this.jsonInit( 	
+			{
+			  "type": "minecraft_drawcol_8",
+			  "message0": " %1",
+			  "args0": [{"type": "input_value", "name": "child"}],
+			  "output": null,
+			  "colour": '#ff00ff',
+			  "tooltip": "",
+			  "helpUrl": ""
+			});
+		}
+	};
+Blockly.Blocks['minecraft_drawcol_9'] = {
+		init : function() {
+			this.jsonInit( 	
+			{
+			  "type": "minecraft_drawcol_9",
+			  "message0": " %1",
+			  "args0": [{"type": "input_value", "name": "child"}],
+			  "output": null,
+			  "colour": '#ff0040',
+			  "tooltip": "",
+			  "helpUrl": ""
+			});
+		}
+	};
+
 
 Blockly.Blocks['minecraft_wait'] = {
 		init : function() {

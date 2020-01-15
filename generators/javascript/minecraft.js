@@ -361,8 +361,10 @@ function removeNulls(valMatList) {
 
 
 Blockly.JavaScript['minecraft_drawing'] = function(block) {
-	var value_matlist = Blockly.JavaScript.valueToCode(block, 'matlist', Blockly.JavaScript.ORDER_ATOMIC);
+	var value_matlist = Blockly.JavaScript.valueToCode(block, 'matlist', Blockly.JavaScript.ORDER_NONE);
 	value_matlist=removeNulls(value_matlist);
+	  var colour_col0 = block.getFieldValue('col0');
+	  var value_blockchoice0 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice0', Blockly.JavaScript.ORDER_NONE));
 	  var colour_col1 = block.getFieldValue('col1');
 	  var value_blockchoice1 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice1', Blockly.JavaScript.ORDER_NONE));
 	  var colour_col2 = block.getFieldValue('col2');
@@ -381,24 +383,23 @@ Blockly.JavaScript['minecraft_drawing'] = function(block) {
 	  var value_blockchoice8 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice8', Blockly.JavaScript.ORDER_NONE));
 	  var colour_col9 = block.getFieldValue('col9');
 	  var value_blockchoice9 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice9', Blockly.JavaScript.ORDER_NONE));
-	  var colour_col10 = block.getFieldValue('col10');
-	  var value_blockchoice10 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice10', Blockly.JavaScript.ORDER_NONE));
 	  var matString ="";
 if(true){
+	//window.alert(value_matlist);
 	  if (value_matlist!=""){
-		  matString = value_matlist.replace(/\(/gm,"[").replace(/,\)/gm,"]")+'\n';
-		  matString=matString.replace(new RegExp('\"'+colour_col1+'\"', "g"), value_blockchoice1);
-		  matString=matString.replace(new RegExp('\"'+colour_col2+'\"', "g"), value_blockchoice2);
-		  matString=matString.replace(new RegExp('\"'+colour_col3+'\"', "g"), value_blockchoice3);
-		  matString=matString.replace(new RegExp('\"'+colour_col4+'\"', "g"), value_blockchoice4);
-		  matString=matString.replace(new RegExp('\"'+colour_col5+'\"', "g"), value_blockchoice5);
-		  matString=matString.replace(new RegExp('\"'+colour_col6+'\"', "g"), value_blockchoice6);
-		  matString=matString.replace(new RegExp('\"'+colour_col7+'\"', "g"), value_blockchoice7);
-		  matString=matString.replace(new RegExp('\"'+colour_col8+'\"', "g"), value_blockchoice8);
-		  matString=matString.replace(new RegExp('\"'+colour_col9+'\"', "g"), value_blockchoice9);
-		  matString=matString.replace(new RegExp('\"'+colour_col10+'\"', "g"), value_blockchoice10);
-		  matString=matString.replace(new RegExp('\"#[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]\"', "g"), '"1, _T_, _EMPTY_;"');
-		  matString=matString.replace(/_M_/gm,"1");
+		  matString = value_matlist.replace(/\(/gm,"\n  [").replace(/,\)/gm,"]")+'\n'; // fix parenthesis
+		  matString=matString.replace(new RegExp('colour_col0', "g"), value_blockchoice0);
+		  matString=matString.replace(new RegExp('colour_col1', "g"), value_blockchoice1);
+		  matString=matString.replace(new RegExp('colour_col2', "g"), value_blockchoice2);
+		  matString=matString.replace(new RegExp('colour_col3', "g"), value_blockchoice3);
+		  matString=matString.replace(new RegExp('colour_col4', "g"), value_blockchoice4);
+		  matString=matString.replace(new RegExp('colour_col5', "g"), value_blockchoice5);
+		  matString=matString.replace(new RegExp('colour_col6', "g"), value_blockchoice6);
+		  matString=matString.replace(new RegExp('colour_col7', "g"), value_blockchoice7);
+		  matString=matString.replace(new RegExp('colour_col8', "g"), value_blockchoice8);
+		  matString=matString.replace(new RegExp('colour_col9', "g"), value_blockchoice9);
+		  //matString=matString.replace(new RegExp('\"#[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]\"', "g"), '"1, _T_, _EMPTY_;"');
+		  matString=matString.replace(/_M_/gm,"1");  // set multiplicity to 1
 	  } else {
 	  	matString="[]";
 	  }
@@ -408,26 +409,58 @@ if(true){
 
 	  var code = 'CMD.createDrawing(nextLocation, ';
 	  code += matString;
-	  code += ", player, startCmdTime);\n";
+	  code += "  , player, startCmdTime);\n";
 	  return code; 
 
 	};
 	
-	function getColor(block) {
-		  var colour_col = block.getFieldValue('col');
-		  var value_drawcolour = Blockly.JavaScript.valueToCode(block, 'drawcolour', Blockly.JavaScript.ORDER_NONE);
-		  var code = '"'+colour_col+'"'+","+value_drawcolour;
+	function getColor(block, id) {
+		  var value_child = Blockly.JavaScript.valueToCode(block, 'child', Blockly.JavaScript.ORDER_NONE);
+		  var code = 'colour_col'+id+","+value_child;
 		  return [code, Blockly.JavaScript.ORDER_NONE];
 	}
 
 	
-	Blockly.JavaScript['minecraft_drawcol_red'] = function(block) {
-		  return getColor(block);
+	Blockly.JavaScript['minecraft_drawcol_0'] = function(block) {
+		  return getColor(block, 0);
 	};
 		
-	Blockly.JavaScript['minecraft_drawcol_yellow'] = function(block) {
-		  return getColor(block);
+	Blockly.JavaScript['minecraft_drawcol_1'] = function(block) {
+		  return getColor(block, 1);
 	};
+	
+	Blockly.JavaScript['minecraft_drawcol_2'] = function(block) {
+		  return getColor(block, 2);
+	};
+	
+	Blockly.JavaScript['minecraft_drawcol_3'] = function(block) {
+		  return getColor(block, 3);
+	};
+	
+	Blockly.JavaScript['minecraft_drawcol_4'] = function(block) {
+		  return getColor(block, 4);
+	};
+	
+	Blockly.JavaScript['minecraft_drawcol_5'] = function(block) {
+		  return getColor(block, 5);
+	};
+	
+	Blockly.JavaScript['minecraft_drawcol_6'] = function(block) {
+		  return getColor(block, 6);
+	};
+	
+	Blockly.JavaScript['minecraft_drawcol_7'] = function(block) {
+		  return getColor(block, 7);
+	};
+	
+	Blockly.JavaScript['minecraft_drawcol_8'] = function(block) {
+		  return getColor(block, 28);
+	};
+	
+	Blockly.JavaScript['minecraft_drawcol_9'] = function(block) {
+		  return getColor(block, 9);
+	};
+		
 	
 	Blockly.JavaScript['minecraft_wait'] = function(block) {
 		  var value_time = Blockly.JavaScript.valueToCode(block, 'time', Blockly.JavaScript.ORDER_NONE);

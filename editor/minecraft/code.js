@@ -526,7 +526,6 @@ Code.init = function() {
 
   Code.serverNeedsUpdate=true;
   Code.workspace.addChangeListener(setServerNeedsUpdate);
-  Code.workspace.addChangeListener(storeLastUsedColour);
   window.onkeypress =handleKeyboardShortcuts;
 
   
@@ -846,21 +845,45 @@ document.getElementById('playernamefield').onblur = function() {
 
 }
 
-var lastUsedColour='#ffffff';
 function handleKeyboardShortcuts(event) { // add a key 'r' that repeats the last used colour in the drawings
-	if(event.key=='r') {
-		var block=Code.workspace.getBlockById(event.blockId);
+	if(event.key>='0' && event.key<='9') {
+		if(Blockly.selected.type.startsWith('minecraft_drawcol_')) {
+		//var oldBlock=Code.workspace.getBlockById(event.blockId);
+		var workspace=Code.workspace;
+		var oldBlock=Blockly.selected;
+		var parent=oldBlock.getParent();
+		var child = oldBlock.getInputTargetBlock('child');
+		
+		var newBlock = workspace.newBlock('minecraft_drawcol_'+event.key);
+		var coordinate = oldBlock.getRelativeToSurfaceXY();
+		newBlock.moveBy(coordinate.x, coordinate.y)
+		
+		if(parent!=null) {
+			var parentConnection = parent.getInputWithBlock(oldBlock).connection;
+			if(parentConnection!=null) {
+				parentConnection.connect(newBlock.outputConnection);
+			}
+		}
+	
+		if(child!=null) {
+			var newBlockchildConnection = newBlock.getInput('child').connection;
+			newBlockchildConnection.connect(child.outputConnection);
+		}
+		
+		oldBlock.dispose();
+ 
+		
+		
 		//window.alert(Blockly.selected.type)
-		Blockly.selected.setFieldValue(lastUsedColour, 'col') // the name 'col' is defined in minecraft_drawcol_red
-		//Blockly.selected.setColour(color);
+		//Blockly.selected.setFieldValue(lastUsedColour, 'col') // the name 'col' is defined in minecraft_drawcol_red
+			//Blockly.selected.setColour('#ff0000');
+			//var newBlock = Blockly.getMainWorkspace().newBlock('minecraft_drawcol_yellow');
+			//Blockly.selected.setType('minecraft_drawcol_yellow');
+			
+			newBlock.initSvg();
+			newBlock.render();
+
 		}
 	
 	}
-function storeLastUsedColour(event) {
-	var block=Code.workspace.getBlockById(event.blockId);
-	  if (event.type == Blockly.Events.CHANGE && block.type.startsWith('minecraft_drawcol') && event.element == 'field')  {
-		  lastUsedColour=event.newValue;
-	    //alert(event.newValue)
-	  }
-	}
-
+}

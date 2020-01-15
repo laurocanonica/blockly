@@ -846,15 +846,21 @@ document.getElementById('playernamefield').onblur = function() {
 }
 
 function handleKeyboardShortcuts(event) { // add a key 'r' that repeats the last used colour in the drawings
-	if(event.key>='0' && event.key<='9') {
-		if(Blockly.selected.type.startsWith('minecraft_drawcol_')) {
+	getDrawingBlockCoordinate(Blockly.selected);
+	setDrawingBlockByCoordinate(getContainingList(Blockly.selected), 19, 19, event.key)
+	setDrawingBlock(Blockly.selected, event.key);
+}
+
+function setDrawingBlock(selected, key) { 
+	if(key>='0' && key<='9') {
+		if(selected.type.startsWith('minecraft_drawcol_')) {
 		//var oldBlock=Code.workspace.getBlockById(event.blockId);
 		var workspace=Code.workspace;
-		var oldBlock=Blockly.selected;
+		var oldBlock=selected;
 		var parent=oldBlock.getParent();
 		var child = oldBlock.getInputTargetBlock('child');
 		
-		var newBlock = workspace.newBlock('minecraft_drawcol_'+event.key);
+		var newBlock = workspace.newBlock('minecraft_drawcol_'+key);
 		var coordinate = oldBlock.getRelativeToSurfaceXY();
 		newBlock.moveBy(coordinate.x, coordinate.y)
 		
@@ -882,8 +888,46 @@ function handleKeyboardShortcuts(event) { // add a key 'r' that repeats the last
 			
 			newBlock.initSvg();
 			newBlock.render();
-
 		}
 	
 	}
 }
+
+function getDrawingBlockCoordinate(block){
+	var x=0;
+	var parent=block.getParent();
+	while (parent!=null && parent.type.startsWith('minecraft_drawcol_')) {
+		x++;
+		block=parent;
+		parent=parent.getParent();
+	}
+
+	window.alert(x +","+ 	parent.getInputWithBlock(block).name.substring(3));
+}
+
+function getContainingList(block){
+	var parent=block.getParent();
+	while (parent!=null && parent.type.startsWith('minecraft_drawcol_')) {
+		parent=parent.getParent();
+	}
+	return parent;
+}
+
+function setDrawingBlockByCoordinate(listBlock, x, y, id){
+	var block = listBlock.getInputTargetBlock('ADD'+y);
+	window.alert(block.type)
+	for (var i = 0; i < x; i++) {
+		if(block==null){
+			break;
+		}
+		block=block.getInputTargetBlock('child');
+	}
+	if(block!=null){
+		setDrawingBlock(block, id);
+		
+	}
+}
+
+
+
+

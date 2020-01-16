@@ -847,7 +847,7 @@ document.getElementById('playernamefield').onblur = function() {
 var lastSelectedDrawColBlock=null; // global to keep track of the last selection
 function handleKeyboardShortcuts(event) { // add a key 'r' that repeats the last used colour in the drawings
 	var selected=Blockly.selected;
-	if(selected.type.startsWith('minecraft_drawcol_')) {
+	if(selected!=null && selected.type.startsWith('minecraft_drawcol_')) {
 		if(event.key>='0' && event.key<='9') { // colour a block
 			//getDrawingBlockCoordinate(Blockly.selected);
 			//setDrawingBlockByCoordinate(getContainingList(Blockly.selected), 19, 19, event.key)
@@ -877,15 +877,23 @@ function handleKeyboardShortcuts(event) { // add a key 'r' that repeats the last
 					var dy=Math.abs(coordEnd.y - coordStart.y);
 					var radiusExp2=dx*dx+dy*dy;
 					var radius=Math.sqrt(radiusExp2);
-					for (var x = coordStart.x-radius; x <= coordStart.x+radius; x++) {
-						var y=coordStart.y+Math.sqrt(radiusExp2-(x-coordStart.x)^2);
-				    	setDrawingBlockByCoordinate(mainList, Math.floor(x), Math.floor(y), 3);
-				    	window.alert(x +","+ y+",rad="+ radius +", start= "+coordStart.x +","+coordStart.y+'--->'+(radiusExp2-(x-coordStart.x)^2));	
+					for (var x = coordStart.x-radius; x <= coordStart.x+radius; x+=.1) {
+						var y=Math.sqrt(radiusExp2-Math.pow(x-coordStart.x, 2));
+				    	setDrawingBlockByCoordinate(mainList, Math.round(x), Math.round(coordStart.y+y), id);
+				    	setDrawingBlockByCoordinate(mainList, Math.round(x), Math.round(coordStart.y-y), id);
+				    	//window.alert(x +","+ y+",rad="+ radius +", start= "+coordStart.x +","+coordStart.y+'--->'+(radiusExp2-(x-coordStart.x)^2)+'-a->'+(x-coordStart.x)+'-b->'+Math.pow(x-coordStart.x,2)+'-xx>'+radiusExp2);	
 					}
 					
 				} else if(event.key=='f' ) { // draw full block
-					for (var i = coordStart.y; i <= coordEnd.y; i++) {
-						bresenham_draw_line (coordStart.x, i, coordEnd.x, i, mainList, id);						
+					if(coordStart.y<coordEnd.y){
+						for (var i = coordStart.y; i <= coordEnd.y; i++) {
+							bresenham_draw_line (coordStart.x, i, coordEnd.x, i, mainList, id);						
+						}
+					} else {
+						for (var i = coordEnd.y; i <= coordStart.y; i++) {
+							bresenham_draw_line (coordStart.x, i, coordEnd.x, i, mainList, id);						
+						}
+						
 					}
 				} 
 			}

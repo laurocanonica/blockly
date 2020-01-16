@@ -527,7 +527,6 @@ Code.init = function() {
   Code.serverNeedsUpdate=true;
   Code.workspace.addChangeListener(setServerNeedsUpdate);
   window.onkeypress =handleKeyboardShortcuts;
-  Code.workspace.addChangeListener(blockClickedEventHandler) 
   
 };
 
@@ -845,6 +844,7 @@ document.getElementById('playernamefield').onblur = function() {
 
 }
 
+var lastSelectedDrawColBlock=null; // global to keep track of the last selection
 function handleKeyboardShortcuts(event) { // add a key 'r' that repeats the last used colour in the drawings
 	var selected=Blockly.selected;
 	if(event.key>='0' && event.key<='9' && selected.type.startsWith('minecraft_drawcol_')) {
@@ -853,11 +853,18 @@ function handleKeyboardShortcuts(event) { // add a key 'r' that repeats the last
 		//alert(event.key)
 		setDrawingBlock(selected, event.key);
 	}
-	if(event.key>='l' && selected.type.startsWith('minecraft_drawcol_') && lastSelectedDrawColBlock!=null) {
+	else if(event.key=='l' && selected.type.startsWith('minecraft_drawcol_') && lastSelectedDrawColBlock!=null && lastSelectedDrawColBlock.type.startsWith('minecraft_drawcol_')) {
 		var coordStart=getDrawingBlockCoordinate(lastSelectedDrawColBlock);
 		var coordEnd=getDrawingBlockCoordinate(selected);
-		bresenham_draw_line (coordStart.x, coordStart.y, coordEnd.x, coordEnd.y, getContainingList(Blockly.selected), selected.type.substring('minecraft_drawcol_'.length));
+		if(coordStart!=null && coordEnd!=null){
+			bresenham_draw_line (coordStart.x, coordStart.y, coordEnd.x, coordEnd.y, getContainingList(Blockly.selected), lastSelectedDrawColBlock.type.substring('minecraft_drawcol_'.length));
+		}
 	
+	}
+	else if(event.key=='m' && selected.type.startsWith('minecraft_drawcol_')) {
+		selected.setColour(Blockly.utils.colour.blend(selected.getColour(), '#ffffff', .5));
+		lastSelectedDrawColBlock=selected;
+		//selected.setColour('#ff0000');
 	}
 }
 
@@ -907,7 +914,10 @@ function getDrawingBlockCoordinate(block){
 		block=parent;
 		parent=parent.getParent();
 	}
-	var coord={'x':x, 'y':parseInt(parent.getInputWithBlock(block).name.substring(3))};
+	var coord=null;
+	if(parent!=null){
+		coord={'x':x, 'y':parseInt(parent.getInputWithBlock(block).name.substring(3))};
+	}
 	//window.alert(x +","+ 	parent.getInputWithBlock(block).name.substring(3));
 	return coord;
 }
@@ -1015,18 +1025,5 @@ function bresenham_draw_line (x1, y1, x2, y2, listBlock, id) {
         }
     }
  }
-
-var lastSelectedDrawColBlock=null;
-var currentlySelectedDrawColBlock=null;
-function blockClickedEventHandler(event){
-	  if (event.type == Blockly.Events.UI &&
-	      event.element == 'selected') {
-		  if(Blockly.selected!=null && Blockly.selected.type.startsWith('minecraft_drawcol_')) {
-			  lastSelectedDrawColBlock=currentlySelectedDrawColBlock;
-			  currentlySelectedDrawColBlock=Blockly.selected;
-		  }
-	    //alert('Congratulations on creating your first comment!'+Blockly.selected.type)
-	  }
-}
 
 

@@ -527,7 +527,7 @@ Code.init = function() {
   Code.serverNeedsUpdate=true;
   Code.workspace.addChangeListener(setServerNeedsUpdate);
   window.onkeypress =handleKeyboardShortcuts;
-
+  Code.workspace.addChangeListener(blockClickedEventHandler) 
   
 };
 
@@ -846,33 +846,41 @@ document.getElementById('playernamefield').onblur = function() {
 }
 
 function handleKeyboardShortcuts(event) { // add a key 'r' that repeats the last used colour in the drawings
-	getDrawingBlockCoordinate(Blockly.selected);
-	setDrawingBlockByCoordinate(getContainingList(Blockly.selected), 19, 19, event.key)
-	setDrawingBlock(Blockly.selected, event.key);
+	var selected=Blockly.selected;
+	if(event.key>='0' && event.key<='9' && selected.type.startsWith('minecraft_drawcol_')) {
+		//getDrawingBlockCoordinate(Blockly.selected);
+		//setDrawingBlockByCoordinate(getContainingList(Blockly.selected), 19, 19, event.key)
+		//alert(event.key)
+		setDrawingBlock(selected, event.key);
+	}
+	if(event.key>='l' && selected.type.startsWith('minecraft_drawcol_') && lastSelectedDrawColBlock!=null) {
+		var coordStart=getDrawingBlockCoordinate(lastSelectedDrawColBlock);
+		var coordEnd=getDrawingBlockCoordinate(selected);
+		bresenham_draw_line (coordStart.x, coordStart.y, coordEnd.x, coordEnd.y, getContainingList(Blockly.selected), selected.type.substring('minecraft_drawcol_'.length));
+	
+	}
 }
 
 function setDrawingBlock(selected, key) { 
-	if(key>='0' && key<='9') {
-		if(selected.type.startsWith('minecraft_drawcol_')) {
-		//var oldBlock=Code.workspace.getBlockById(event.blockId);
-		var workspace=Code.workspace;
-		var oldBlock=selected;
-		var parent=oldBlock.getParent();
-		var child = oldBlock.getInputTargetBlock('child');
-		
-		var newBlock = workspace.newBlock('minecraft_drawcol_'+key);
-		var coordinate = oldBlock.getRelativeToSurfaceXY();
-		newBlock.moveBy(coordinate.x, coordinate.y)
-		
-		if(parent!=null) {
-			var parentConnection = parent.getInputWithBlock(oldBlock).connection;
-			if(parentConnection!=null) {
-				parentConnection.connect(newBlock.outputConnection);
-			}
-		}
+	//var oldBlock=Code.workspace.getBlockById(event.blockId);
+	var workspace=Code.workspace;
+	var oldBlock=selected;
+	var parent=oldBlock.getParent();
+	var child = oldBlock.getInputTargetBlock('child');
 	
-		if(child!=null) {
-			var newBlockchildConnection = newBlock.getInput('child').connection;
+	var newBlock = workspace.newBlock('minecraft_drawcol_'+key);
+	var coordinate = oldBlock.getRelativeToSurfaceXY();
+	newBlock.moveBy(coordinate.x, coordinate.y)
+	
+	if(parent!=null) {
+		var parentConnection = parent.getInputWithBlock(oldBlock).connection;
+		if(parentConnection!=null) {
+			parentConnection.connect(newBlock.outputConnection);
+		}
+	}
+
+	if(child!=null) {
+		var newBlockchildConnection = newBlock.getInput('child').connection;
 			newBlockchildConnection.connect(child.outputConnection);
 		}
 		
@@ -881,16 +889,14 @@ function setDrawingBlock(selected, key) {
 		
 		
 		//window.alert(Blockly.selected.type)
-		//Blockly.selected.setFieldValue(lastUsedColour, 'col') // the name 'col' is defined in minecraft_drawcol_red
-			//Blockly.selected.setColour('#ff0000');
-			//var newBlock = Blockly.getMainWorkspace().newBlock('minecraft_drawcol_yellow');
-			//Blockly.selected.setType('minecraft_drawcol_yellow');
-			
-			newBlock.initSvg();
-			newBlock.render();
-		}
-	
-	}
+	//Blockly.selected.setFieldValue(lastUsedColour, 'col') // the name 'col' is defined in minecraft_drawcol_red
+		//Blockly.selected.setColour('#ff0000');
+		//var newBlock = Blockly.getMainWorkspace().newBlock('minecraft_drawcol_yellow');
+		//Blockly.selected.setType('minecraft_drawcol_yellow');
+		
+		newBlock.initSvg();
+		newBlock.render();
+
 }
 
 function getDrawingBlockCoordinate(block){
@@ -901,8 +907,9 @@ function getDrawingBlockCoordinate(block){
 		block=parent;
 		parent=parent.getParent();
 	}
-
-	window.alert(x +","+ 	parent.getInputWithBlock(block).name.substring(3));
+	var coord={'x':x, 'y':parseInt(parent.getInputWithBlock(block).name.substring(3))};
+	//window.alert(x +","+ 	parent.getInputWithBlock(block).name.substring(3));
+	return coord;
 }
 
 function getContainingList(block){
@@ -914,8 +921,8 @@ function getContainingList(block){
 }
 
 function setDrawingBlockByCoordinate(listBlock, x, y, id){
+	//window.alert(x +","+ y);	
 	var block = listBlock.getInputTargetBlock('ADD'+y);
-	window.alert(block.type)
 	for (var i = 0; i < x; i++) {
 		if(block==null){
 			break;
@@ -928,6 +935,98 @@ function setDrawingBlockByCoordinate(listBlock, x, y, id){
 	}
 }
 
+function bresenham_draw_line (x1, y1, x2, y2, listBlock, id) {
+	//alert(x1+','+y1+'    '+x2+','+y2)
 
+    // Iterators, counters required by algorithm
+    let x, y, dx, dy, dx1, dy1, px, py, xe, ye, i;
+
+    // Calculate line deltas
+    dx = x2 - x1;
+    dy = y2 - y1;
+
+    // Create a positive copy of deltas (makes iterating easier)
+    dx1 = Math.abs(dx);
+    dy1 = Math.abs(dy);
+
+    // Calculate error intervals for both axis
+    px = 2 * dy1 - dx1;
+    py = 2 * dx1 - dy1;
+
+    // The line is X-axis dominant
+    if (dy1 <= dx1) {
+
+        // Line is drawn left to right
+        if (dx >= 0) {
+            x = x1; y = y1; xe = x2;
+        } else { // Line is drawn right to left (swap ends)
+            x = x2; y = y2; xe = x1;
+        }
+
+    	setDrawingBlockByCoordinate(listBlock, x, y, id)
+
+
+        // Rasterize the line
+        for (i = 0; x < xe; i++) {
+            x = x + 1;
+
+            // Deal with octants...
+            if (px < 0) {
+                px = px + 2 * dy1;
+            } else {
+                if ((dx < 0 && dy < 0) || (dx > 0 && dy > 0)) {
+                    y = y + 1;
+                } else {
+                    y = y - 1;
+                }
+                px = px + 2 * (dy1 - dx1);
+            }
+
+        	setDrawingBlockByCoordinate(listBlock, x, y, id)
+        }
+
+    } else { // The line is Y-axis dominant
+
+        // Line is drawn bottom to top
+        if (dy >= 0) {
+            x = x1; y = y1; ye = y2;
+        } else { // Line is drawn top to bottom
+            x = x2; y = y2; ye = y1;
+        }
+
+    	setDrawingBlockByCoordinate(listBlock, x, y, id)
+
+        // Rasterize the line
+        for (i = 0; y < ye; i++) {
+            y = y + 1;
+
+             if (py <= 0) {
+                py = py + 2 * dx1;
+            } else {
+                if ((dx < 0 && dy<0) || (dx > 0 && dy > 0)) {
+                    x = x + 1;
+                } else {
+                    x = x - 1;
+                }
+                py = py + 2 * (dx1 - dy1);
+            }
+
+        	setDrawingBlockByCoordinate(listBlock, x, y, id)
+        }
+    }
+ }
+
+var lastSelectedDrawColBlock=null;
+var currentlySelectedDrawColBlock=null;
+function blockClickedEventHandler(event){
+	  if (event.type == Blockly.Events.UI &&
+	      event.element == 'selected') {
+		  if(Blockly.selected!=null && Blockly.selected.type.startsWith('minecraft_drawcol_')) {
+			  lastSelectedDrawColBlock=currentlySelectedDrawColBlock;
+			  currentlySelectedDrawColBlock=Blockly.selected;
+		  }
+	    //alert('Congratulations on creating your first comment!'+Blockly.selected.type)
+	  }
+}
 
 

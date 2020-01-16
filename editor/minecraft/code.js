@@ -847,24 +847,37 @@ document.getElementById('playernamefield').onblur = function() {
 var lastSelectedDrawColBlock=null; // global to keep track of the last selection
 function handleKeyboardShortcuts(event) { // add a key 'r' that repeats the last used colour in the drawings
 	var selected=Blockly.selected;
-	if(event.key>='0' && event.key<='9' && selected.type.startsWith('minecraft_drawcol_')) {
-		//getDrawingBlockCoordinate(Blockly.selected);
-		//setDrawingBlockByCoordinate(getContainingList(Blockly.selected), 19, 19, event.key)
-		//alert(event.key)
-		setDrawingBlock(selected, event.key);
-	}
-	else if(event.key=='l' && selected.type.startsWith('minecraft_drawcol_') && lastSelectedDrawColBlock!=null && lastSelectedDrawColBlock.type.startsWith('minecraft_drawcol_')) {
-		var coordStart=getDrawingBlockCoordinate(lastSelectedDrawColBlock);
-		var coordEnd=getDrawingBlockCoordinate(selected);
-		if(coordStart!=null && coordEnd!=null){
-			bresenham_draw_line (coordStart.x, coordStart.y, coordEnd.x, coordEnd.y, getContainingList(Blockly.selected), lastSelectedDrawColBlock.type.substring('minecraft_drawcol_'.length));
+	if(selected.type.startsWith('minecraft_drawcol_')) {
+		if(event.key>='0' && event.key<='9') {
+			//getDrawingBlockCoordinate(Blockly.selected);
+			//setDrawingBlockByCoordinate(getContainingList(Blockly.selected), 19, 19, event.key)
+			//alert(event.key)
+			setDrawingBlock(selected, event.key);
 		}
-	
-	}
-	else if(event.key=='m' && selected.type.startsWith('minecraft_drawcol_')) {
-		selected.setColour(Blockly.utils.colour.blend(selected.getColour(), '#ffffff', .5));
-		lastSelectedDrawColBlock=selected;
-		//selected.setColour('#ff0000');
+		else if(event.key=='m' ) {
+			selected.setColour(Blockly.utils.colour.blend(selected.getColour(), '#ffffff', .5));
+			lastSelectedDrawColBlock=selected;
+			//selected.setColour('#ff0000');
+		}
+		else if(lastSelectedDrawColBlock!=null && lastSelectedDrawColBlock.type.startsWith('minecraft_drawcol_')){
+			var coordStart=getDrawingBlockCoordinate(lastSelectedDrawColBlock);
+			var coordEnd=getDrawingBlockCoordinate(selected);
+			var mainList=getContainingList(Blockly.selected)
+			var id=lastSelectedDrawColBlock.type.substring('minecraft_drawcol_'.length);
+			if(coordStart!=null && coordEnd!=null){
+				if(event.key=='l' ) {
+						bresenham_draw_line (coordStart.x, coordStart.y, coordEnd.x, coordEnd.y, mainList, id);
+				} else if(event.key=='r' ) {
+					if(coordStart!=null && coordEnd!=null){
+						bresenham_draw_line (coordStart.x, coordStart.y, coordEnd.x, coordStart.y, mainList, id);
+						bresenham_draw_line (coordStart.x, coordStart.y, coordStart.x, coordEnd.y, mainList, id);
+						bresenham_draw_line (coordStart.x, coordEnd.y, coordEnd.x, coordEnd.y, mainList, id);
+						bresenham_draw_line (coordEnd.x, coordStart.y, coordEnd.x, coordEnd.y, mainList, id);
+					}
+				}
+
+			}
+		}
 	}
 }
 

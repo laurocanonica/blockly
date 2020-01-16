@@ -2605,7 +2605,7 @@ Blockly.Blocks['minecraft_drawcol_0'] = {
 			  "message0": " %1",
 			  "args0": [{"type": "input_value", "name": "child"}],
 			  "output": null,
-			  "colour": '#888888',
+			  "colour": getColorForDrawCol(0), // defined in code.js
 			  "tooltip": "",
 			  "helpUrl": ""
 			});
@@ -2620,7 +2620,7 @@ Blockly.Blocks['minecraft_drawcol_1'] = {
 		  "message0": " %1",
 		  "args0": [{"type": "input_value", "name": "child"}],
 		  "output": null,
-		  "colour": '#ff4000',
+		  "colour": getColorForDrawCol(1), // defined in code.js
 		  "tooltip": "",
 		  "helpUrl": ""
 		});
@@ -2635,7 +2635,7 @@ Blockly.Blocks['minecraft_drawcol_2'] = {
 			  "message0": " %1",
 			  "args0": [{"type": "input_value", "name": "child"}],
 			  "output": null,
-			  "colour": '#ffbf00',
+			  "colour": getColorForDrawCol(2), // defined in code.js
 			  "tooltip": "",
 			  "helpUrl": ""
 			});
@@ -2649,7 +2649,7 @@ Blockly.Blocks['minecraft_drawcol_3'] = {
 			  "message0": " %1",
 			  "args0": [{"type": "input_value", "name": "child"}],
 			  "output": null,
-			  "colour": '#bfff00',
+			  "colour": getColorForDrawCol(3), // defined in code.js
 			  "tooltip": "",
 			  "helpUrl": ""
 			});
@@ -2663,7 +2663,7 @@ Blockly.Blocks['minecraft_drawcol_4'] = {
 			  "message0": " %1",
 			  "args0": [{"type": "input_value", "name": "child"}],
 			  "output": null,
-			  "colour": '#00ff80',
+			  "colour": getColorForDrawCol(4), // defined in code.js
 			  "tooltip": "",
 			  "helpUrl": ""
 			});
@@ -2677,7 +2677,7 @@ Blockly.Blocks['minecraft_drawcol_5'] = {
 			  "message0": " %1",
 			  "args0": [{"type": "input_value", "name": "child"}],
 			  "output": null,
-			  "colour": '#00bfff',
+			  "colour": getColorForDrawCol(5), // defined in code.js
 			  "tooltip": "",
 			  "helpUrl": ""
 			});
@@ -2691,7 +2691,7 @@ Blockly.Blocks['minecraft_drawcol_6'] = {
 			  "message0": " %1",
 			  "args0": [{"type": "input_value", "name": "child"}],
 			  "output": null,
-			  "colour": '#0040ff',
+			  "colour": getColorForDrawCol(6), // defined in code.js
 			  "tooltip": "",
 			  "helpUrl": ""
 			});
@@ -2705,7 +2705,7 @@ Blockly.Blocks['minecraft_drawcol_7'] = {
 			  "message0": " %1",
 			  "args0": [{"type": "input_value", "name": "child"}],
 			  "output": null,
-			  "colour": '#8000ff',
+			  "colour": getColorForDrawCol(7), // defined in code.js
 			  "tooltip": "",
 			  "helpUrl": ""
 			});
@@ -2719,7 +2719,7 @@ Blockly.Blocks['minecraft_drawcol_8'] = {
 			  "message0": " %1",
 			  "args0": [{"type": "input_value", "name": "child"}],
 			  "output": null,
-			  "colour": '#ff00ff',
+			  "colour": getColorForDrawCol(8), // defined in code.js
 			  "tooltip": "",
 			  "helpUrl": ""
 			});
@@ -2733,7 +2733,7 @@ Blockly.Blocks['minecraft_drawcol_9'] = {
 			  "message0": " %1",
 			  "args0": [{"type": "input_value", "name": "child"}],
 			  "output": null,
-			  "colour": '#ff0040',
+			  "colour": getColorForDrawCol(9), // defined in code.js
 			  "tooltip": "",
 			  "helpUrl": ""
 			});

@@ -882,6 +882,14 @@ function handleKeyboardShortcuts(event) { // add a key 'r' that repeats the last
 }
 
 function setDrawingBlock(selected, key) { 
+	selected.type='minecraft_drawcol_'+key;
+	selected.setColour(getColorForDrawCol(parseInt(key)));
+
+
+	//alert(selected.type);
+}
+
+function setDrawingBlock_ORG(selected, key) { 
 	//var oldBlock=Code.workspace.getBlockById(event.blockId);
 	var workspace=Code.workspace;
 	var oldBlock=selected;
@@ -891,6 +899,10 @@ function setDrawingBlock(selected, key) {
 	var newBlock = workspace.newBlock('minecraft_drawcol_'+key);
 	var coordinate = oldBlock.getRelativeToSurfaceXY();
 	newBlock.moveBy(coordinate.x, coordinate.y)
+
+		newBlock.initSvg();
+		newBlock.render();
+
 	
 	if(parent!=null) {
 		var parentConnection = parent.getInputWithBlock(oldBlock).connection;
@@ -904,18 +916,7 @@ function setDrawingBlock(selected, key) {
 			newBlockchildConnection.connect(child.outputConnection);
 		}
 		
-		oldBlock.dispose();
- 
-		
-		
-		//window.alert(Blockly.selected.type)
-	//Blockly.selected.setFieldValue(lastUsedColour, 'col') // the name 'col' is defined in minecraft_drawcol_red
-		//Blockly.selected.setColour('#ff0000');
-		//var newBlock = Blockly.getMainWorkspace().newBlock('minecraft_drawcol_yellow');
-		//Blockly.selected.setType('minecraft_drawcol_yellow');
-		
-		newBlock.initSvg();
-		newBlock.render();
+		oldBlock.dispose();		
 
 }
 
@@ -1038,5 +1039,42 @@ function bresenham_draw_line (x1, y1, x2, y2, listBlock, id) {
         }
     }
  }
+
+function getColorForDrawCol(color){
+	switch(color) {
+	  case 0:
+		  return '#888888';
+	    break;
+	  case 1:
+		  return '#ff4000';
+	    break;
+	  case 2:
+		  return '#ffbf00';
+	    break;
+	  case 3:
+		  return '#bfff00';
+	    break;
+	  case 4:
+		  return '#00ff80';
+	    break;
+	  case 5:
+		  return '#00bfff';
+	    break;
+	  case 6:
+		  return '#0040ff';
+	    break;
+	  case 7:
+		  return '#8000ff';
+	    break;
+	  case 8:
+		  return '#ff00ff';
+	    break;
+	  case 9:
+		  return '#ff0040';
+	    break;
+	  default:
+		  return '#111111';
+	}
+}
 
 

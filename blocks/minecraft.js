@@ -2433,7 +2433,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 						    },
 						    {
 						        "type": "field_image",
-						        "src": "https://www.gstatic.com/codesite/ph/images/star_on.gif",
+						        "src": "drawcol_icons/drawcol0.jpg",
 						        "width": 15,
 						        "height": 15,
 						        "alt": "*",
@@ -2449,7 +2449,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 						    },
 						    {
 						        "type": "field_image",
-						        "src": "https://www.gstatic.com/codesite/ph/images/star_on.gif",
+						        "src": "drawcol_icons/drawcol1.jpg",
 						        "width": 15,
 						        "height": 15,
 						        "alt": "*",
@@ -2465,7 +2465,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 
 						    {
 						        "type": "field_image",
-						        "src": "https://www.gstatic.com/codesite/ph/images/star_on.gif",
+						        "src": "drawcol_icons/drawcol2.jpg",
 						        "width": 15,
 						        "height": 15,
 						        "alt": "*",
@@ -2480,7 +2480,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 						    },
 						    {
 						        "type": "field_image",
-						        "src": "https://www.gstatic.com/codesite/ph/images/star_on.gif",
+						        "src": "drawcol_icons/drawcol3.jpg",
 						        "width": 15,
 						        "height": 15,
 						        "alt": "*",
@@ -2495,7 +2495,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 						    },
 						    {
 						        "type": "field_image",
-						        "src": "https://www.gstatic.com/codesite/ph/images/star_on.gif",
+						        "src": "drawcol_icons/drawcol4.jpg",
 						        "width": 15,
 						        "height": 15,
 						        "alt": "*",
@@ -2510,7 +2510,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 						    },
 						    {
 						        "type": "field_image",
-						        "src": "https://www.gstatic.com/codesite/ph/images/star_on.gif",
+						        "src": "drawcol_icons/drawcol5.jpg",
 						        "width": 15,
 						        "height": 15,
 						        "alt": "*",
@@ -2525,7 +2525,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 						    },
 						    {
 						        "type": "field_image",
-						        "src": "https://www.gstatic.com/codesite/ph/images/star_on.gif",
+						        "src": "drawcol_icons/drawcol6.jpg",
 						        "width": 15,
 						        "height": 15,
 						        "alt": "*",
@@ -2540,7 +2540,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 							    },
 							    {
 							        "type": "field_image",
-							        "src": "https://www.gstatic.com/codesite/ph/images/star_on.gif",
+							        "src": "drawcol_icons/drawcol7.jpg",
 							        "width": 15,
 							        "height": 15,
 							        "alt": "*",
@@ -2555,7 +2555,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 								    },
 								    {
 								        "type": "field_image",
-								        "src": "https://www.gstatic.com/codesite/ph/images/star_on.gif",
+								        "src": "drawcol_icons/drawcol8.jpg",
 								        "width": 15,
 								        "height": 15,
 								        "alt": "*",
@@ -2570,7 +2570,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 									    },
 									    {
 									        "type": "field_image",
-									        "src": "https://www.gstatic.com/codesite/ph/images/star_on.gif",
+									        "src": "drawcol_icons/drawcol9.jpg",
 									        "width": 15,
 									        "height": 15,
 									        "alt": "*",

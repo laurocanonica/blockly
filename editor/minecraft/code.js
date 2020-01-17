@@ -859,10 +859,25 @@ function handleKeyboardShortcuts(event) { // add a key 'r' that repeats the last
 			lastSelectedDrawColBlock=selected;
 			//selected.setColour('#ff0000');
 		}
+		else if(event.key=='i' ) { // insert a column
+			var coord=getDrawingBlockCoordinate(selected)
+			if(coord!=null){
+				var mainList=getContainingList(selected);
+				var nLines=selected.inputList.length;
+				for (var y = 0; y < 20; y++) {
+					//alert(coord.x+","+y);
+					var inBlock=getDrawingBlockByCoordinate(mainList, coord.x, y);
+					if(inBlock!=null){
+						insertDrawingBlock(inBlock);
+					}
+				}
+			}
+			//selected.setColour('#ff0000');
+		}
 		else if(lastSelectedDrawColBlock!=null && lastSelectedDrawColBlock.type.startsWith('minecraft_drawcol_')){
 			var coordStart=getDrawingBlockCoordinate(lastSelectedDrawColBlock);
 			var coordEnd=getDrawingBlockCoordinate(selected);
-			var mainList=getContainingList(Blockly.selected)
+			var mainList=getContainingList(selected)
 			var id=lastSelectedDrawColBlock.type.substring('minecraft_drawcol_'.length);
 			if(coordStart!=null && coordEnd!=null){
 				if(event.key=='l' ) { // draw line
@@ -904,12 +919,40 @@ function handleKeyboardShortcuts(event) { // add a key 'r' that repeats the last
 function setDrawingBlock(selected, key) { 
 	selected.type='minecraft_drawcol_'+key;
 	selected.setColour(getColorForDrawCol(parseInt(key)));
-
-
 	//alert(selected.type);
 }
 
-function setDrawingBlock_ORG(selected, key) { 
+function insertDrawingBlock(selected) { 
+	//var oldBlock=Code.workspace.getBlockById(event.blockId);
+	var workspace=Code.workspace;
+	var parent=selected.getParent();
+	
+	var newBlock = workspace.newBlock(selected.type);
+	var coordinate = selected.getRelativeToSurfaceXY();
+	newBlock.moveBy(coordinate.x, coordinate.y)
+
+	//parent.setColour(23);
+	//newBlock.setColour(100);
+	newBlock.initSvg();
+	newBlock.render();
+	
+	if(parent!=null) {
+		var parentConnection = parent.getInputWithBlock(selected).connection;
+		if(parentConnection!=null) {
+			parentConnection.connect(newBlock.outputConnection);
+		}
+	}
+
+	var newBlockchildConnection = newBlock.getInput('child').connection;
+	newBlockchildConnection.connect(selected.outputConnection);
+		
+
+
+
+}
+
+
+function deleteDrawingBlock_ORG(selected) { 
 	//var oldBlock=Code.workspace.getBlockById(event.blockId);
 	var workspace=Code.workspace;
 	var oldBlock=selected;
@@ -966,6 +1009,14 @@ function getContainingList(block){
 
 function setDrawingBlockByCoordinate(listBlock, x, y, id){
 	//window.alert(x +","+ y);	
+	var block = getDrawingBlockByCoordinate(listBlock, x, y)
+	if(block!=null){
+		setDrawingBlock(block, id);		
+	}
+}
+
+function getDrawingBlockByCoordinate(listBlock, x, y){
+	//window.alert(x +","+ y);	
 	var block = listBlock.getInputTargetBlock('ADD'+y);
 	for (var i = 0; i < x; i++) {
 		if(block==null){
@@ -973,27 +1024,24 @@ function setDrawingBlockByCoordinate(listBlock, x, y, id){
 		}
 		block=block.getInputTargetBlock('child');
 	}
-	if(block!=null){
-		setDrawingBlock(block, id);
-		
-	}
+	return block;
 }
 
 function bresenham_draw_line (x1, y1, x2, y2, listBlock, id) {
 	//alert(x1+','+y1+'    '+x2+','+y2)
 
-    // Iterators, counters required by algorithm
+
     let x, y, dx, dy, dx1, dy1, px, py, xe, ye, i;
 
-    // Calculate line deltas
+    // Calculate deltas
     dx = x2 - x1;
     dy = y2 - y1;
 
-    // Create a positive copy of deltas (makes iterating easier)
+    // 
     dx1 = Math.abs(dx);
     dy1 = Math.abs(dy);
 
-    // Calculate error intervals for both axis
+    // Calculate error intervals 
     px = 2 * dy1 - dx1;
     py = 2 * dx1 - dy1;
 
@@ -1003,7 +1051,7 @@ function bresenham_draw_line (x1, y1, x2, y2, listBlock, id) {
         // Line is drawn left to right
         if (dx >= 0) {
             x = x1; y = y1; xe = x2;
-        } else { // Line is drawn right to left (swap ends)
+        } else { // Line is drawn right to left (swap )
             x = x2; y = y2; xe = x1;
         }
 
@@ -1014,7 +1062,7 @@ function bresenham_draw_line (x1, y1, x2, y2, listBlock, id) {
         for (i = 0; x < xe; i++) {
             x = x + 1;
 
-            // Deal with octants...
+            // octants.
             if (px < 0) {
                 px = px + 2 * dy1;
             } else {
@@ -1029,9 +1077,9 @@ function bresenham_draw_line (x1, y1, x2, y2, listBlock, id) {
         	setDrawingBlockByCoordinate(listBlock, x, y, id)
         }
 
-    } else { // The line is Y-axis dominant
+    } else { //The line is Y-axis dominant
 
-        // Line is drawn bottom to top
+        //  bottom to top
         if (dy >= 0) {
             x = x1; y = y1; ye = y2;
         } else { // Line is drawn top to bottom
@@ -1040,7 +1088,7 @@ function bresenham_draw_line (x1, y1, x2, y2, listBlock, id) {
 
     	setDrawingBlockByCoordinate(listBlock, x, y, id)
 
-        // Rasterize the line
+        // Rasterize 
         for (i = 0; y < ye; i++) {
             y = y + 1;
 

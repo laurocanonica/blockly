@@ -853,6 +853,7 @@ function handleKeyboardShortcuts(event) { // add a key 'r' that repeats the last
 			//setDrawingBlockByCoordinate(getContainingList(Blockly.selected), 19, 19, event.key)
 			//alert(event.key)
 			setDrawingBlock(selected, event.key);
+			//Blockly.Events.fire(new Blockly.Events.BlockChange(selected, 'field', 'tooltip', 'minecraft_drawcol_0', 'minecraft_drawcol_1'));
 		}
 		else if(event.key=='m' ) { // mark the starting block
 			selected.setColour(Blockly.utils.colour.blend(selected.getColour(), '#ffffff', .5));

@@ -304,7 +304,7 @@ Blockly.Msg["MC_cmd_minecraft_clone"] = "clone the blocks created until now";  /
 Blockly.Msg["MC_cmd_minecraft_connectPositions1"] = "create a row made of %1";  // untranslated
 Blockly.Msg["MC_cmd_minecraft_connectPositions2"] = "from the last marked position to this position";  // untranslated
 Blockly.Msg["MC_cmd_minecraft_createchest"] = "create chest with %1";  // untranslated
-Blockly.Msg["MC_cmd_minecraft_draw"] = "Draw %1 %2 = %3 %4 = %5 %6 = %7 %8 = %9 %10 = %11 %12 = %13 %14 = %15 %16 = %17 %18 = %19 %20 = %21";  // untranslated
+Blockly.Msg["MC_cmd_minecraft_draw"] = "Draw %1 0 %2 %3 1 %4 %5 2 %6 %7 3 %8 %9 4 %10  %11 5 %12 %13 6 %14 %15 7 %16 %17 8 %18 %19 9 %20 %21";  // untranslated
 Blockly.Msg["MC_cmd_minecraft_ellipse"] = "create a %1 %2 %3 ellipse with radiusX %4 %5 and radiusY %6 %7 made of %8 %9";  // untranslated
 Blockly.Msg["MC_cmd_minecraft_execute_command"] = "call function %1 of player %2 with parameter %3 %4 %5 %6 %7";  // untranslated
 Blockly.Msg["MC_cmd_minecraft_giveme"] = "give me %1";  // untranslated

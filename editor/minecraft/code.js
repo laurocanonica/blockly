@@ -859,16 +859,21 @@ function handleKeyboardShortcuts(event) { // add a key 'r' that repeats the last
 			lastSelectedDrawColBlock=selected;
 			//selected.setColour('#ff0000');
 		}
-		else if(event.key=='i' ) { // insert a column
+		else if(event.key=='i' || event.key=='d' ) { // insert or delete a column
 			var coord=getDrawingBlockCoordinate(selected)
 			if(coord!=null){
 				var mainList=getContainingList(selected);
-				var nLines=selected.inputList.length;
+				//alert(mainList.childBlocks_.length);
+				var nLines=mainList.childBlocks_.length;
 				for (var y = 0; y < 20; y++) {
 					//alert(coord.x+","+y);
 					var inBlock=getDrawingBlockByCoordinate(mainList, coord.x, y);
 					if(inBlock!=null){
-						insertDrawingBlock(inBlock);
+						if(event.key=='d'){
+							deleteDrawingBlock(inBlock);
+						}else{
+							insertDrawingBlock(inBlock);
+						}
 					}
 				}
 			}
@@ -952,34 +957,19 @@ function insertDrawingBlock(selected) {
 }
 
 
-function deleteDrawingBlock_ORG(selected) { 
+function deleteDrawingBlock(selected) { 
 	//var oldBlock=Code.workspace.getBlockById(event.blockId);
 	var workspace=Code.workspace;
-	var oldBlock=selected;
-	var parent=oldBlock.getParent();
-	var child = oldBlock.getInputTargetBlock('child');
+	var parent=selected.getParent();
+	var child = selected.getInputTargetBlock('child');
 	
-	var newBlock = workspace.newBlock('minecraft_drawcol_'+key);
-	var coordinate = oldBlock.getRelativeToSurfaceXY();
-	newBlock.moveBy(coordinate.x, coordinate.y)
-
-		newBlock.initSvg();
-		newBlock.render();
-
-	
-	if(parent!=null) {
-		var parentConnection = parent.getInputWithBlock(oldBlock).connection;
+	if(parent!=null && child!=null) {
+		var parentConnection = parent.getInputWithBlock(selected).connection;
 		if(parentConnection!=null) {
-			parentConnection.connect(newBlock.outputConnection);
+			parentConnection.connect(child.outputConnection);
 		}
 	}
-
-	if(child!=null) {
-		var newBlockchildConnection = newBlock.getInput('child').connection;
-			newBlockchildConnection.connect(child.outputConnection);
-		}
-		
-		oldBlock.dispose();		
+	selected.dispose();		
 
 }
 

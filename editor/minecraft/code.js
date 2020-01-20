@@ -527,6 +527,7 @@ Code.init = function() {
   Code.serverNeedsUpdate=true;
   Code.workspace.addChangeListener(setServerNeedsUpdate);
   window.onkeypress =handleKeyboardShortcuts;
+    Code.workspace.addChangeListener(blockClickedEventHandler) 
   
 };
 
@@ -844,7 +845,6 @@ document.getElementById('playernamefield').onblur = function() {
 
 }
 
-var lastSelectedDrawColBlock=null; // global to keep track of the last selection
 function handleKeyboardShortcuts(event) { // add a key 'r' that repeats the last used colour in the drawings
 	var selected=Blockly.selected;
 	if(selected!=null && selected.type.startsWith('minecraft_drawcol_')) {
@@ -1141,3 +1141,24 @@ function getColorForDrawCol(color){
 }
 
 
+var lastSelectedDrawColBlock=null; // global to keep track of the last selection
+var lastSelectedDrawColBlockColour=null;
+var currentlySelectedDrawColBlock=null;
+function blockClickedEventHandler(event){
+	  if (event.type == Blockly.Events.UI &&
+	      event.element == 'selected') {
+		  var selected=Blockly.selected;
+		  if(selected.type.startsWith('minecraft_drawcol_')) {
+			  if(lastSelectedDrawColBlock!=null){
+				  lastSelectedDrawColBlock.setColour(lastSelectedDrawColBlockColour);				  
+			  }
+			  lastSelectedDrawColBlock=currentlySelectedDrawColBlock;
+			  if(lastSelectedDrawColBlock!=null){
+				  lastSelectedDrawColBlockColour=lastSelectedDrawColBlock.getColour();
+				  lastSelectedDrawColBlock.setColour(Blockly.utils.colour.blend(lastSelectedDrawColBlockColour, '#ffffff', .5));
+			  }
+			  currentlySelectedDrawColBlock=selected;
+		  }
+	    //alert('Congratulations on creating your first comment!'+Blockly.selected.type)
+	  }
+}

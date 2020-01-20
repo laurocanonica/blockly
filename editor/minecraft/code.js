@@ -898,10 +898,14 @@ function handleKeyboardShortcuts(event) { // add a key 'r' that repeats the last
 					var dy=Math.abs(coordEnd.y - coordStart.y);
 					var radiusExp2=dx*dx+dy*dy;
 					var radius=Math.sqrt(radiusExp2);
-					for (var x = coordStart.x-radius; x <= coordStart.x+radius; x+=.1) {
+					var prevY=0;
+					for (var x = coordStart.x-radius+1; x <= coordStart.x+radius; x+=1) {
 						var y=Math.sqrt(radiusExp2-Math.pow(x-coordStart.x, 2));
-				    	setDrawingBlockByCoordinate(mainList, Math.round(x), Math.round(coordStart.y+y), id);
-				    	setDrawingBlockByCoordinate(mainList, Math.round(x), Math.round(coordStart.y-y), id);
+						bresenham_draw_line (x-1, Math.round(coordStart.y+prevY), x, Math.round(coordStart.y+y), mainList, id);
+						bresenham_draw_line (x-1, Math.round(coordStart.y-prevY), x, Math.round(coordStart.y-y), mainList, id);
+				    	//setDrawingBlockByCoordinate(mainList, Math.round(x), Math.round(coordStart.y+y), id);
+				    	//setDrawingBlockByCoordinate(mainList, Math.round(x), Math.round(coordStart.y-y), id);
+				    	prevY=y;
 				    	//window.alert(x +","+ y+",rad="+ radius +", start= "+coordStart.x +","+coordStart.y+'--->'+(radiusExp2-(x-coordStart.x)^2)+'-a->'+(x-coordStart.x)+'-b->'+Math.pow(x-coordStart.x,2)+'-xx>'+radiusExp2);	
 					}
 					

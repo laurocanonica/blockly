@@ -2597,11 +2597,11 @@ Blockly.Blocks['minecraft_drawing'] = {
 
 
 
-Blockly.Blocks['minecraft_drawcol_0'] = {
+Blockly.Blocks['m_draw_0'] = {
 		init : function() {
 			this.jsonInit( 	
 			{
-			  "type": "minecraft_drawcol_0",
+			  "type": "m_draw_0",
 			  "message0": " %1",
 			  "args0": [{"type": "input_value", "name": "child"}],
 			  "output": null,
@@ -2612,11 +2612,11 @@ Blockly.Blocks['minecraft_drawcol_0'] = {
 		}
 	};
 
-Blockly.Blocks['minecraft_drawcol_1'] = {
+Blockly.Blocks['m_draw_1'] = {
 	init : function() {
 		this.jsonInit( 	
 		{
-		  "type": "minecraft_drawcol_1",
+		  "type": "m_draw_1",
 		  "message0": " %1",
 		  "args0": [{"type": "input_value", "name": "child"}],
 		  "output": null,
@@ -2627,11 +2627,11 @@ Blockly.Blocks['minecraft_drawcol_1'] = {
 	}
 };
 
-Blockly.Blocks['minecraft_drawcol_2'] = {
+Blockly.Blocks['m_draw_2'] = {
 		init : function() {
 			this.jsonInit( 	
 			{
-			  "type": "minecraft_drawcol_2",
+			  "type": "m_draw_2",
 			  "message0": " %1",
 			  "args0": [{"type": "input_value", "name": "child"}],
 			  "output": null,
@@ -2641,11 +2641,11 @@ Blockly.Blocks['minecraft_drawcol_2'] = {
 			});
 		}
 	};
-Blockly.Blocks['minecraft_drawcol_3'] = {
+Blockly.Blocks['m_draw_3'] = {
 		init : function() {
 			this.jsonInit( 	
 			{
-			  "type": "minecraft_drawcol_3",
+			  "type": "m_draw_3",
 			  "message0": " %1",
 			  "args0": [{"type": "input_value", "name": "child"}],
 			  "output": null,
@@ -2655,11 +2655,11 @@ Blockly.Blocks['minecraft_drawcol_3'] = {
 			});
 		}
 	};
-Blockly.Blocks['minecraft_drawcol_4'] = {
+Blockly.Blocks['m_draw_4'] = {
 		init : function() {
 			this.jsonInit( 	
 			{
-			  "type": "minecraft_drawcol_4",
+			  "type": "m_draw_4",
 			  "message0": " %1",
 			  "args0": [{"type": "input_value", "name": "child"}],
 			  "output": null,
@@ -2669,11 +2669,11 @@ Blockly.Blocks['minecraft_drawcol_4'] = {
 			});
 		}
 	};
-Blockly.Blocks['minecraft_drawcol_5'] = {
+Blockly.Blocks['m_draw_5'] = {
 		init : function() {
 			this.jsonInit( 	
 			{
-			  "type": "minecraft_drawcol_5",
+			  "type": "m_draw_5",
 			  "message0": " %1",
 			  "args0": [{"type": "input_value", "name": "child"}],
 			  "output": null,
@@ -2683,11 +2683,11 @@ Blockly.Blocks['minecraft_drawcol_5'] = {
 			});
 		}
 	};
-Blockly.Blocks['minecraft_drawcol_6'] = {
+Blockly.Blocks['m_draw_6'] = {
 		init : function() {
 			this.jsonInit( 	
 			{
-			  "type": "minecraft_drawcol_6",
+			  "type": "m_draw_6",
 			  "message0": " %1",
 			  "args0": [{"type": "input_value", "name": "child"}],
 			  "output": null,
@@ -2697,11 +2697,11 @@ Blockly.Blocks['minecraft_drawcol_6'] = {
 			});
 		}
 	};
-Blockly.Blocks['minecraft_drawcol_7'] = {
+Blockly.Blocks['m_draw_7'] = {
 		init : function() {
 			this.jsonInit( 	
 			{
-			  "type": "minecraft_drawcol_7",
+			  "type": "m_draw_7",
 			  "message0": " %1",
 			  "args0": [{"type": "input_value", "name": "child"}],
 			  "output": null,
@@ -2711,11 +2711,11 @@ Blockly.Blocks['minecraft_drawcol_7'] = {
 			});
 		}
 	};
-Blockly.Blocks['minecraft_drawcol_8'] = {
+Blockly.Blocks['m_draw_8'] = {
 		init : function() {
 			this.jsonInit( 	
 			{
-			  "type": "minecraft_drawcol_8",
+			  "type": "m_draw_8",
 			  "message0": " %1",
 			  "args0": [{"type": "input_value", "name": "child"}],
 			  "output": null,
@@ -2725,11 +2725,11 @@ Blockly.Blocks['minecraft_drawcol_8'] = {
 			});
 		}
 	};
-Blockly.Blocks['minecraft_drawcol_9'] = {
+Blockly.Blocks['m_draw_9'] = {
 		init : function() {
 			this.jsonInit( 	
 			{
-			  "type": "minecraft_drawcol_9",
+			  "type": "m_draw_9",
 			  "message0": " %1",
 			  "args0": [{"type": "input_value", "name": "child"}],
 			  "output": null,

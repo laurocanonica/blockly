@@ -346,10 +346,14 @@ Blockly.JavaScript['minecraft_clone'] = function(block) {
 
 function validateBlockchoice(blockChoice) {
 	if(blockChoice==""){
-		return ('"1, _T_, _EMPTY_;"')
+		return ('"_P_,,1,,_T_,,_EMPTY_;"')
 	} else {
 		var endFirstElement=blockChoice.indexOf(';');
-		return blockChoice.substr(0, endFirstElement+2);
+		if(endFirstElement==-1){
+			return blockChoice  //it is a variable name
+		} else {
+			return blockChoice.substr(0, endFirstElement+2);
+		}
 	}
 }
 function removeNulls(valMatList) {
@@ -421,43 +425,43 @@ if(true){
 	}
 
 	
-	Blockly.JavaScript['minecraft_drawcol_0'] = function(block) {
+	Blockly.JavaScript['m_draw_0'] = function(block) {
 		  return getColor(block, 0);
 	};
 		
-	Blockly.JavaScript['minecraft_drawcol_1'] = function(block) {
+	Blockly.JavaScript['m_draw_1'] = function(block) {
 		  return getColor(block, 1);
 	};
 	
-	Blockly.JavaScript['minecraft_drawcol_2'] = function(block) {
+	Blockly.JavaScript['m_draw_2'] = function(block) {
 		  return getColor(block, 2);
 	};
 	
-	Blockly.JavaScript['minecraft_drawcol_3'] = function(block) {
+	Blockly.JavaScript['m_draw_3'] = function(block) {
 		  return getColor(block, 3);
 	};
 	
-	Blockly.JavaScript['minecraft_drawcol_4'] = function(block) {
+	Blockly.JavaScript['m_draw_4'] = function(block) {
 		  return getColor(block, 4);
 	};
 	
-	Blockly.JavaScript['minecraft_drawcol_5'] = function(block) {
+	Blockly.JavaScript['m_draw_5'] = function(block) {
 		  return getColor(block, 5);
 	};
 	
-	Blockly.JavaScript['minecraft_drawcol_6'] = function(block) {
+	Blockly.JavaScript['m_draw_6'] = function(block) {
 		  return getColor(block, 6);
 	};
 	
-	Blockly.JavaScript['minecraft_drawcol_7'] = function(block) {
+	Blockly.JavaScript['m_draw_7'] = function(block) {
 		  return getColor(block, 7);
 	};
 	
-	Blockly.JavaScript['minecraft_drawcol_8'] = function(block) {
+	Blockly.JavaScript['m_draw_8'] = function(block) {
 		  return getColor(block, 28);
 	};
 	
-	Blockly.JavaScript['minecraft_drawcol_9'] = function(block) {
+	Blockly.JavaScript['m_draw_9'] = function(block) {
 		  return getColor(block, 9);
 	};
 		

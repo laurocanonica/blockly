@@ -847,18 +847,13 @@ document.getElementById('playernamefield').onblur = function() {
 
 function handleKeyboardShortcuts(event) { // add a key 'r' that repeats the last used colour in the drawings
 	var selected=Blockly.selected;
-	if(selected!=null && selected.type.startsWith('minecraft_drawcol_')) {
+	if(selected!=null && selected.type.startsWith('m_draw_')) {
 		if(event.key>='0' && event.key<='9') { // colour a block
 			//getDrawingBlockCoordinate(Blockly.selected);
 			//setDrawingBlockByCoordinate(getContainingList(Blockly.selected), 19, 19, event.key)
 			//alert(event.key)
 			setDrawingBlock(selected, event.key);
-			//Blockly.Events.fire(new Blockly.Events.BlockChange(selected, 'field', 'tooltip', 'minecraft_drawcol_0', 'minecraft_drawcol_1'));
-		}
-		else if(event.key=='m' ) { // mark the starting block
-			selected.setColour(Blockly.utils.colour.blend(selected.getColour(), '#ffffff', .5));
-			lastSelectedDrawColBlock=selected;
-			//selected.setColour('#ff0000');
+			//Blockly.Events.fire(new Blockly.Events.BlockChange(selected, 'field', 'tooltip', 'm_draw_0', 'm_draw_1'));
 		}
 		else if(event.key=='i' || event.key=='d' ) { // insert or delete a column
 			var coord=getDrawingBlockCoordinate(selected)
@@ -866,25 +861,28 @@ function handleKeyboardShortcuts(event) { // add a key 'r' that repeats the last
 				var mainList=getContainingList(selected);
 				//alert(mainList.childBlocks_.length);
 				var nLines=mainList.childBlocks_.length;
-				for (var y = 0; y < 20; y++) {
+				var yPos = 0;
+				for (var y = 0; y < nLines && yPos<200;) {  // 200 to avoid potential infinite loops
 					//alert(coord.x+","+y);
-					var inBlock=getDrawingBlockByCoordinate(mainList, coord.x, y);
+					var inBlock=getDrawingBlockByCoordinate(mainList, coord.x, yPos);
 					if(inBlock!=null){
+						y++; //increment only when there is a subelement
 						if(event.key=='d'){
 							deleteDrawingBlock(inBlock);
 						}else{
 							insertDrawingBlock(inBlock);
 						}
 					}
+					yPos++;
 				}
 			}
 			//selected.setColour('#ff0000');
 		}
-		else if(lastSelectedDrawColBlock!=null && lastSelectedDrawColBlock.type.startsWith('minecraft_drawcol_')){
+		else if(lastSelectedDrawColBlock!=null && lastSelectedDrawColBlock.type.startsWith('m_draw_')){
 			var coordStart=getDrawingBlockCoordinate(lastSelectedDrawColBlock);
 			var coordEnd=getDrawingBlockCoordinate(selected);
 			var mainList=getContainingList(selected)
-			var id=lastSelectedDrawColBlock.type.substring('minecraft_drawcol_'.length);
+			var id=lastSelectedDrawColBlock.type.substring('m_draw_'.length);
 			if(coordStart!=null && coordEnd!=null){
 				if(event.key=='l' ) { // draw line
 						bresenham_draw_line (coordStart.x, coordStart.y, coordEnd.x, coordEnd.y, mainList, id);
@@ -927,7 +925,7 @@ function handleKeyboardShortcuts(event) { // add a key 'r' that repeats the last
 }
 
 function setDrawingBlock(selected, key) { 
-	selected.type='minecraft_drawcol_'+key;
+	selected.type='m_draw_'+key;
 	selected.setColour(getColorForDrawCol(parseInt(key)));
 	//alert(selected.type);
 }
@@ -981,7 +979,7 @@ function deleteDrawingBlock(selected) {
 function getDrawingBlockCoordinate(block){
 	var x=0;
 	var parent=block.getParent();
-	while (parent!=null && parent.type.startsWith('minecraft_drawcol_')) {
+	while (parent!=null && parent.type.startsWith('m_draw_')) {
 		x++;
 		block=parent;
 		parent=parent.getParent();
@@ -996,7 +994,7 @@ function getDrawingBlockCoordinate(block){
 
 function getContainingList(block){
 	var parent=block.getParent();
-	while (parent!=null && parent.type.startsWith('minecraft_drawcol_')) {
+	while (parent!=null && parent.type.startsWith('m_draw_')) {
 		parent=parent.getParent();
 	}
 	return parent;
@@ -1148,7 +1146,7 @@ function blockClickedEventHandler(event){
 	  if (event.type == Blockly.Events.UI &&
 	      event.element == 'selected') {
 		  var selected=Blockly.selected;
-		  if(selected.type.startsWith('minecraft_drawcol_')) {
+		  if(selected!=null && selected.type.startsWith('m_draw_')) {
 			  if(lastSelectedDrawColBlock!=null){
 				  lastSelectedDrawColBlock.setColour(lastSelectedDrawColBlockColour);				  
 			  }

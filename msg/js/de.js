@@ -304,7 +304,7 @@ Blockly.Msg["MC_cmd_minecraft_clone"] = "Klon der Blöcke, die bis jetzt erzeugt
 Blockly.Msg["MC_cmd_minecraft_connectPositions1"] = "Erzeuge eine Reihe bestehend aus %1";
 Blockly.Msg["MC_cmd_minecraft_connectPositions2"] = "aus der markierte Position bis hier";
 Blockly.Msg["MC_cmd_minecraft_createchest"] = "Erzeuge eine Truhe mit %1";
-Blockly.Msg["MC_cmd_minecraft_draw"] = "Zeichne %1 %2 = %3 %4 = %5 %6 = %7 %8 = %9 %10 = %11 %12 = %13 %14 = %15 %16 = %17 %18 = %19 %20 = %21";
+Blockly.Msg["MC_cmd_minecraft_draw"] = "Zeichne %1 0 %2 %3 1 %4 %5 2 %6 %7 3 %8 %9 4 %10  %11 5 %12 %13 6 %14 %15 7 %16 %17 8 %18 %19 9 %20 %21";
 Blockly.Msg["MC_cmd_minecraft_ellipse"] = "Erzeuge eine %1 %2 %3 Ellipse mit RadiusX %4 %5 und RadiusY %6 %7 aus %8 %9";
 Blockly.Msg["MC_cmd_minecraft_execute_command"] = "ruf die Funktion %1 des Spielers %2 mit Parameter %3 %4 %5 %6 %7 auf";
 Blockly.Msg["MC_cmd_minecraft_giveme"] = "Gib mir %1";

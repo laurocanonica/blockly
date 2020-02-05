@@ -423,17 +423,24 @@ Code.init = function() {
 
   Code.workspace = Blockly.inject('content_blocks',
       {grid:
-          {spacing: 25,
+          {spacing: 0,
            length: 3,
            colour: '#ccc',
-           snap: true},
+           snap: false},
        media: '../../media/',
        rtl: rtl,
        toolbox: toolboxXml,
+       
        zoom:
            {controls: true,
-            wheel: true}
+            wheel: false},
+          move:{
+               scrollbars: true,
+               drag: true,
+               wheel: true}
+        
       });
+  
 
   // Add to reserved word list: Local variables in execution environment (runJS)
   // and the infinite loop detection function.

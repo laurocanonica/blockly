@@ -1171,7 +1171,7 @@ Blockly.Blocks['minecraft_multiciplity'] = {
 				}, {
 					"type" : "input_value",
 					"name" : "singleblock",
-					"check" : [ "Material", "Face", "Entity", "Team", "Item" ]
+					"check" : [ "Material", "Face", "Ground", "Entity", "Team", "Item" ]
 				} ],
 				"output" : "Multiciplity",
 				"colour" : 330,
@@ -1194,7 +1194,7 @@ Blockly.Blocks['minecraft_multiciplity_var'] = {
 				    {
 				      "type": "input_value",
 				      "name": "singleblock",
-					  "check" : [ "Material", "Face", "Entity", "Team", "Item" ]
+					  "check" : [ "Material", "Face", "Ground", "Entity", "Team", "Item" ]
 				    }
 				  ],
 				  "output": "Multiciplity",
@@ -1217,7 +1217,7 @@ Blockly.Blocks['minecraft_materialbockOnlyOne'] = {
 			}, {
 				"type" : "input_value",
 				"name" : "singleblock",
-				"check" : [ "Material", "Face", "Multiciplity", "Entity", "Team" ]
+				"check" : [ "Material", "Face", "Ground", "Multiciplity", "Entity", "Team" ]
 			} ],
 			"output" : "Material",
 			"colour" : 330,
@@ -1239,7 +1239,7 @@ Blockly.Blocks['minecraft_materialbockOnlyOne_op'] = {
 				}, {
 					"type" : "input_value",
 					"name" : "singleblock",
-					"check" : [ "Material", "Face", "Multiciplity", "Entity", "Team" ]
+					"check" : [ "Material", "Face", "Ground", "Multiciplity", "Entity", "Team" ]
 				} ],
 				"output" : "Material",
 				"colour" : 330,
@@ -1261,7 +1261,7 @@ Blockly.Blocks['minecraft_particleOnlyOne'] = {
 				}, {
 					"type" : "input_value",
 					"name" : "singleblock",
-					"check" : [ "Material", "Face", "Multiciplity", "Entity", "Team" ]
+					"check" : [ "Material", "Face", "Ground", "Multiciplity", "Entity", "Team" ]
 				} ],
 				"output" : "Material",
 				"colour" : 330,
@@ -1283,7 +1283,7 @@ Blockly.Blocks['minecraft_entity'] = {
 			}, {
 				"type" : "input_value",
 				"name" : "singleblock",
-				"check" : [ "Material", "Face", "Multiciplity", "Team", "Entity" ]
+				"check" : [ "Material", "Face", "Ground", "Multiciplity", "Team", "Entity" ]
 			} ],
 			"output" : "Entity",
 			"colour" : 210,
@@ -1305,7 +1305,7 @@ Blockly.Blocks['minecraft_entity_op'] = {
 				}, {
 					"type" : "input_value",
 					"name" : "singleblock",
-					"check" : [ "Material", "Face", "Multiciplity", "Team", "Entity" ]
+					"check" : [ "Material", "Face", "Ground", "Multiciplity", "Team", "Entity" ]
 				} ],
 				"output" : "Entity",
 				"colour" : 210,
@@ -1424,7 +1424,7 @@ Blockly.Blocks['minecraft_polygon'] = {
 				      "type": "input_value",
 				      "name": "NAME",
 				      "check": [
-				        "Material", "Face",
+				        "Material", "Face", "Ground",
 				        "Entity",
 				        "Multiciplity",
 				        "Team"
@@ -1493,7 +1493,7 @@ Blockly.Blocks['minecraft_rectangle'] = {
 					      "type": "input_value",
 					      "name": "NAME",
 					      "check": [
-					    	"Material", "Face",
+					    	"Material", "Face", "Ground",
 					        "Entity",
 					        "Multiciplity",
 					        "Team"
@@ -1559,7 +1559,7 @@ Blockly.Blocks['minecraft_ellipse'] = {
 				      "type": "input_value",
 				      "name": "NAME",
 				      "check": [
-				        "Material", "Face",
+				        "Material", "Face", "Ground",
 				        "Entity",
 				        "Multiciplity",
 				        "Team"
@@ -1613,7 +1613,7 @@ Blockly.Blocks['minecraft_block'] = {
 				      "type": "input_value",
 				      "name": "NAME",
 				      "check": [
-				        "Material", "Face",
+				        "Material", "Face", "Ground",
 				        "Entity",
 				        "Multiciplity",
 				        "Team"
@@ -1652,7 +1652,7 @@ Blockly.Blocks['minecraft_line'] = {
 			      "type": "input_value",
 			      "name": "NAME",
 			      "check": [
-			        "Material", "Face",
+			        "Material", "Face", "Ground",
 			        "Entity",
 			        "Multiciplity",
 			        "Team"
@@ -1679,7 +1679,7 @@ Blockly.Blocks['minecraft_connectPositions'] = {
 				      "type": "input_value",
 				      "name": "NAME",
 				      "check": [
-				        "Material", "Face",
+				        "Material", "Face", "Ground",
 				        "Entity",
 				        "Multiciplity",
 				        "Team"
@@ -1804,7 +1804,7 @@ Blockly.Blocks['minecraft_sign'] = {
 				    {
 				      "type": "input_value",
 				      "name": "name",
-				      "check" : [ "Material", "Face", "Multiciplity", "Entity", "Team" ]
+				      "check" : [ "Material", "Face", "Ground", "Multiciplity", "Entity", "Team" ]
 				    }
 				  ],
 				  "output": "Material",
@@ -1893,9 +1893,27 @@ Blockly.Blocks['minecraft_direction'] = {
 				}, {
 					"type" : "input_value",
 					"name" : "singleblock",
-					"check" :  [ "Material", "Entity"]
+					"check" :  [ "Material", "Entity", "Ground"]
 				} ],
 				"output" : "Face",
+				"colour" : 330,
+				"tooltip" : "",
+				"helpUrl" : ""
+			});
+		}
+	};
+
+Blockly.Blocks['minecraft_on_the_ground'] = {
+		init : function() {
+			this.jsonInit({
+				"type" : "minecraft_on_the_ground",
+				"message0" : Blockly.Msg.MC_cmd_ground,
+				"args0" : [ {
+					"type" : "input_value",
+					"name" : "singleblock",
+					"check" :  [ "Material", "Entity", "Face"]
+				} ],
+				"output" : "Ground",
 				"colour" : 330,
 				"tooltip" : "",
 				"helpUrl" : ""
@@ -2329,7 +2347,7 @@ Blockly.Blocks['minecraft_text'] = {
 						      "type": "input_value",
 						      "name": "NAME",
 						      "check": [
-						        "Material", "Face",
+						        "Material", "Face", "Ground",
 						        "Entity",
 						        "Multiciplity",
 						        "Team",
@@ -2444,7 +2462,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 						      "name": "blockchoice0",
 						      
 						      "check": [
-						    	  "Material", "Face", "Entity", "Team"
+						    	  "Material", "Face", "Ground", "Entity", "Team"
 						      ]
 						    },
 						    {
@@ -2459,7 +2477,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 							      "type": "input_value",
 							      "name": "blockchoice1",
 							      "check": [
-							    	  "Material", "Face", "Entity", "Team"
+							    	  "Material", "Face", "Ground", "Entity", "Team"
 							      ]
 						    },
 
@@ -2475,7 +2493,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 						      "type": "input_value",
 						      "name": "blockchoice2",
 						      "check": [
-						    	  "Material", "Face", "Entity", "Team"
+						    	  "Material", "Face", "Ground", "Entity", "Team"
 						      ]
 						    },
 						    {
@@ -2490,7 +2508,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 						      "type": "input_value",
 						      "name": "blockchoice3",
 						      "check": [
-						    	  "Material", "Face", "Entity", "Team"
+						    	  "Material", "Face", "Ground", "Entity", "Team"
 						      ]
 						    },
 						    {
@@ -2505,7 +2523,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 						      "type": "input_value",
 						      "name": "blockchoice4",
 						      "check": [
-						    	  "Material", "Face", "Entity", "Team"
+						    	  "Material", "Face", "Ground", "Entity", "Team"
 						      ]
 						    },
 						    {
@@ -2520,7 +2538,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 						      "type": "input_value",
 						      "name": "blockchoice5",
 						      "check": [
-						    	  "Material", "Face", "Entity", "Team"
+						    	  "Material", "Face", "Ground", "Entity", "Team"
 						      ]
 						    },
 						    {
@@ -2535,7 +2553,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 							      "type": "input_value",
 							      "name": "blockchoice6",
 							      "check": [
-							    	  "Material", "Face", "Entity", "Team"
+							    	  "Material", "Face", "Ground", "Entity", "Team"
 							      ]
 							    },
 							    {
@@ -2550,7 +2568,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 								      "type": "input_value",
 								      "name": "blockchoice7",
 								      "check": [
-								    	  "Material", "Face", "Entity", "Team"
+								    	  "Material", "Face", "Ground", "Entity", "Team"
 								      ]
 								    },
 								    {
@@ -2565,7 +2583,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 									      "type": "input_value",
 									      "name": "blockchoice8",
 									      "check": [
-									    	  "Material", "Face", "Entity", "Team"
+									    	  "Material", "Face", "Ground", "Entity", "Team"
 									      ]
 									    },
 									    {
@@ -2580,7 +2598,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 										      "type": "input_value",
 										      "name": "blockchoice9",
 										      "check": [
-										    	  "Material", "Face", "Entity", "Team"
+										    	  "Material", "Face", "Ground", "Entity", "Team"
 										      ]
 										    }
 						  ],

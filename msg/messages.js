@@ -2780,6 +2780,7 @@ Blockly.Msg.MC_cmd_minecraft_reset_position = 'reset the current position to %1 
 Blockly.Msg.MC_cmd_minecraft_option_start_position = 'the start position';
 Blockly.Msg.MC_cmd_minecraft_option_lastmarked_position = 'the last marked position';
 Blockly.Msg.MC_cmd_facing = 'facing %1 %2';
+Blockly.Msg.MC_cmd_ground = 'on the ground %1';
 Blockly.Msg.MC_cmd_minecraft_clone = 'clone the blocks created until now';
 Blockly.Msg.MC_cmd_minecraft_cancel_events = 'cancel all events';
 Blockly.Msg.MC_cmd_minecraft_draw = 'Draw %1 0 %2 %3 1 %4 %5 2 %6 %7 3 %8 %9 4 %10  %11 5 %12 %13 6 %14 %15 7 %16 %17 8 %18 %19 9 %20 %21';

@@ -248,6 +248,13 @@ Blockly.JavaScript['minecraft_direction'] = function(block) {
 };
 
 
+Blockly.JavaScript['minecraft_on_the_ground'] = function(block) {
+	var value_singleblock = Blockly.JavaScript.valueToCode(block, 'singleblock', Blockly.JavaScript.ORDER_NONE);
+	var code = value_singleblock.replace("_P_", "ground");
+	return [ code, Blockly.JavaScript.ORDER_NONE ];
+};
+
+
 Blockly.JavaScript['minecraft_hitting'] = function(block) {
 	var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_NONE);
 	var code = "CMD.isPlayerHittingA(event, " + cleanMaterialList(value_name) + ")";
@@ -458,7 +465,7 @@ if(true){
 	};
 	
 	Blockly.JavaScript['m_draw_8'] = function(block) {
-		  return getColor(block, 28);
+		  return getColor(block, 8);
 	};
 	
 	Blockly.JavaScript['m_draw_9'] = function(block) {

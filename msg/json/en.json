@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2020-02-16 15:11:09.586000",
+		"lastupdated": "2020-02-16 15:17:04.387000",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -1539,7 +1539,6 @@
 	"MC_cmd_minecraft_option_lastmarked_position": "the last marked position",
 	"MC_cmd_facing": "facing %1 %2",
 	"MC_cmd_ground": "on the ground %1",
-	"MC_cmd_minecraft_clone": "clone the blocks created until now",
 	"MC_cmd_minecraft_cancel_events": "cancel all events",
 	"MC_cmd_minecraft_draw": "Draw %1 0 %2 %3 1 %4 %5 2 %6 %7 3 %8 %9 4 %10  %11 5 %12 %13 6 %14 %15 7 %16 %17 8 %18 %19 9 %20 %21",
 	"MC_cmd_minecraft_playerCoord": "player pos %1",

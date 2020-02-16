@@ -301,7 +301,6 @@ Blockly.Msg["MC_cmd_left"] = "a sinistra";
 Blockly.Msg["MC_cmd_minecraft_addevent"] = "Quando %1 chiama il comando %2";
 Blockly.Msg["MC_cmd_minecraft_block"] = "crea un blocco fatto di %1";
 Blockly.Msg["MC_cmd_minecraft_cancel_events"] = "cancella tutti gli eventi";
-Blockly.Msg["MC_cmd_minecraft_clone"] = "clona i blocchi creati fino ad'ora";
 Blockly.Msg["MC_cmd_minecraft_connectPositions1"] = "crea una serie di blocchi fatta di %1";
 Blockly.Msg["MC_cmd_minecraft_connectPositions2"] = "dall'ultima posizione marcata a questa posizione ";
 Blockly.Msg["MC_cmd_minecraft_createchest"] = "crea un baule con %1";

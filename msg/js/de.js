@@ -301,7 +301,6 @@ Blockly.Msg["MC_cmd_left"] = "nach links";
 Blockly.Msg["MC_cmd_minecraft_addevent"] = "Wenn ich %1 rufe die Funktion %2";
 Blockly.Msg["MC_cmd_minecraft_block"] = "Erzeuge ein Block aus %1";
 Blockly.Msg["MC_cmd_minecraft_cancel_events"] = "Lösche alle automatische Aufrufe";
-Blockly.Msg["MC_cmd_minecraft_clone"] = "Klon der Blöcke, die bis jetzt erzeugt worden sind";
 Blockly.Msg["MC_cmd_minecraft_connectPositions1"] = "Erzeuge eine Reihe bestehend aus %1";
 Blockly.Msg["MC_cmd_minecraft_connectPositions2"] = "aus der markierte Position bis hier";
 Blockly.Msg["MC_cmd_minecraft_createchest"] = "Erzeuge eine Truhe mit %1";

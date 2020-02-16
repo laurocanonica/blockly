@@ -1520,7 +1520,6 @@
 "MC_cmd_minecraft_option_lastmarked_position" : "wo die letzte Markierung stattgefunden hat",
 "MC_cmd_facing" : "gedreht %1 %2",
 "MC_cmd_ground" : "auf dem Boden %1",
-"MC_cmd_minecraft_clone" : "Klon der Blöcke, die bis jetzt erzeugt worden sind",
 "MC_cmd_minecraft_cancel_events" : "Lösche alle automatische Aufrufe",
 "MC_cmd_minecraft_draw" : "Zeichne %1 0 %2 %3 1 %4 %5 2 %6 %7 3 %8 %9 4 %10  %11 5 %12 %13 6 %14 %15 7 %16 %17 8 %18 %19 9 %20 %21",
 "MC_cmd_minecraft_playerCoord" : "Pos Spieler %1",

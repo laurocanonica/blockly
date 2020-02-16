@@ -301,7 +301,6 @@ Blockly.Msg["MC_cmd_left"] = "left";  // untranslated
 Blockly.Msg["MC_cmd_minecraft_addevent"] = "When %1 call function %2";  // untranslated
 Blockly.Msg["MC_cmd_minecraft_block"] = "create a block made of %1";  // untranslated
 Blockly.Msg["MC_cmd_minecraft_cancel_events"] = "cancel all events";  // untranslated
-Blockly.Msg["MC_cmd_minecraft_clone"] = "clone the blocks created until now";  // untranslated
 Blockly.Msg["MC_cmd_minecraft_connectPositions1"] = "create a row made of %1";  // untranslated
 Blockly.Msg["MC_cmd_minecraft_connectPositions2"] = "from the last marked position to this position";  // untranslated
 Blockly.Msg["MC_cmd_minecraft_createchest"] = "create chest with %1";  // untranslated

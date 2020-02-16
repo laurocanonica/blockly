@@ -2420,21 +2420,6 @@ Blockly.Blocks['minecraft_gotomark'] = {
 	};
 
 
-Blockly.Blocks['minecraft_clone'] = {
-		init : function() {
-			this.jsonInit( 	
-					{
-						  "type": "minecraft_clone",
-						  "message0": Blockly.Msg.MC_cmd_minecraft_clone,
-						  "inputsInline": true,
-						  "previousStatement": null,
-						  "nextStatement": null,
-						  "colour": 180,
-						  "tooltip": "",
-						  "helpUrl": ""
-						});
-		}
-	};
 
 Blockly.Blocks['minecraft_drawing'] = {
 		init : function() {

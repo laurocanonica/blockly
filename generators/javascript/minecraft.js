@@ -346,11 +346,6 @@ Blockly.JavaScript['minecraft_gotomark'] = function(block) {
   return code;
 };
 
-Blockly.JavaScript['minecraft_clone'] = function(block) {
-	  var code = 'markLocation=CMD.cloneBlocks(nextLocation, player);\n';
-	  return code;
-};
-
 function validateBlockchoice(blockChoice) {
 	if(blockChoice==""){
 		return ('"_P_,,1,,_T_,,_EMPTY_;"')

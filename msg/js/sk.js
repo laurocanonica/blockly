@@ -296,6 +296,7 @@ Blockly.Msg["MC_cmd_facing"] = "facing %1 %2";  // untranslated
 Blockly.Msg["MC_cmd_forward"] = "forward";  // untranslated
 Blockly.Msg["MC_cmd_friendly"] = "friendly";  // untranslated
 Blockly.Msg["MC_cmd_full"] = "full";  // untranslated
+Blockly.Msg["MC_cmd_ground"] = "on the ground %1";  // untranslated
 Blockly.Msg["MC_cmd_left"] = "left";  // untranslated
 Blockly.Msg["MC_cmd_minecraft_addevent"] = "When %1 call function %2";  // untranslated
 Blockly.Msg["MC_cmd_minecraft_block"] = "create a block made of %1";  // untranslated

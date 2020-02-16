@@ -1532,6 +1532,7 @@
 	"MC_cmd_minecraft_option_start_position": "",
 	"MC_cmd_minecraft_option_lastmarked_position": "",
 	"MC_cmd_facing": "",
+	"MC_cmd_ground": "",
 	"MC_cmd_minecraft_clone": "",
 	"MC_cmd_minecraft_cancel_events": "",
 	"MC_cmd_minecraft_draw": "",

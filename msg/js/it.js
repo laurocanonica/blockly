@@ -296,6 +296,7 @@ Blockly.Msg["MC_cmd_facing"] = "girato %1 %2";
 Blockly.Msg["MC_cmd_forward"] = "in avanti";
 Blockly.Msg["MC_cmd_friendly"] = "amichevole";
 Blockly.Msg["MC_cmd_full"] = "pieno";
+Blockly.Msg["MC_cmd_ground"] = "sul terreno %1";
 Blockly.Msg["MC_cmd_left"] = "a sinistra";
 Blockly.Msg["MC_cmd_minecraft_addevent"] = "Quando %1 chiama il comando %2";
 Blockly.Msg["MC_cmd_minecraft_block"] = "crea un blocco fatto di %1";

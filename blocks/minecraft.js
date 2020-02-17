@@ -1171,7 +1171,7 @@ Blockly.Blocks['minecraft_multiciplity'] = {
 				}, {
 					"type" : "input_value",
 					"name" : "singleblock",
-					"check" : [ "Material", "Face", "Ground", "Entity", "Team", "Item" ]
+					"check" : [ "Material", "Face", "Ground", "Delay", "Entity", "Team", "Item" ]
 				} ],
 				"output" : "Multiciplity",
 				"colour" : 330,
@@ -1194,10 +1194,58 @@ Blockly.Blocks['minecraft_multiciplity_var'] = {
 				    {
 				      "type": "input_value",
 				      "name": "singleblock",
-					  "check" : [ "Material", "Face", "Ground", "Entity", "Team", "Item" ]
+					  "check" : [ "Material", "Face", "Ground", "Delay", "Entity", "Team", "Item" ]
 				    }
 				  ],
 				  "output": "Multiciplity",
+				  "colour": 330,
+				  "tooltip": "",
+				  "helpUrl": ""
+				});
+		}
+	};
+Blockly.Blocks['minecraft_delay'] = {
+		init : function() {
+			this.jsonInit({
+				"type" : "minecraft_delay",
+				"message0" : Blockly.Msg.MC_cmd_minecraft_delay,
+				"args0" : [ {
+					"type" : "field_number",
+					"name" : "delay",
+					"value" : 0,
+					"min" : 1,
+					"max" : 1000,
+					"precision" : 1
+				}, {
+					"type" : "input_value",
+					"name" : "singleblock",
+					"check" : [ "Material", "Face", "Ground", "Multiciplity", "Entity", "Team", "Item" ]
+				} ],
+				"output" : "Delay",
+				"colour" : 330,
+				"tooltip" : "",
+				"helpUrl" : ""
+			});
+		}
+	};
+Blockly.Blocks['minecraft_delay_var'] = {
+		init : function() {
+			this.jsonInit({
+				  "type": "minecraft_delay_var",
+				  "message0" : Blockly.Msg.MC_cmd_minecraft_delay,
+				  "args0": [
+				    {
+				      "type": "field_variable",
+				      "name": "delay",
+				      "variable": "num"
+				    },
+				    {
+				      "type": "input_value",
+				      "name": "singleblock",
+					  "check" : [ "Material", "Face", "Ground", "Multiciplity", "Entity", "Team", "Item" ]
+				    }
+				  ],
+				  "output": "Delay",
 				  "colour": 330,
 				  "tooltip": "",
 				  "helpUrl": ""
@@ -1217,7 +1265,7 @@ Blockly.Blocks['minecraft_materialbockOnlyOne'] = {
 			}, {
 				"type" : "input_value",
 				"name" : "singleblock",
-				"check" : [ "Material", "Face", "Ground", "Multiciplity", "Entity", "Team" ]
+				"check" : [ "Material", "Face", "Ground", "Multiciplity", "Delay", "Entity", "Team" ]
 			} ],
 			"output" : "Material",
 			"colour" : 330,
@@ -1239,7 +1287,7 @@ Blockly.Blocks['minecraft_materialbockOnlyOne_op'] = {
 				}, {
 					"type" : "input_value",
 					"name" : "singleblock",
-					"check" : [ "Material", "Face", "Ground", "Multiciplity", "Entity", "Team" ]
+					"check" : [ "Material", "Face", "Ground", "Multiciplity", "Delay", "Entity", "Team" ]
 				} ],
 				"output" : "Material",
 				"colour" : 330,
@@ -1261,7 +1309,7 @@ Blockly.Blocks['minecraft_particleOnlyOne'] = {
 				}, {
 					"type" : "input_value",
 					"name" : "singleblock",
-					"check" : [ "Material", "Face", "Ground", "Multiciplity", "Entity", "Team" ]
+					"check" : [ "Material", "Face", "Ground", "Multiciplity", "Delay", "Entity", "Team" ]
 				} ],
 				"output" : "Material",
 				"colour" : 330,
@@ -1283,7 +1331,7 @@ Blockly.Blocks['minecraft_entity'] = {
 			}, {
 				"type" : "input_value",
 				"name" : "singleblock",
-				"check" : [ "Material", "Face", "Ground", "Multiciplity", "Team", "Entity" ]
+				"check" : [ "Material", "Face", "Ground", "Multiciplity", "Delay", "Team", "Entity" ]
 			} ],
 			"output" : "Entity",
 			"colour" : 210,
@@ -1305,7 +1353,7 @@ Blockly.Blocks['minecraft_entity_op'] = {
 				}, {
 					"type" : "input_value",
 					"name" : "singleblock",
-					"check" : [ "Material", "Face", "Ground", "Multiciplity", "Team", "Entity" ]
+					"check" : [ "Material", "Face", "Ground", "Multiciplity", "Delay", "Team", "Entity" ]
 				} ],
 				"output" : "Entity",
 				"colour" : 210,
@@ -1753,7 +1801,7 @@ Blockly.Blocks['minecraft_item'] = {
 					    {
 					      "type": "input_value",
 					      "name": "singleblock",
-					      "check": [ "Item", "Multiciplity" ]
+					      "check": [ "Item", "Multiciplity", "Delay" ]
 					    }
 					  ],
 					  "output": "Item",
@@ -1779,7 +1827,7 @@ Blockly.Blocks['minecraft_splashpotion'] = {
 				    {
 				      "type": "input_value",
 				      "name": "name",
-				      "check": [ "Item", "Multiciplity" ]
+				      "check": [ "Item", "Multiciplity", "Delay" ]
 				    }
 				  ],
 				  "output": "Item",
@@ -1804,7 +1852,7 @@ Blockly.Blocks['minecraft_sign'] = {
 				    {
 				      "type": "input_value",
 				      "name": "name",
-				      "check" : [ "Material", "Face", "Ground", "Multiciplity", "Entity", "Team" ]
+				      "check" : [ "Material", "Face", "Ground", "Multiciplity", "Delay", "Entity", "Team" ]
 				    }
 				  ],
 				  "output": "Material",
@@ -1911,7 +1959,7 @@ Blockly.Blocks['minecraft_on_the_ground'] = {
 				"args0" : [ {
 					"type" : "input_value",
 					"name" : "singleblock",
-					"check" :  [ "Material", "Entity", "Face"]
+				    "check" : [ "Material", "Face", "Multiciplity", "Entity", "Team", "Delay" ]
 				} ],
 				"output" : "Ground",
 				"colour" : 330,
@@ -2216,7 +2264,7 @@ Blockly.Blocks['minecraft_givetoplayer'] = {
 						    {
 						      "type": "input_value",
 						      "name": "NAME",
-						      "check": ["Material", "Item", "Multiciplity"]
+						      "check": ["Material", "Item", "Multiciplity", "Delay"]
 						    }
 						  ],
 						  "inputsInline": true,
@@ -2239,7 +2287,7 @@ Blockly.Blocks['minecraft_createchest'] = {
 						    {
 						      "type": "input_value",
 						      "name": "NAME",
-						      "check": ["Material", "Item", "Multiciplity"]
+						      "check": ["Material", "Item", "Multiciplity", "Delay"]
 						    }
 						  ],
 						  "inputsInline": true,
@@ -2447,7 +2495,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 						      "name": "blockchoice0",
 						      
 						      "check": [
-						    	  "Material", "Face", "Ground", "Entity", "Team"
+						    	  "Material", "Face", "Ground", "Delay", "Entity", "Team"
 						      ]
 						    },
 						    {
@@ -2462,7 +2510,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 							      "type": "input_value",
 							      "name": "blockchoice1",
 							      "check": [
-							    	  "Material", "Face", "Ground", "Entity", "Team"
+							    	  "Material", "Face", "Ground", "Delay", "Entity", "Team"
 							      ]
 						    },
 
@@ -2478,7 +2526,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 						      "type": "input_value",
 						      "name": "blockchoice2",
 						      "check": [
-						    	  "Material", "Face", "Ground", "Entity", "Team"
+						    	  "Material", "Face", "Ground", "Delay", "Entity", "Team"
 						      ]
 						    },
 						    {
@@ -2493,7 +2541,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 						      "type": "input_value",
 						      "name": "blockchoice3",
 						      "check": [
-						    	  "Material", "Face", "Ground", "Entity", "Team"
+						    	  "Material", "Face", "Ground", "Delay", "Entity", "Team"
 						      ]
 						    },
 						    {
@@ -2508,7 +2556,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 						      "type": "input_value",
 						      "name": "blockchoice4",
 						      "check": [
-						    	  "Material", "Face", "Ground", "Entity", "Team"
+						    	  "Material", "Face", "Ground", "Delay", "Entity", "Team"
 						      ]
 						    },
 						    {
@@ -2523,7 +2571,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 						      "type": "input_value",
 						      "name": "blockchoice5",
 						      "check": [
-						    	  "Material", "Face", "Ground", "Entity", "Team"
+						    	  "Material", "Face", "Ground", "Delay", "Entity", "Team"
 						      ]
 						    },
 						    {
@@ -2538,7 +2586,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 							      "type": "input_value",
 							      "name": "blockchoice6",
 							      "check": [
-							    	  "Material", "Face", "Ground", "Entity", "Team"
+							    	  "Material", "Face", "Ground", "Delay", "Entity", "Team"
 							      ]
 							    },
 							    {
@@ -2553,7 +2601,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 								      "type": "input_value",
 								      "name": "blockchoice7",
 								      "check": [
-								    	  "Material", "Face", "Ground", "Entity", "Team"
+								    	  "Material", "Face", "Ground", "Delay", "Entity", "Team"
 								      ]
 								    },
 								    {
@@ -2568,7 +2616,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 									      "type": "input_value",
 									      "name": "blockchoice8",
 									      "check": [
-									    	  "Material", "Face", "Ground", "Entity", "Team"
+									    	  "Material", "Face", "Ground", "Delay", "Entity", "Team"
 									      ]
 									    },
 									    {
@@ -2583,7 +2631,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 										      "type": "input_value",
 										      "name": "blockchoice9",
 										      "check": [
-										    	  "Material", "Face", "Ground", "Entity", "Team"
+										    	  "Material", "Face", "Ground", "Delay", "Entity", "Team"
 										      ]
 										    }
 						  ],

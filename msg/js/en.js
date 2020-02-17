@@ -304,6 +304,7 @@ Blockly.Msg["MC_cmd_minecraft_cancel_events"] = "cancel all events";
 Blockly.Msg["MC_cmd_minecraft_connectPositions1"] = "create a row made of %1";
 Blockly.Msg["MC_cmd_minecraft_connectPositions2"] = "from the last marked position to this position";
 Blockly.Msg["MC_cmd_minecraft_createchest"] = "create chest with %1";
+Blockly.Msg["MC_cmd_minecraft_delay"] = "after %1 sec. %2";
 Blockly.Msg["MC_cmd_minecraft_draw"] = "Draw %1 0 %2 %3 1 %4 %5 2 %6 %7 3 %8 %9 4 %10  %11 5 %12 %13 6 %14 %15 7 %16 %17 8 %18 %19 9 %20 %21";
 Blockly.Msg["MC_cmd_minecraft_ellipse"] = "create a %1 %2 %3 ellipse with radiusX %4 %5 and radiusY %6 %7 made of %8 %9";
 Blockly.Msg["MC_cmd_minecraft_execute_command"] = "call function %1 of player %2 with parameter %3 %4 %5 %6 %7";

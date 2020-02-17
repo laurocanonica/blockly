@@ -21,6 +21,19 @@ Blockly.JavaScript['minecraft_multiciplity_var'] = function(block) {
 	return [ code, Blockly.JavaScript.ORDER_NONE ];
 };
 
+Blockly.JavaScript['minecraft_delay'] = function(block) {
+	var number_delay = block.getFieldValue('delay');
+	var value_singleblock = Blockly.JavaScript.valueToCode(block, 'singleblock', Blockly.JavaScript.ORDER_NONE);
+	var code = value_singleblock.replace("_D_", number_delay);
+	return [ code, Blockly.JavaScript.ORDER_NONE ];
+};
+Blockly.JavaScript['minecraft_delay_var'] = function(block) {
+	var variable_delay = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('delay'), Blockly.Variables.NAME_TYPE);
+	var value_singleblock = Blockly.JavaScript.valueToCode(block, 'singleblock', Blockly.JavaScript.ORDER_NONE);
+	var code =value_singleblock.replace('_D_', '"+'+variable_delay+'+"'); // move the double quote after the variable name
+	return [ code, Blockly.JavaScript.ORDER_NONE ];
+};
+
 Blockly.JavaScript['minecraft_item'] = function(block) {
 	return minecraft_materialbockOnlyOne_fn(block);
 };
@@ -183,7 +196,7 @@ Blockly.JavaScript['minecraft_rotate'] = function(block) {
 		Blockly.JavaScript['minecraft_splashpotion'] = function(block) {
 			  var text_functionname = block.getFieldValue('functionName');
 			  var value_name = Blockly.JavaScript.valueToCode(block, 'name', Blockly.JavaScript.ORDER_NONE);
-			  var code = '"_P_,,_M_,,\''+text_functionname+'\',,i.splash_potion;"';
+			  var code = '"_P_,,_D_,,_M_,,\''+text_functionname+'\',,i.splash_potion;"';
 				if(value_name!=''){
 					code += '+ '+value_name;
 				}
@@ -193,7 +206,7 @@ Blockly.JavaScript['minecraft_rotate'] = function(block) {
 		Blockly.JavaScript['minecraft_sign'] = function(block) {
 			  var variable_varname = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('varName'), Blockly.Variables.NAME_TYPE);
 			  var value_name = Blockly.JavaScript.valueToCode(block, 'name', Blockly.JavaScript.ORDER_NONE);
-			  var code = variable_varname+'+",,_M_,,_T_,,b.acacia_sign;"';
+			  var code = variable_varname+'+",,_D_,,_M_,,_T_,,b.acacia_sign;"';
 				if(value_name!=''){
 					code += '+ '+value_name;
 				}
@@ -204,7 +217,7 @@ Blockly.JavaScript['minecraft_rotate'] = function(block) {
 function minecraft_materialbockOnlyOne_fn(block){
 	var dropdown_name = block.getFieldValue('NAME');
 	var value_singleblock = Blockly.JavaScript.valueToCode(block, 'singleblock', Blockly.JavaScript.ORDER_NONE);
-	var code = '"_P_,,_M_,,_T_,,' + dropdown_name + ';"';
+	var code = '"_P_,,_D_,,_M_,,_T_,,' + dropdown_name + ';"';
 	if(value_singleblock!=''){
 		code += '+ '+value_singleblock;
 	}
@@ -348,7 +361,7 @@ Blockly.JavaScript['minecraft_gotomark'] = function(block) {
 
 function validateBlockchoice(blockChoice) {
 	if(blockChoice==""){
-		return ('"_P_,,1,,_T_,,_EMPTY_;"')
+		return ('"_P_,,_D_,,1,,_T_,,_EMPTY_;"')
 	} else {
 		var endFirstElement=blockChoice.indexOf(';');
 		if(endFirstElement==-1){

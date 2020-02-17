@@ -2728,6 +2728,7 @@ Blockly.Msg.MC_particles='particles';
 
 
 
+Blockly.Msg.MC_cmd_minecraft_delay = 'after %1 sec. %2';
 Blockly.Msg.MC_cmd_minecraft_multiciplity = '%1 of %2';
 Blockly.Msg.MC_cmd_minecraft_gotopos = 'set the position at %1 %2 %3 %4 %5 %6 from the start position';
 Blockly.Msg.MC_cmd_minecraft_polygon = 'create a %1 %2 %3 polygon with %4 %5 sides and radius %6 %7 made of %8 %9';

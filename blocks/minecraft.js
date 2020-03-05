@@ -2958,3 +2958,28 @@ Blockly.Blocks['minecraft_executecommand'] = {
 						});
 		}
 	};
+
+Blockly.Blocks['customimage_var'] = {
+		init : function() {
+			this.jsonInit({
+				  "type": "customimage_var",
+				  "message0" : Blockly.Msg.MC_cmd_minecraft_customimage,
+				  "args0": [
+				    {
+				      "type": "field_variable",
+				      "name": "url",
+				      "variable": "url"
+				    },
+				    {
+				      "type": "input_value",
+				      "name": "singleblock",
+					  "check" : [ "Material", "Face", "Ground", "Multiciplity", "Entity", "Team", "Item" ]
+				    }
+				  ],
+				  "output": "Material",
+				  "colour": 330,
+				  "tooltip": "",
+				  "helpUrl": ""
+				});
+		}
+	};

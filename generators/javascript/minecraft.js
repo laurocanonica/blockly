@@ -196,7 +196,7 @@ Blockly.JavaScript['minecraft_rotate'] = function(block) {
 		Blockly.JavaScript['minecraft_splashpotion'] = function(block) {
 			  var text_functionname = block.getFieldValue('functionName');
 			  var value_name = Blockly.JavaScript.valueToCode(block, 'name', Blockly.JavaScript.ORDER_NONE);
-			  var code = '"_P_,,_D_,,_M_,,\''+text_functionname+'\',,i.splash_potion;"';
+			  var code = '"_G_,,_P_,,_D_,,_M_,,\''+text_functionname+'\',,i.splash_potion;"';
 				if(value_name!=''){
 					code += '+ '+value_name;
 				}
@@ -206,7 +206,7 @@ Blockly.JavaScript['minecraft_rotate'] = function(block) {
 		Blockly.JavaScript['minecraft_sign'] = function(block) {
 			  var variable_varname = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('varName'), Blockly.Variables.NAME_TYPE);
 			  var value_name = Blockly.JavaScript.valueToCode(block, 'name', Blockly.JavaScript.ORDER_NONE);
-			  var code = variable_varname+'+",,_D_,,_M_,,_T_,,b.acacia_sign;"';
+			  var code = '_G_,,'+variable_varname+'+",,_D_,,_M_,,_T_,,b.acacia_sign;"';
 				if(value_name!=''){
 					code += '+ '+value_name;
 				}
@@ -217,7 +217,7 @@ Blockly.JavaScript['minecraft_rotate'] = function(block) {
 function minecraft_materialbockOnlyOne_fn(block){
 	var dropdown_name = block.getFieldValue('NAME');
 	var value_singleblock = Blockly.JavaScript.valueToCode(block, 'singleblock', Blockly.JavaScript.ORDER_NONE);
-	var code = '"_P_,,_D_,,_M_,,_T_,,' + dropdown_name + ';"';
+	var code = '"_G_,,_P_,,_D_,,_M_,,_T_,,' + dropdown_name + ';"';
 	if(value_singleblock!=''){
 		code += '+ '+value_singleblock;
 	}
@@ -263,7 +263,7 @@ Blockly.JavaScript['minecraft_direction'] = function(block) {
 
 Blockly.JavaScript['minecraft_on_the_ground'] = function(block) {
 	var value_singleblock = Blockly.JavaScript.valueToCode(block, 'singleblock', Blockly.JavaScript.ORDER_NONE);
-	var code = value_singleblock.replace("_P_", "ground");
+	var code = value_singleblock.replace("_G_", "g");
 	return [ code, Blockly.JavaScript.ORDER_NONE ];
 };
 
@@ -361,7 +361,7 @@ Blockly.JavaScript['minecraft_gotomark'] = function(block) {
 
 function validateBlockchoice(blockChoice) {
 	if(blockChoice==""){
-		return ('"_P_,,_D_,,1,,_T_,,_EMPTY_;"')
+		return ('"_G_,,_P_,,_D_,,1,,_T_,,_EMPTY_;"')
 	} else {
 		var endFirstElement=blockChoice.indexOf(';');
 		if(endFirstElement==-1){
@@ -536,5 +536,12 @@ if(true){
 		  code += '");\n';
 		  return code;
 		};
+		
+		Blockly.JavaScript['customimage_var'] = function(block) {
+			var variable_url = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('url'), Blockly.Variables.NAME_TYPE);
+			var value_singleblock = Blockly.JavaScript.valueToCode(block, 'singleblock', Blockly.JavaScript.ORDER_NONE);
+			var code = '"_G_,,"+'+variable_url+'+",,_D_,,_M_,,_T_,,e.item_frame;"';
 
+			return [ code, Blockly.JavaScript.ORDER_NONE ];
+		};
 	

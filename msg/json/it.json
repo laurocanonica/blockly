@@ -1506,8 +1506,11 @@
 "MC_cmd_minecraft_splash_potion_function" : "con funzione",
 "MC_cmd_minecraft_sign_with_text" : "con testo",
 "MC_cmd_minecraft_execute_command" : "chiama la funzione %1 del giocatore %2 con parametri %3 %4 %5 %6 %7",
+"MC_cmd_minecraft_customimage" : "immagine %1 %2",
+"MC_cmd_minecraft_delay" : "dopo %1 sec. %2",
+
 "PROCEDURES_DEFNORETURN_TITLE": "/vm",
-"PROCEDURES_DEFNORETURN_PROCEDURE": "miocomando"
+"PROCEDURES_DEFNORETURN_POCEDURE": "miocomando"
 
 	
 }

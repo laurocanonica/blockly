@@ -1480,6 +1480,7 @@
 	"i_zombie_spawn_egg": "",
 	"i_zombie_villager_spawn_egg": "",
 	"MC_particles": "",
+	"MC_cmd_minecraft_customimage": "",
 	"MC_cmd_minecraft_delay": "",
 	"MC_cmd_minecraft_multiciplity": "",
 	"MC_cmd_minecraft_gotopos": "",

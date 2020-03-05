@@ -2728,6 +2728,7 @@ Blockly.Msg.MC_particles='particles';
 
 
 
+Blockly.Msg.MC_cmd_minecraft_customimage = 'image %1 %2';
 Blockly.Msg.MC_cmd_minecraft_delay = 'after %1 sec. %2';
 Blockly.Msg.MC_cmd_minecraft_multiciplity = '%1 of %2';
 Blockly.Msg.MC_cmd_minecraft_gotopos = 'set the position at %1 %2 %3 %4 %5 %6 from the start position';

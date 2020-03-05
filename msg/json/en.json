@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2020-02-17 21:38:12.144000",
+		"lastupdated": "2020-03-05 19:04:35.483000",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -1486,6 +1486,7 @@
 	"i_zombie_spawn_egg": "Zombie Spawn Egg",
 	"i_zombie_villager_spawn_egg": "Zombie Villager Spawn Egg",
 	"MC_particles": "particles",
+	"MC_cmd_minecraft_customimage": "image %1 %2",
 	"MC_cmd_minecraft_delay": "after %1 sec. %2",
 	"MC_cmd_minecraft_multiciplity": "%1 of %2",
 	"MC_cmd_minecraft_gotopos": "set the position at %1 %2 %3 %4 %5 %6 from the start position",

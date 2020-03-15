@@ -496,24 +496,25 @@ Code.init = function() {
 	    };
   		var fileInput = document.getElementById('readButton1');
   		fileInput.addEventListener('change', function(e) {
-  			var file = fileInput.files[0];
-  			var textType = /text.*/;
-
-  			if (file.type.match(textType)) {
-  				var reader = new FileReader();
-
-  				reader.onload = function(e) {
-  					//window.alert(reader.result);
-  					var outxml = Blockly.Xml.textToDom(reader.result);
-  					Blockly.Xml.domToWorkspace(outxml, Code.workspace);
-  					window.alert("ok");
-  				}
-  				reader.readAsText(file);	
-  			} else {
-  				window.alert( "File not supported!")
-  			}
+  			Code.loadFile(fileInput.files);
   		});
-  
+  		
+  // drag and drop files  ---------------------
+  		let dropArea = document.getElementById('modalDeployResultMessage');
+
+      dropArea.addEventListener('dragstart', Code.preventDefaults, false)
+  	  dropArea.addEventListener('dragenter', Code.preventDefaults, false)
+  	  dropArea.addEventListener('dragleave', Code.preventDefaults, false)
+  	  dropArea.addEventListener('dragover', Code.preventDefaults, false)
+  		document.documentElement.addEventListener('drop', function(e){
+  			//window.alert("dropped");
+  			Code.preventDefaults(e)
+  			e.dataTransfer.dropEffect = 'copy';
+  		  let dt = e.dataTransfer;
+  		  let files = dt.files
+			Code.loadFile(files);		
+  		}, false)
+
 
   // Lazy-load the syntax-highlighting.
   window.setTimeout(Code.importPrettify, 1);
@@ -537,6 +538,30 @@ Code.init = function() {
     Code.workspace.addChangeListener(blockClickedEventHandler) 
   
 };
+
+Code.preventDefaults = function preventDefaults (e) {
+		e.preventDefault(); // no default behaviour in drag and drop
+  		e.stopPropagation();
+  		e.dataTransfer.setData('Text', " "); // this to fix a bug in chrome
+	}
+
+Code.loadFile = function(files){
+	var file = files[0];
+	var textType = /text.*/;
+	if (file!=undefined && file.type.match(textType)) {
+		var reader = new FileReader();
+
+		reader.onload = function(e) {
+			//window.alert(reader.result);
+			var outxml = Blockly.Xml.textToDom(reader.result);
+			Blockly.Xml.domToWorkspace(outxml, Code.workspace);
+			window.alert("loaded");
+		}
+		reader.readAsText(file);	
+	} else {
+		window.alert( "File type not supported or it is on a remote FTP drive")
+	}
+}
 
 /**
  * Initialize the page language.

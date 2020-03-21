@@ -1529,6 +1529,7 @@
 "MC_cmd_minecraft_execute_command" : "ruf die Funktion %1 des Spielers %2 mit Parameter %3 %4 %5 %6 %7 auf",
 "MC_cmd_minecraft_customimage" : "Bild %1 %2",
 "MC_cmd_minecraft_delay" : "nach %1 Sek. %2",
+"MC_cmd_minecraft_delay_random" : "nach einer Zeit zwischen  %1 und %2 Sek. %3",
 
 "PROCEDURES_DEFNORETURN_TITLE": "/vm",
 "PROCEDURES_DEFNORETURN_PROCEDURE": "meinbefehl"

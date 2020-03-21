@@ -27,6 +27,14 @@ Blockly.JavaScript['minecraft_delay'] = function(block) {
 	var code = value_singleblock.replace("_D_", number_delay);
 	return [ code, Blockly.JavaScript.ORDER_NONE ];
 };
+Blockly.JavaScript['minecraft_delay_random'] = function(block) {
+	var min = block.getFieldValue('min');
+	var max = block.getFieldValue('max');
+	var number_delay = min+'-x-'+max;
+	var value_singleblock = Blockly.JavaScript.valueToCode(block, 'singleblock', Blockly.JavaScript.ORDER_NONE);
+	var code = value_singleblock.replace("_D_", number_delay);
+	return [ code, Blockly.JavaScript.ORDER_NONE ];
+};
 Blockly.JavaScript['minecraft_delay_var'] = function(block) {
 	var variable_delay = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('delay'), Blockly.Variables.NAME_TYPE);
 	var value_singleblock = Blockly.JavaScript.valueToCode(block, 'singleblock', Blockly.JavaScript.ORDER_NONE);

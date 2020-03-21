@@ -1228,6 +1228,37 @@ Blockly.Blocks['minecraft_delay'] = {
 			});
 		}
 	};
+Blockly.Blocks['minecraft_delay_random'] = {
+		init : function() {
+			this.jsonInit({
+				"type" : "minecraft_delay_random",
+				"message0" : Blockly.Msg.MC_cmd_minecraft_delay_random,
+				"args0" : [ {
+					"type" : "field_number",
+					"name" : "min",
+					"value" : 0,
+					"min" : 1,
+					"max" : 1000,
+					"precision" : 1
+				},{
+					"type" : "field_number",
+					"name" : "max",
+					"value" : 0,
+					"min" : 1,
+					"max" : 1000,
+					"precision" : 1
+				}, {
+					"type" : "input_value",
+					"name" : "singleblock",
+					"check" : [ "Material" ]
+				} ],
+				"output" : "Material",
+				"colour" : 330,
+				"tooltip" : "",
+				"helpUrl" : ""
+			});
+		}
+	};
 Blockly.Blocks['minecraft_delay_var'] = {
 		init : function() {
 			this.jsonInit({

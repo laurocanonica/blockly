@@ -1482,6 +1482,7 @@
 	"MC_particles": "",
 	"MC_cmd_minecraft_customimage": "",
 	"MC_cmd_minecraft_delay": "",
+	"MC_cmd_minecraft_delay_random": "",
 	"MC_cmd_minecraft_multiciplity": "",
 	"MC_cmd_minecraft_gotopos": "",
 	"MC_cmd_minecraft_polygon": "",

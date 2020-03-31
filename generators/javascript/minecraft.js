@@ -27,6 +27,14 @@ Blockly.JavaScript['minecraft_delay'] = function(block) {
 	var code = value_singleblock.replace("_D_", number_delay);
 	return [ code, Blockly.JavaScript.ORDER_NONE ];
 };
+
+Blockly.JavaScript['minecraft_delay_var'] = function(block) {
+	var variable_delay = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('delay'), Blockly.Variables.NAME_TYPE);
+	var value_singleblock = Blockly.JavaScript.valueToCode(block, 'singleblock', Blockly.JavaScript.ORDER_NONE);
+	var code =value_singleblock.replace('_D_', '"+'+variable_delay+'+"'); // move the double quote after the variable name
+	return [ code, Blockly.JavaScript.ORDER_NONE ];
+};
+
 Blockly.JavaScript['minecraft_delay_random'] = function(block) {
 	var min = block.getFieldValue('min');
 	var max = block.getFieldValue('max');
@@ -35,12 +43,28 @@ Blockly.JavaScript['minecraft_delay_random'] = function(block) {
 	var code = value_singleblock.replace("_D_", number_delay);
 	return [ code, Blockly.JavaScript.ORDER_NONE ];
 };
-Blockly.JavaScript['minecraft_delay_var'] = function(block) {
-	var variable_delay = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('delay'), Blockly.Variables.NAME_TYPE);
+
+Blockly.JavaScript['minecraft_delay_random_var'] = function(block) {
+	var min = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('min'), Blockly.Variables.NAME_TYPE);
+	var max = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('max'), Blockly.Variables.NAME_TYPE);
+	var number_delay = '"+'+min+'+"-x-"+'+max+'+"';
 	var value_singleblock = Blockly.JavaScript.valueToCode(block, 'singleblock', Blockly.JavaScript.ORDER_NONE);
-	var code =value_singleblock.replace('_D_', '"+'+variable_delay+'+"'); // move the double quote after the variable name
+	var code = value_singleblock.replace("_D_", number_delay);
 	return [ code, Blockly.JavaScript.ORDER_NONE ];
 };
+
+
+Blockly.JavaScript['minecraft_delay_reset_random'] = function(block) {
+	  var number_seed = block.getFieldValue('seed');
+	  var code = "CMD.setDelayRandomGeneratorSeed(" + number_seed + ");\n";
+	  return code;
+	};
+
+
+
+
+
+
 
 Blockly.JavaScript['minecraft_item'] = function(block) {
 	return minecraft_materialbockOnlyOne_fn(block);

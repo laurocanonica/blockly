@@ -1530,6 +1530,8 @@
 "MC_cmd_minecraft_customimage" : "Bild %1 %2",
 "MC_cmd_minecraft_delay" : "nach %1 Sek. %2",
 "MC_cmd_minecraft_delay_random" : "nach einer Zeit zwischen  %1 und %2 Sek. %3",
+"MC_cmd_minecraft_delay_random_reset" : "reset des Wartezeitgenerators auf %1",
+
 
 "PROCEDURES_DEFNORETURN_TITLE": "/vm",
 "PROCEDURES_DEFNORETURN_PROCEDURE": "meinbefehl"

@@ -23,6 +23,7 @@ var MSG = {
   badXml: "Fehler beim Parsen von XML:\n%1\n\nWähle 'OK' zum Verwerfen deiner Änderungen oder 'Abbrechen' zum weiteren Bearbeiten des XML.",
   
 	  c_Objects : "Objekte",
+	  c_Time : "Zeit",
 	  c_Movement : "Bewegung",
 	  c_Actions : "Aktionen",
 	  c_Drawing : "Zeichnungen",

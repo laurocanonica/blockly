@@ -1228,6 +1228,31 @@ Blockly.Blocks['minecraft_delay'] = {
 			});
 		}
 	};
+
+Blockly.Blocks['minecraft_delay_var'] = {
+		init : function() {
+			this.jsonInit({
+				  "type": "minecraft_delay_var",
+				  "message0" : Blockly.Msg.MC_cmd_minecraft_delay,
+				  "args0": [
+				    {
+				      "type": "field_variable",
+				      "name": "delay",
+				      "variable": "num"
+				    },
+				    {
+				      "type": "input_value",
+				      "name": "singleblock",
+						"check" : [ "Material" ]
+				    }
+				  ],
+				  "output": "Material",
+				  "colour": 330,
+				  "tooltip": "",
+				  "helpUrl": ""
+				});
+		}
+	};
 Blockly.Blocks['minecraft_delay_random'] = {
 		init : function() {
 			this.jsonInit({
@@ -1259,30 +1284,59 @@ Blockly.Blocks['minecraft_delay_random'] = {
 			});
 		}
 	};
-Blockly.Blocks['minecraft_delay_var'] = {
+
+Blockly.Blocks['minecraft_delay_random_var'] = {
 		init : function() {
 			this.jsonInit({
-				  "type": "minecraft_delay_var",
-				  "message0" : Blockly.Msg.MC_cmd_minecraft_delay,
-				  "args0": [
-				    {
+				"type" : "minecraft_delay_random_var",
+				"message0" : Blockly.Msg.MC_cmd_minecraft_delay_random,
+				"args0" : [ {
 				      "type": "field_variable",
-				      "name": "delay",
-				      "variable": "num"
-				    },
-				    {
-				      "type": "input_value",
-				      "name": "singleblock",
-						"check" : [ "Material" ]
-				    }
-				  ],
-				  "output": "Material",
-				  "colour": 330,
-				  "tooltip": "",
-				  "helpUrl": ""
-				});
+				      "name": "min",
+				      "variable": "min"
+				},{
+				      "type": "field_variable",
+				      "name": "max",
+				      "variable": "max"
+				}, {
+					"type" : "input_value",
+					"name" : "singleblock",
+					"check" : [ "Material" ]
+				} ],
+				"output" : "Material",
+				"colour" : 330,
+				"tooltip" : "",
+				"helpUrl" : ""
+			});
 		}
 	};
+
+
+Blockly.Blocks['minecraft_delay_reset_random'] = {
+		init : function() {
+			this.jsonInit( 	
+					{
+						  "type": "minecraft_delay_reset_random",
+						  "message0": Blockly.Msg.MC_cmd_minecraft_delay_random_reset,
+						  "args0": [
+						    {
+						    	"type": "field_number",
+						        "name": "seed",
+						        "value": 0,
+						        "precision": 1
+						    }
+						  ],
+						  "previousStatement": null,
+						  "nextStatement": null,
+						  "colour": 90,
+						  "tooltip": "",
+						  "helpUrl": ""
+						});
+		}
+	};
+
+
+
 
 Blockly.Blocks['minecraft_materialbockOnlyOne'] = {
 	init : function() {
@@ -2606,8 +2660,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 										      "type": "input_value",
 										      "name": "blockchoice9",
 										      "check": [
-										    	  "Material", "Face", "Ground", "Delay", "Entity", "Team"
-										      ]
+										    	  "Material" ]
 										    }
 						  ],
 						  "inputsInline": false,

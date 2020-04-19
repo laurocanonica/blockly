@@ -391,15 +391,20 @@ Blockly.JavaScript['minecraft_gotomark'] = function(block) {
   return code;
 };
 
-function validateBlockchoice(blockChoice) {
-	if(blockChoice==""){
+function validateBlockchoice(blockChoice, index_material) {
+	if(index_material=="" || index_material==undefined){
+		index_material=1; 
+	}
+	var choicesArr=blockChoice.split("+");
+	var choice=choicesArr[index_material-1]; //array start at 1
+	if(choice=="" || choice==undefined){
 		return ('"_G_,,_P_,,_D_,,1,,_T_,,_EMPTY_;"')
 	} else {
-		var endFirstElement=blockChoice.indexOf(';');
+		var endFirstElement=choice.indexOf(';');
 		if(endFirstElement==-1){
-			return blockChoice  //it is a variable name
+			return choice  //it is a variable name
 		} else {
-			return blockChoice.substr(0, endFirstElement+2);
+			return choice.substr(0, endFirstElement+2);
 		}
 	}
 }
@@ -413,28 +418,20 @@ function removeNulls(valMatList) {
 
 Blockly.JavaScript['minecraft_drawing'] = function(block) {
 	var value_matlist = Blockly.JavaScript.valueToCode(block, 'matlist', Blockly.JavaScript.ORDER_NONE);
+	var id = Blockly.JavaScript.valueToCode(block, 'index_material', Blockly.JavaScript.ORDER_NONE);
 	value_matlist=removeNulls(value_matlist);
-	  var colour_col0 = block.getFieldValue('col0');
-	  var value_blockchoice0 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice0', Blockly.JavaScript.ORDER_NONE));
-	  var colour_col1 = block.getFieldValue('col1');
-	  var value_blockchoice1 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice1', Blockly.JavaScript.ORDER_NONE));
-	  var colour_col2 = block.getFieldValue('col2');
-	  var value_blockchoice2 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice2', Blockly.JavaScript.ORDER_NONE));
-	  var colour_col3 = block.getFieldValue('col3');
-	  var value_blockchoice3 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice3', Blockly.JavaScript.ORDER_NONE));
-	  var colour_col4 = block.getFieldValue('col4');
-	  var value_blockchoice4 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice4', Blockly.JavaScript.ORDER_NONE));
-	  var colour_col5 = block.getFieldValue('col5');
-	  var value_blockchoice5 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice5', Blockly.JavaScript.ORDER_NONE));
-	  var colour_col6 = block.getFieldValue('col6');
-	  var value_blockchoice6 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice6', Blockly.JavaScript.ORDER_NONE));
-	  var colour_col7 = block.getFieldValue('col7');
-	  var value_blockchoice7 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice7', Blockly.JavaScript.ORDER_NONE));
-	  var colour_col8 = block.getFieldValue('col8');
-	  var value_blockchoice8 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice8', Blockly.JavaScript.ORDER_NONE));
-	  var colour_col9 = block.getFieldValue('col9');
-	  var value_blockchoice9 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice9', Blockly.JavaScript.ORDER_NONE));
+	  var value_blockchoice0 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice0', Blockly.JavaScript.ORDER_NONE), id);
+	  var value_blockchoice1 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice1', Blockly.JavaScript.ORDER_NONE), id);
+	  var value_blockchoice2 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice2', Blockly.JavaScript.ORDER_NONE), id);
+	  var value_blockchoice3 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice3', Blockly.JavaScript.ORDER_NONE), id);
+	  var value_blockchoice4 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice4', Blockly.JavaScript.ORDER_NONE), id);
+	  var value_blockchoice5 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice5', Blockly.JavaScript.ORDER_NONE), id);
+	  var value_blockchoice6 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice6', Blockly.JavaScript.ORDER_NONE), id);
+	  var value_blockchoice7 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice7', Blockly.JavaScript.ORDER_NONE), id);
+	  var value_blockchoice8 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice8', Blockly.JavaScript.ORDER_NONE), id);
+	  var value_blockchoice9 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice9', Blockly.JavaScript.ORDER_NONE), id);
 	  var matString ="";
+
 if(true){
 	//window.alert(value_matlist);
 	  if (value_matlist!=""){

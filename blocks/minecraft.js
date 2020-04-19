@@ -2661,7 +2661,12 @@ Blockly.Blocks['minecraft_drawing'] = {
 										      "name": "blockchoice9",
 										      "check": [
 										    	  "Material" ]
-										    }
+										    },
+										    {
+											      "type": "input_value",
+											      "name": "index_material",
+											      "check": "Number"
+											    }
 						  ],
 						  "inputsInline": false,
 						  "previousStatement": null,

@@ -391,22 +391,9 @@ Blockly.JavaScript['minecraft_gotomark'] = function(block) {
   return code;
 };
 
-function validateBlockchoice(blockChoice, index_material) {
-	if(index_material=="" || index_material==undefined){
-		index_material=1; 
-	}
-	var choicesArr=blockChoice.split("+");
-	var choice=choicesArr[index_material-1]; //array start at 1
-	if(choice=="" || choice==undefined){
-		return ('"_G_,,_P_,,_D_,,1,,_T_,,_EMPTY_;"')
-	} else {
-		var endFirstElement=choice.indexOf(';');
-		if(endFirstElement==-1){
-			return choice  //it is a variable name
-		} else {
-			return choice.substr(0, endFirstElement+2);
-		}
-	}
+function validateBlockchoice(block, blockChoice) {
+	var choice = Blockly.JavaScript.valueToCode(block, blockChoice, Blockly.JavaScript.ORDER_NONE);
+	return("\t["+choice+"],\n");
 }
 function removeNulls(valMatList) {
 	  //alert("*"+valMatList);
@@ -418,45 +405,36 @@ function removeNulls(valMatList) {
 
 Blockly.JavaScript['minecraft_drawing'] = function(block) {
 	var value_matlist = Blockly.JavaScript.valueToCode(block, 'matlist', Blockly.JavaScript.ORDER_NONE);
-	var id = Blockly.JavaScript.valueToCode(block, 'index_material', Blockly.JavaScript.ORDER_NONE);
+	var index_material = Blockly.JavaScript.valueToCode(block, 'index_material', Blockly.JavaScript.ORDER_NONE);
+	if(index_material=="" || index_material==undefined){
+		index_material=1; 
+	}
+
 	value_matlist=removeNulls(value_matlist);
-	  var value_blockchoice0 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice0', Blockly.JavaScript.ORDER_NONE), id);
-	  var value_blockchoice1 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice1', Blockly.JavaScript.ORDER_NONE), id);
-	  var value_blockchoice2 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice2', Blockly.JavaScript.ORDER_NONE), id);
-	  var value_blockchoice3 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice3', Blockly.JavaScript.ORDER_NONE), id);
-	  var value_blockchoice4 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice4', Blockly.JavaScript.ORDER_NONE), id);
-	  var value_blockchoice5 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice5', Blockly.JavaScript.ORDER_NONE), id);
-	  var value_blockchoice6 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice6', Blockly.JavaScript.ORDER_NONE), id);
-	  var value_blockchoice7 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice7', Blockly.JavaScript.ORDER_NONE), id);
-	  var value_blockchoice8 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice8', Blockly.JavaScript.ORDER_NONE), id);
-	  var value_blockchoice9 = validateBlockchoice(Blockly.JavaScript.valueToCode(block, 'blockchoice9', Blockly.JavaScript.ORDER_NONE), id);
 	  var matString ="";
 
-if(true){
 	//window.alert(value_matlist);
 	  if (value_matlist!=""){
-		  matString = value_matlist.replace(/\(/gm,"\n  [").replace(/,\)/gm,"]")+'\n'; // fix parenthesis
-		  matString=matString.replace(new RegExp('colour_col0', "g"), value_blockchoice0);
-		  matString=matString.replace(new RegExp('colour_col1', "g"), value_blockchoice1);
-		  matString=matString.replace(new RegExp('colour_col2', "g"), value_blockchoice2);
-		  matString=matString.replace(new RegExp('colour_col3', "g"), value_blockchoice3);
-		  matString=matString.replace(new RegExp('colour_col4', "g"), value_blockchoice4);
-		  matString=matString.replace(new RegExp('colour_col5', "g"), value_blockchoice5);
-		  matString=matString.replace(new RegExp('colour_col6', "g"), value_blockchoice6);
-		  matString=matString.replace(new RegExp('colour_col7', "g"), value_blockchoice7);
-		  matString=matString.replace(new RegExp('colour_col8', "g"), value_blockchoice8);
-		  matString=matString.replace(new RegExp('colour_col9', "g"), value_blockchoice9);
-		  //matString=matString.replace(new RegExp('\"#[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]\"', "g"), '"1, _T_, _EMPTY_;"');
-		  matString=matString.replace(/_M_/gm,"1");  // set multiplicity to 1
+		  matString = value_matlist.replace(/\(/gm,"\n\t[").replace(/,\)/gm,"]")+',[\n'; // fix parenthesis
 	  } else {
-	  	matString="[]";
+	  	matString="[], [";
 	  }
-} else {
-	 matString = value_matlist;
-}
-
+	  
 	  var code = 'CMD.createDrawing(nextLocation, ';
 	  code += matString;
+	  code += validateBlockchoice(block, "blockchoice0");
+	  code += validateBlockchoice(block, "blockchoice1");
+	  code += validateBlockchoice(block, "blockchoice2");
+	  code += validateBlockchoice(block, "blockchoice3");
+	  code += validateBlockchoice(block, "blockchoice4");
+	  code += validateBlockchoice(block, "blockchoice5");
+	  code += validateBlockchoice(block, "blockchoice6");
+	  code += validateBlockchoice(block, "blockchoice7");
+	  code += validateBlockchoice(block, "blockchoice8");
+	  code += validateBlockchoice(block, "blockchoice9");
+	  code=code.substring(code, code.length-2); // remove last comma
+	  code +="],";
+	  code +=index_material;
 	  code += "  , player, startCmdTime);\n";
 	  return code; 
 
@@ -464,7 +442,7 @@ if(true){
 	
 	function getColor(block, id) {
 		  var value_child = Blockly.JavaScript.valueToCode(block, 'child', Blockly.JavaScript.ORDER_NONE);
-		  var code = 'colour_col'+id+","+value_child;
+		  var code = id+","+value_child;
 		  return [code, Blockly.JavaScript.ORDER_NONE];
 	}
 

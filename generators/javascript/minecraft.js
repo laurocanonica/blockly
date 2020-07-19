@@ -551,4 +551,14 @@ Blockly.JavaScript['minecraft_drawing'] = function(block) {
 
 			return [ code, Blockly.JavaScript.ORDER_NONE ];
 		};
+		
+		Blockly.JavaScript['minecraft_materialNothing'] = function(block) {
+			var value_singleblock = Blockly.JavaScript.valueToCode(block, 'singleblock', Blockly.JavaScript.ORDER_NONE);
+			var code = '"_G_,,_P_,,_D_,,_M_,,_T_,,_EMPTY_;"';
+			if(value_singleblock!=''){
+				code += '+ '+value_singleblock;
+			}
+			return [ code, Blockly.JavaScript.ORDER_NONE ];
+		}
+
 	

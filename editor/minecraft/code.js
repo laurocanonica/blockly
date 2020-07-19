@@ -617,7 +617,7 @@ Code.runJS = function() {
 	nameField.style.backgroundColor = "#FFFFFF"
    if(playerName=='Minecraft_player_name' || 
 		   playerName=='' || 
-		   playerName.length > 16 || 
+		   playerName.length > 32 || 
 		   playerName.indexOf(" ")>=0) {
 	   nameField.style.backgroundColor = "red";
 	   displayResultMessage(MSG['warn_entername'], "red");

@@ -2880,12 +2880,14 @@ Blockly.Msg.MC_cmd_minecraft_option_lastmarked_position = 'the last marked posit
 Blockly.Msg.MC_cmd_facing = 'facing %1 %2';
 Blockly.Msg.MC_cmd_ground = 'on the ground %1';
 Blockly.Msg.MC_cmd_minecraft_cancel_events = 'cancel all events';
-Blockly.Msg.MC_cmd_minecraft_draw = 'Draw %1 0 %2 %3 1 %4 %5 2 %6 %7 3 %8 %9 4 %10  %11 5 %12 %13 6 %14 %15 7 %16 %17 8 %18 %19 9 %20 %21 nr: %22';
+Blockly.Msg.MC_cmd_minecraft_draw = 'Draw %1 %2 0 %3 %4 1 %5 %6 2 %7 %8 3 %9 %10 4 %11 %12 5 %13 %14 6 %15 %16 7 %17 %18 8 %19 %20 9 %21 nr: %22';
+Blockly.Msg.MC_cmd_minecraft_draw_extended = 'Draw %1 %2 0 %3 %4 1 %5 %6 2 %7 %8 3 %9 %10 4 %11 %12 5 %13 %14 6 %15 %16 7 %17 %18 8 %19 %20 9 %21 %22 z %23 %24 y %25 %26 x %27 %28 w %29 %30 v %31 %32 u %33 %34 t %35 %36 s %37 %38 r %39 %40 q %41 nr: %42';
 Blockly.Msg.MC_cmd_minecraft_playerCoord = 'player pos %1';
 Blockly.Msg.MC_cmd_minecraft_importObj = 'import %1 %2 with size %3 %4';
 Blockly.Msg.MC_cmd_minecraft_splash_potion_function = 'with function';
 Blockly.Msg.MC_cmd_minecraft_sign_with_text = 'with text';
 Blockly.Msg.MC_cmd_minecraft_execute_command = 'call function %1 of player %2 with parameter %3 %4 %5 %6 %7';
+Blockly.Msg.MC_cmd_minecraft_nothing = 'nothing %1';
 Blockly.Msg.PROCEDURES_DEFNORETURN_TITLE = '/vm';
 Blockly.Msg.PROCEDURES_DEFNORETURN_PROCEDURE = 'mycommand';
 

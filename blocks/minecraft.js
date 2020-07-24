@@ -2612,8 +2612,6 @@ Blockly.Blocks['minecraft_gotomark'] = {
 		}
 	};
 
-
-
 Blockly.Blocks['minecraft_drawing'] = {
 		init : function() {
 			this.jsonInit( 	
@@ -2779,6 +2777,311 @@ Blockly.Blocks['minecraft_drawing'] = {
 
 
 
+Blockly.Blocks['minecraft_drawing_extended'] = {
+		init : function() {
+			this.jsonInit( 	
+					{
+						  "type": "minecraft_drawing_extended",
+						  "message0": Blockly.Msg.MC_cmd_minecraft_draw_extended,
+						  "args0": [
+							  
+						    {
+						      "type": "input_value",
+						      "name": "matlist",
+						      "check": "Array"
+						    },
+						    {
+						        "type": "field_image",
+						        "src": "drawcol_icons/drawcol0.jpg",
+						        "width": 15,
+						        "height": 15,
+						        "alt": "*",
+						        "flipRtl": false
+						    },
+						    {
+						      "type": "input_value",
+						      "name": "blockchoice0",
+						      
+								"check" : [ "Material" ]
+						    },
+						    {
+						        "type": "field_image",
+						        "src": "drawcol_icons/drawcol1.jpg",
+						        "width": 15,
+						        "height": 15,
+						        "alt": "*",
+						        "flipRtl": false
+							    },
+							    {
+							      "type": "input_value",
+							      "name": "blockchoice1",
+									"check" : [ "Material" ]
+						    },
+
+						    {
+						        "type": "field_image",
+						        "src": "drawcol_icons/drawcol2.jpg",
+						        "width": 15,
+						        "height": 15,
+						        "alt": "*",
+						        "flipRtl": false
+						    },
+						    {
+						      "type": "input_value",
+						      "name": "blockchoice2",
+								"check" : [ "Material" ]
+						    },
+						    {
+						        "type": "field_image",
+						        "src": "drawcol_icons/drawcol3.jpg",
+						        "width": 15,
+						        "height": 15,
+						        "alt": "*",
+						        "flipRtl": false
+						    },
+						    {
+						      "type": "input_value",
+						      "name": "blockchoice3",
+								"check" : [ "Material" ]
+						    },
+						    {
+						        "type": "field_image",
+						        "src": "drawcol_icons/drawcol4.jpg",
+						        "width": 15,
+						        "height": 15,
+						        "alt": "*",
+						        "flipRtl": false
+						    },
+						    {
+						      "type": "input_value",
+						      "name": "blockchoice4",
+								"check" : [ "Material" ]
+						    },
+						    {
+						        "type": "field_image",
+						        "src": "drawcol_icons/drawcol5.jpg",
+						        "width": 15,
+						        "height": 15,
+						        "alt": "*",
+						        "flipRtl": false
+						    },
+						    {
+						      "type": "input_value",
+						      "name": "blockchoice5",
+								"check" : [ "Material" ]
+						    },
+						    {
+						        "type": "field_image",
+						        "src": "drawcol_icons/drawcol6.jpg",
+						        "width": 15,
+						        "height": 15,
+						        "alt": "*",
+						        "flipRtl": false
+							    },
+							    {
+							      "type": "input_value",
+							      "name": "blockchoice6",
+									"check" : [ "Material" ]
+							    },
+							    {
+							        "type": "field_image",
+							        "src": "drawcol_icons/drawcol7.jpg",
+							        "width": 15,
+							        "height": 15,
+							        "alt": "*",
+							        "flipRtl": false
+								    },
+								    {
+								      "type": "input_value",
+								      "name": "blockchoice7",
+										"check" : [ "Material" ]
+								    },
+								    {
+								        "type": "field_image",
+								        "src": "drawcol_icons/drawcol8.jpg",
+								        "width": 15,
+								        "height": 15,
+								        "alt": "*",
+								        "flipRtl": false
+									    },
+									    {
+									      "type": "input_value",
+									      "name": "blockchoice8",
+											"check" : [ "Material" ]
+									    },
+									    {
+									        "type": "field_image",
+									        "src": "drawcol_icons/drawcol9.jpg",
+									        "width": 15,
+									        "height": 15,
+									        "alt": "*",
+									        "flipRtl": false
+										    },
+										    {
+										      "type": "input_value",
+										      "name": "blockchoice9",
+										      "check": [
+										    	  "Material" ]
+									    },
+									    {
+									        "type": "field_image",
+									        "src": "drawcol_icons/drawcolz.jpg",
+									        "width": 15,
+									        "height": 15,
+									        "alt": "*",
+									        "flipRtl": false
+										    },
+										    {
+										      "type": "input_value",
+										      "name": "blockchoicez",
+										      "check": [
+										    	  "Material" ]
+									    },
+									    {
+									        "type": "field_image",
+									        "src": "drawcol_icons/drawcoly.jpg",
+									        "width": 15,
+									        "height": 15,
+									        "alt": "*",
+									        "flipRtl": false
+										    },
+										    {
+										      "type": "input_value",
+										      "name": "blockchoicey",
+										      "check": [
+										    	  "Material" ]
+									    },
+									    {
+									        "type": "field_image",
+									        "src": "drawcol_icons/drawcolx.jpg",
+									        "width": 15,
+									        "height": 15,
+									        "alt": "*",
+									        "flipRtl": false
+										    },
+										    {
+										      "type": "input_value",
+										      "name": "blockchoicex",
+										      "check": [
+										    	  "Material" ]
+									    },
+									    {
+									        "type": "field_image",
+									        "src": "drawcol_icons/drawcolw.jpg",
+									        "width": 15,
+									        "height": 15,
+									        "alt": "*",
+									        "flipRtl": false
+										    },
+										    {
+										      "type": "input_value",
+										      "name": "blockchoicew",
+										      "check": [
+										    	  "Material" ]
+									    },
+									    {
+									        "type": "field_image",
+									        "src": "drawcol_icons/drawcolv.jpg",
+									        "width": 15,
+									        "height": 15,
+									        "alt": "*",
+									        "flipRtl": false
+										    },
+										    {
+										      "type": "input_value",
+										      "name": "blockchoicev",
+										      "check": [
+										    	  "Material" ]
+									    },
+									    {
+									        "type": "field_image",
+									        "src": "drawcol_icons/drawcolu.jpg",
+									        "width": 15,
+									        "height": 15,
+									        "alt": "*",
+									        "flipRtl": false
+										    },
+										    {
+										      "type": "input_value",
+										      "name": "blockchoiceu",
+										      "check": [
+										    	  "Material" ]
+									    },
+									    {
+									        "type": "field_image",
+									        "src": "drawcol_icons/drawcolt.jpg",
+									        "width": 15,
+									        "height": 15,
+									        "alt": "*",
+									        "flipRtl": false
+										    },
+										    {
+										      "type": "input_value",
+										      "name": "blockchoicet",
+										      "check": [
+										    	  "Material" ]
+									    },
+									    {
+									        "type": "field_image",
+									        "src": "drawcol_icons/drawcols.jpg",
+									        "width": 15,
+									        "height": 15,
+									        "alt": "*",
+									        "flipRtl": false
+										    },
+										    {
+										      "type": "input_value",
+										      "name": "blockchoices",
+										      "check": [
+										    	  "Material" ]
+									    },
+									    {
+									        "type": "field_image",
+									        "src": "drawcol_icons/drawcolr.jpg",
+									        "width": 15,
+									        "height": 15,
+									        "alt": "*",
+									        "flipRtl": false
+										    },
+										    {
+										      "type": "input_value",
+										      "name": "blockchoicer",
+										      "check": [
+										    	  "Material" ]
+									    },
+									    {
+									        "type": "field_image",
+									        "src": "drawcol_icons/drawcolq.jpg",
+									        "width": 15,
+									        "height": 15,
+									        "alt": "*",
+									        "flipRtl": false
+										    },
+										    {
+										      "type": "input_value",
+										      "name": "blockchoiceq",
+										      "check": [
+										    	  "Material" ]
+									    },
+									    {
+										      "type": "input_value",
+										      "name": "index_material",
+										      "check": "Number"
+										    }
+						  ],
+						  "inputsInline": false,
+						  "previousStatement": null,
+						  "nextStatement": null,
+						  "colour": 230,
+						  "tooltip": "",
+						  "helpUrl": ""
+						}
+);
+		}
+	};
+
+
+
 Blockly.Blocks['m_draw_0'] = {
 		init : function() {
 			this.jsonInit( 	
@@ -2787,7 +3090,7 @@ Blockly.Blocks['m_draw_0'] = {
 			  "message0": " %1",
 			  "args0": [{"type": "input_value", "name": "child"}],
 			  "output": null,
-			  "colour": getColorForDrawCol(0), // defined in code.js
+			  "colour": getColorForDrawCol('0'), // defined in code.js
 			  "tooltip": "",
 			  "helpUrl": ""
 			});
@@ -2802,7 +3105,7 @@ Blockly.Blocks['m_draw_1'] = {
 		  "message0": " %1",
 		  "args0": [{"type": "input_value", "name": "child"}],
 		  "output": null,
-		  "colour": getColorForDrawCol(1), // defined in code.js
+		  "colour": getColorForDrawCol('1'), // defined in code.js
 		  "tooltip": "",
 		  "helpUrl": ""
 		});
@@ -2817,7 +3120,7 @@ Blockly.Blocks['m_draw_2'] = {
 			  "message0": " %1",
 			  "args0": [{"type": "input_value", "name": "child"}],
 			  "output": null,
-			  "colour": getColorForDrawCol(2), // defined in code.js
+			  "colour": getColorForDrawCol('2'), // defined in code.js
 			  "tooltip": "",
 			  "helpUrl": ""
 			});
@@ -2831,7 +3134,7 @@ Blockly.Blocks['m_draw_3'] = {
 			  "message0": " %1",
 			  "args0": [{"type": "input_value", "name": "child"}],
 			  "output": null,
-			  "colour": getColorForDrawCol(3), // defined in code.js
+			  "colour": getColorForDrawCol('3'), // defined in code.js
 			  "tooltip": "",
 			  "helpUrl": ""
 			});
@@ -2845,7 +3148,7 @@ Blockly.Blocks['m_draw_4'] = {
 			  "message0": " %1",
 			  "args0": [{"type": "input_value", "name": "child"}],
 			  "output": null,
-			  "colour": getColorForDrawCol(4), // defined in code.js
+			  "colour": getColorForDrawCol('4'), // defined in code.js
 			  "tooltip": "",
 			  "helpUrl": ""
 			});
@@ -2859,7 +3162,7 @@ Blockly.Blocks['m_draw_5'] = {
 			  "message0": " %1",
 			  "args0": [{"type": "input_value", "name": "child"}],
 			  "output": null,
-			  "colour": getColorForDrawCol(5), // defined in code.js
+			  "colour": getColorForDrawCol('5'), // defined in code.js
 			  "tooltip": "",
 			  "helpUrl": ""
 			});
@@ -2873,7 +3176,7 @@ Blockly.Blocks['m_draw_6'] = {
 			  "message0": " %1",
 			  "args0": [{"type": "input_value", "name": "child"}],
 			  "output": null,
-			  "colour": getColorForDrawCol(6), // defined in code.js
+			  "colour": getColorForDrawCol('6'), // defined in code.js
 			  "tooltip": "",
 			  "helpUrl": ""
 			});
@@ -2887,7 +3190,7 @@ Blockly.Blocks['m_draw_7'] = {
 			  "message0": " %1",
 			  "args0": [{"type": "input_value", "name": "child"}],
 			  "output": null,
-			  "colour": getColorForDrawCol(7), // defined in code.js
+			  "colour": getColorForDrawCol('7'), // defined in code.js
 			  "tooltip": "",
 			  "helpUrl": ""
 			});
@@ -2901,7 +3204,7 @@ Blockly.Blocks['m_draw_8'] = {
 			  "message0": " %1",
 			  "args0": [{"type": "input_value", "name": "child"}],
 			  "output": null,
-			  "colour": getColorForDrawCol(8), // defined in code.js
+			  "colour": getColorForDrawCol('8'), // defined in code.js
 			  "tooltip": "",
 			  "helpUrl": ""
 			});
@@ -2915,7 +3218,147 @@ Blockly.Blocks['m_draw_9'] = {
 			  "message0": " %1",
 			  "args0": [{"type": "input_value", "name": "child"}],
 			  "output": null,
-			  "colour": getColorForDrawCol(9), // defined in code.js
+			  "colour": getColorForDrawCol('9'), // defined in code.js
+			  "tooltip": "",
+			  "helpUrl": ""
+			});
+		}
+	};
+Blockly.Blocks['m_draw_q'] = {
+		init : function() {
+			this.jsonInit( 	
+			{
+			  "type": "m_draw_q",
+			  "message0": " %1",
+			  "args0": [{"type": "input_value", "name": "child"}],
+			  "output": null,
+			  "colour": getColorForDrawCol('q'), // defined in code.js
+			  "tooltip": "",
+			  "helpUrl": ""
+			});
+		}
+	};
+Blockly.Blocks['m_draw_r'] = {
+		init : function() {
+			this.jsonInit( 	
+			{
+			  "type": "m_draw_r",
+			  "message0": " %1",
+			  "args0": [{"type": "input_value", "name": "child"}],
+			  "output": null,
+			  "colour": getColorForDrawCol('r'), // defined in code.js
+			  "tooltip": "",
+			  "helpUrl": ""
+			});
+		}
+	};
+Blockly.Blocks['m_draw_s'] = {
+		init : function() {
+			this.jsonInit( 	
+			{
+			  "type": "m_draw_s",
+			  "message0": " %1",
+			  "args0": [{"type": "input_value", "name": "child"}],
+			  "output": null,
+			  "colour": getColorForDrawCol('s'), // defined in code.js
+			  "tooltip": "",
+			  "helpUrl": ""
+			});
+		}
+	};
+Blockly.Blocks['m_draw_t'] = {
+		init : function() {
+			this.jsonInit( 	
+			{
+			  "type": "m_draw_t",
+			  "message0": " %1",
+			  "args0": [{"type": "input_value", "name": "child"}],
+			  "output": null,
+			  "colour": getColorForDrawCol('t'), // defined in code.js
+			  "tooltip": "",
+			  "helpUrl": ""
+			});
+		}
+	};
+Blockly.Blocks['m_draw_u'] = {
+		init : function() {
+			this.jsonInit( 	
+			{
+			  "type": "m_draw_u",
+			  "message0": " %1",
+			  "args0": [{"type": "input_value", "name": "child"}],
+			  "output": null,
+			  "colour": getColorForDrawCol('u'), // defined in code.js
+			  "tooltip": "",
+			  "helpUrl": ""
+			});
+		}
+	};
+Blockly.Blocks['m_draw_v'] = {
+		init : function() {
+			this.jsonInit( 	
+			{
+			  "type": "m_draw_v",
+			  "message0": " %1",
+			  "args0": [{"type": "input_value", "name": "child"}],
+			  "output": null,
+			  "colour": getColorForDrawCol('v'), // defined in code.js
+			  "tooltip": "",
+			  "helpUrl": ""
+			});
+		}
+	};
+Blockly.Blocks['m_draw_w'] = {
+		init : function() {
+			this.jsonInit( 	
+			{
+			  "type": "m_draw_w",
+			  "message0": " %1",
+			  "args0": [{"type": "input_value", "name": "child"}],
+			  "output": null,
+			  "colour": getColorForDrawCol('w'), // defined in code.js
+			  "tooltip": "",
+			  "helpUrl": ""
+			});
+		}
+	};
+Blockly.Blocks['m_draw_x'] = {
+		init : function() {
+			this.jsonInit( 	
+			{
+			  "type": "m_draw_x",
+			  "message0": " %1",
+			  "args0": [{"type": "input_value", "name": "child"}],
+			  "output": null,
+			  "colour": getColorForDrawCol('x'), // defined in code.js
+			  "tooltip": "",
+			  "helpUrl": ""
+			});
+		}
+	};
+Blockly.Blocks['m_draw_y'] = {
+		init : function() {
+			this.jsonInit( 	
+			{
+			  "type": "m_draw_y",
+			  "message0": " %1",
+			  "args0": [{"type": "input_value", "name": "child"}],
+			  "output": null,
+			  "colour": getColorForDrawCol('y'), // defined in code.js
+			  "tooltip": "",
+			  "helpUrl": ""
+			});
+		}
+	};
+Blockly.Blocks['m_draw_z'] = {
+		init : function() {
+			this.jsonInit( 	
+			{
+			  "type": "m_draw_z",
+			  "message0": " %1",
+			  "args0": [{"type": "input_value", "name": "child"}],
+			  "output": null,
+			  "colour": getColorForDrawCol('z'), // defined in code.js
 			  "tooltip": "",
 			  "helpUrl": ""
 			});
@@ -3120,7 +3563,7 @@ Blockly.Blocks['minecraft_materialNothing'] = {
 		init : function() {
 			this.jsonInit({
 				  "type": "minecraft_materialNothing",
-				  "message0": "empty %1",
+				  "message0": Blockly.Msg.MC_cmd_minecraft_nothing,
 				  "args0": [
 				    {
 				      "type": "input_value",

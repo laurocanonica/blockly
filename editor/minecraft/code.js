@@ -880,7 +880,7 @@ document.getElementById('playernamefield').onblur = function() {
 function handleKeyboardShortcuts(event) { // add a key 'r' that repeats the last used colour in the drawings
 	var selected=Blockly.selected;
 	if(selected!=null && selected.type.startsWith('m_draw_')) {
-		if(event.key>='0' && event.key<='9') { // colour a block
+		if((event.key>='0' && event.key<='9')||(event.key>='q' && event.key<='z')) { // colour a block
 			//getDrawingBlockCoordinate(Blockly.selected);
 			//setDrawingBlockByCoordinate(getContainingList(Blockly.selected), 19, 19, event.key)
 			//alert(event.key)
@@ -958,7 +958,7 @@ function handleKeyboardShortcuts(event) { // add a key 'r' that repeats the last
 
 function setDrawingBlock(selected, key) { 
 	selected.type='m_draw_'+key;
-	selected.setColour(getColorForDrawCol(parseInt(key)));
+	selected.setColour(getColorForDrawCol(key));
 	//alert(selected.type);
 }
 
@@ -1135,38 +1135,67 @@ function bresenham_draw_line (x1, y1, x2, y2, listBlock, id) {
 
 function getColorForDrawCol(color){
 	switch(color) {
-	  case 0:
-		  return '#888888';
+	  case '0': return '#a9a9a9';
 	    break;
-	  case 1:
-		  return '#ff4000';
+	  case '1':
+		  return '#e6194B';
 	    break;
-	  case 2:
-		  return '#ffbf00';
+	  case '2':
+		  return '#3cb44b';
 	    break;
-	  case 3:
-		  return '#bfff00';
+	  case '3':
+		  return '#ffe119';
 	    break;
-	  case 4:
-		  return '#00ff80';
+	  case '4':
+		  return '#4363d8';
 	    break;
-	  case 5:
-		  return '#00bfff';
+	  case '5':
+		  return '#f58231';
 	    break;
-	  case 6:
-		  return '#0040ff';
+	  case '6':
+		  return '#911eb4';
 	    break;
-	  case 7:
-		  return '#8000ff';
+	  case '7':
+		  return '#42d4f4';
 	    break;
-	  case 8:
-		  return '#ff00ff';
+	  case '8':
+		  return '#f032e6';
 	    break;
-	  case 9:
-		  return '#ff0040';
+	  case '9':
+		  return '#bfef45';
+	    break;
+	  case 'q':
+		  return '#000000';
+	    break;
+	  case 'r':
+		  return '#469990';
+	    break;
+	  case 's':
+		  return '#dcbeff';
+	    break;
+	  case 't':
+		  return '#9A6324';
+	    break;
+	  case 'u':
+		  return '#fffac8';
+	    break;
+	  case 'v':
+		  return '#800000';
+	    break;
+	  case 'w':
+		  return '#aaffc3';
+	    break;
+	  case 'x':
+		  return '#808000';
+	    break;
+	  case 'y':
+		  return '#ffd8b1';
+	    break;
+	  case 'z':
+		  return '#000075';
 	    break;
 	  default:
-		  return '#111111';
+		  return '#000000';
 	}
 }
 

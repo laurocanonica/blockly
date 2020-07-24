@@ -1633,11 +1633,13 @@
 	"MC_cmd_ground": "",
 	"MC_cmd_minecraft_cancel_events": "",
 	"MC_cmd_minecraft_draw": "",
+	"MC_cmd_minecraft_draw_extended": "",
 	"MC_cmd_minecraft_playerCoord": "",
 	"MC_cmd_minecraft_importObj": "",
 	"MC_cmd_minecraft_splash_potion_function": "",
 	"MC_cmd_minecraft_sign_with_text": "",
 	"MC_cmd_minecraft_execute_command": "",
+	"MC_cmd_minecraft_nothing": "",
 	"PROCEDURES_DEFNORETURN_TITLE": "",
 	"PROCEDURES_DEFNORETURN_PROCEDURE": ""
 }

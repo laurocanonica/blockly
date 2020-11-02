@@ -918,12 +918,12 @@ function handleKeyboardShortcuts(event) { // add a key 'r' that repeats the last
 			if(coordStart!=null && coordEnd!=null){
 				if(event.key=='l' ) { // draw line
 						bresenham_draw_line (coordStart.x, coordStart.y, coordEnd.x, coordEnd.y, mainList, id);
-				} else if(event.key=='r' ) { // draw rectangle
+				} else if(event.key=='b' ) { // draw box (rectangle)
 					bresenham_draw_line (coordStart.x, coordStart.y, coordEnd.x, coordStart.y, mainList, id);
 					bresenham_draw_line (coordStart.x, coordStart.y, coordStart.x, coordEnd.y, mainList, id);
 					bresenham_draw_line (coordStart.x, coordEnd.y, coordEnd.x, coordEnd.y, mainList, id);
 					bresenham_draw_line (coordEnd.x, coordStart.y, coordEnd.x, coordEnd.y, mainList, id);
-				} else if(event.key=='c' ) { // draw rectangle
+				} else if(event.key=='c' ) { // draw circle
 					var dx=Math.abs(coordEnd.x - coordStart.x);
 					var dy=Math.abs(coordEnd.y - coordStart.y);
 					var radiusExp2=dx*dx+dy*dy;

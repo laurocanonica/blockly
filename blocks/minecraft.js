@@ -2637,7 +2637,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 						      "type": "input_value",
 						      "name": "blockchoice0",
 						      
-								"check" : [ "Material" ]
+								"check" : [ "Material", "Array" ]
 						    },
 						    {
 						        "type": "field_image",
@@ -2650,7 +2650,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 							    {
 							      "type": "input_value",
 							      "name": "blockchoice1",
-									"check" : [ "Material" ]
+									"check" : [ "Material", "Array" ]
 						    },
 
 						    {
@@ -2664,7 +2664,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 						    {
 						      "type": "input_value",
 						      "name": "blockchoice2",
-								"check" : [ "Material" ]
+								"check" : [ "Material", "Array" ]
 						    },
 						    {
 						        "type": "field_image",
@@ -2677,7 +2677,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 						    {
 						      "type": "input_value",
 						      "name": "blockchoice3",
-								"check" : [ "Material" ]
+								"check" : [ "Material", "Array" ]
 						    },
 						    {
 						        "type": "field_image",
@@ -2690,7 +2690,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 						    {
 						      "type": "input_value",
 						      "name": "blockchoice4",
-								"check" : [ "Material" ]
+								"check" : [ "Material", "Array" ]
 						    },
 						    {
 						        "type": "field_image",
@@ -2703,7 +2703,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 						    {
 						      "type": "input_value",
 						      "name": "blockchoice5",
-								"check" : [ "Material" ]
+								"check" : [ "Material", "Array" ]
 						    },
 						    {
 						        "type": "field_image",
@@ -2716,7 +2716,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 							    {
 							      "type": "input_value",
 							      "name": "blockchoice6",
-									"check" : [ "Material" ]
+									"check" : [ "Material", "Array" ]
 							    },
 							    {
 							        "type": "field_image",
@@ -2729,7 +2729,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 								    {
 								      "type": "input_value",
 								      "name": "blockchoice7",
-										"check" : [ "Material" ]
+										"check" : [ "Material", "Array" ]
 								    },
 								    {
 								        "type": "field_image",
@@ -2742,7 +2742,7 @@ Blockly.Blocks['minecraft_drawing'] = {
 									    {
 									      "type": "input_value",
 									      "name": "blockchoice8",
-											"check" : [ "Material" ]
+											"check" : [ "Material", "Array" ]
 									    },
 									    {
 									        "type": "field_image",
@@ -2802,7 +2802,7 @@ Blockly.Blocks['minecraft_drawing_extended'] = {
 						      "type": "input_value",
 						      "name": "blockchoice0",
 						      
-								"check" : [ "Material" ]
+								"check" : [ "Material", "Array" ]
 						    },
 						    {
 						        "type": "field_image",
@@ -2815,7 +2815,7 @@ Blockly.Blocks['minecraft_drawing_extended'] = {
 							    {
 							      "type": "input_value",
 							      "name": "blockchoice1",
-									"check" : [ "Material" ]
+									"check" : [ "Material", "Array" ]
 						    },
 
 						    {
@@ -2829,7 +2829,7 @@ Blockly.Blocks['minecraft_drawing_extended'] = {
 						    {
 						      "type": "input_value",
 						      "name": "blockchoice2",
-								"check" : [ "Material" ]
+								"check" : [ "Material", "Array" ]
 						    },
 						    {
 						        "type": "field_image",
@@ -2842,7 +2842,7 @@ Blockly.Blocks['minecraft_drawing_extended'] = {
 						    {
 						      "type": "input_value",
 						      "name": "blockchoice3",
-								"check" : [ "Material" ]
+								"check" : [ "Material", "Array" ]
 						    },
 						    {
 						        "type": "field_image",
@@ -2855,7 +2855,7 @@ Blockly.Blocks['minecraft_drawing_extended'] = {
 						    {
 						      "type": "input_value",
 						      "name": "blockchoice4",
-								"check" : [ "Material" ]
+								"check" : [ "Material", "Array" ]
 						    },
 						    {
 						        "type": "field_image",
@@ -2868,7 +2868,7 @@ Blockly.Blocks['minecraft_drawing_extended'] = {
 						    {
 						      "type": "input_value",
 						      "name": "blockchoice5",
-								"check" : [ "Material" ]
+								"check" : [ "Material", "Array" ]
 						    },
 						    {
 						        "type": "field_image",
@@ -2881,7 +2881,7 @@ Blockly.Blocks['minecraft_drawing_extended'] = {
 							    {
 							      "type": "input_value",
 							      "name": "blockchoice6",
-									"check" : [ "Material" ]
+									"check" : [ "Material", "Array" ]
 							    },
 							    {
 							        "type": "field_image",
@@ -2894,7 +2894,7 @@ Blockly.Blocks['minecraft_drawing_extended'] = {
 								    {
 								      "type": "input_value",
 								      "name": "blockchoice7",
-										"check" : [ "Material" ]
+										"check" : [ "Material", "Array" ]
 								    },
 								    {
 								        "type": "field_image",
@@ -2907,7 +2907,7 @@ Blockly.Blocks['minecraft_drawing_extended'] = {
 									    {
 									      "type": "input_value",
 									      "name": "blockchoice8",
-											"check" : [ "Material" ]
+											"check" : [ "Material", "Array" ]
 									    },
 									    {
 									        "type": "field_image",

@@ -346,6 +346,7 @@ Blockly.Msg["MC_cmd_north"] = "north";  // untranslated
 Blockly.Msg["MC_cmd_right"] = "right";  // untranslated
 Blockly.Msg["MC_cmd_south"] = "south";  // untranslated
 Blockly.Msg["MC_cmd_up"] = "up";  // untranslated
+Blockly.Msg["MC_cmd_upper_lower"] = "side %1 %2";  // untranslated
 Blockly.Msg["MC_cmd_west"] = "west";  // untranslated
 Blockly.Msg["MC_cmd_whereLook"] = "where I'm looking";  // untranslated
 Blockly.Msg["MC_particles"] = "particles";  // untranslated

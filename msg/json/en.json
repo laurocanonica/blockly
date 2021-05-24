@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2021-04-07 20:07:37.818013",
+		"lastupdated": "2021-04-15 15:11:12.658795",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -1636,6 +1636,7 @@
 	"MC_cmd_minecraft_option_start_position": "the start position",
 	"MC_cmd_minecraft_option_lastmarked_position": "the last marked position",
 	"MC_cmd_facing": "facing %1 %2",
+	"MC_cmd_upper_lower": "side %1 %2",
 	"MC_cmd_ground": "on the ground %1",
 	"MC_cmd_minecraft_cancel_events": "cancel all events",
 	"MC_cmd_minecraft_draw": "Draw %1 %2 0 %3 %4 1 %5 %6 2 %7 %8 3 %9 %10 4 %11 %12 5 %13 %14 6 %15 %16 7 %17 %18 8 %19 %20 9 %21 nr: %22",

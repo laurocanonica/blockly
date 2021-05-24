@@ -2101,6 +2101,36 @@ Blockly.Blocks['minecraft_direction'] = {
 			});
 		}
 	};
+Blockly.Blocks['minecraft_upper_lower_part'] = {
+		init : function() {
+			this.jsonInit({
+				"type" : "minecraft_upper_lower_part",
+				"message0" : Blockly.Msg.MC_cmd_upper_lower,
+				"args0" : [ {
+					"type" : "field_dropdown",
+					"name" : "NAME",
+					 "options": [
+					        [
+					        	Blockly.Msg.MC_cmd_up,
+					          "UP"
+					        ],
+					        [
+					        	Blockly.Msg.MC_cmd_down,
+					          "DOWN"
+					        ]
+					   ]
+				}, {
+					"type" : "input_value",
+					"name" : "singleblock",
+					"check" : [ "Material" ]
+				} ],
+				"output" : "Material",
+				"colour" : 330,
+				"tooltip" : "",
+				"helpUrl" : ""
+			});
+		}
+	};
 
 Blockly.Blocks['minecraft_on_the_ground'] = {
 		init : function() {

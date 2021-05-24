@@ -292,6 +292,13 @@ Blockly.JavaScript['minecraft_direction'] = function(block) {
 	return [ code, Blockly.JavaScript.ORDER_NONE ];
 };
 
+Blockly.JavaScript['minecraft_upper_lower_part'] = function(block) {
+	var dropdown_name = block.getFieldValue('NAME');
+	var value_singleblock = Blockly.JavaScript.valueToCode(block, 'singleblock', Blockly.JavaScript.ORDER_NONE);
+	var code = value_singleblock.replace("_P_", dropdown_name);
+	return [ code, Blockly.JavaScript.ORDER_NONE ];
+};
+
 
 Blockly.JavaScript['minecraft_on_the_ground'] = function(block) {
 	var value_singleblock = Blockly.JavaScript.valueToCode(block, 'singleblock', Blockly.JavaScript.ORDER_NONE);

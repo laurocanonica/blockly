@@ -346,6 +346,7 @@ Blockly.Msg["MC_cmd_north"] = "verso nord";
 Blockly.Msg["MC_cmd_right"] = "a destra";
 Blockly.Msg["MC_cmd_south"] = "verso sud";
 Blockly.Msg["MC_cmd_up"] = "in su";
+Blockly.Msg["MC_cmd_upper_lower"] = "parte %1 %2";
 Blockly.Msg["MC_cmd_west"] = "verso ovest";
 Blockly.Msg["MC_cmd_whereLook"] = "a dove sto guardando";
 Blockly.Msg["MC_particles"] = "Particelle";
